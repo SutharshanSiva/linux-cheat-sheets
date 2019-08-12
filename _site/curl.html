@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/curl.html" />
+<meta property="og:url" content="http://localhost:4000/curl.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/curl.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Download a single file</span>
+curl http://path.to.the/file
+
+<span class="c"># Download a file and specify a new filename</span>
+curl http://example.com/file.zip <span class="nt">-o</span> new_file.zip
+
+<span class="c"># Download multiple files</span>
+curl <span class="nt">-O</span> URLOfFirstFile <span class="nt">-O</span> URLOfSecondFile
+
+<span class="c"># Download a file and pass HTTP Authentication</span>
+curl <span class="nt">-u</span> username:password URL
+
+<span class="c"># Download all sequentially numbered files (1-24)</span>
+curl http://example.com/pic[1-24].jpg
+
+<span class="c"># Download a file with a Proxy</span>
+curl <span class="nt">-x</span> proxysever.server.com:PORT http://addressiwantto.access
+
+<span class="c"># Download a file from FTP</span>
+curl <span class="nt">-u</span> username:password <span class="nt">-O</span> ftp://example.com/pub/file.zip
+
+<span class="c"># Get an FTP directory listing</span>
+curl ftp://username:password@example.com
+
+<span class="c"># Resume a previously failed download</span>
+curl <span class="nt">-C</span> - <span class="nt">-o</span> partial_file.zip http://example.com/file.zip
+
+<span class="c"># Fetch only the HTTP headers from a response</span>
+curl <span class="nt">-I</span> http://example.com
+
+<span class="c"># Fetch your external IP and network info as JSON</span>
+curl http://ifconfig.me/all/json
+
+<span class="c"># Limit the rate of a download</span>
+curl <span class="nt">--limit-rate</span> 1000B <span class="nt">-O</span> http://path.to.the/file
+
+<span class="c"># Get your global IP</span>
+curl httpbin.org/ip
+
+<span class="c"># POST REQUEST - json</span>
+curl <span class="nt">-d</span> <span class="s1">'{"name":"First Lastname","course":"LPIC102"}'</span> httpbin.org/post
+curl <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="nt">-d</span> <span class="s1">'{"name":"John Doe","course":"Linux"}'</span> httpbin.org/post
+
+<span class="c"># POST REQUEST - URL</span>
+curl <span class="nt">-d</span> <span class="s1">'name=john+doe&amp;course=linux'</span> httpbin.org/post
+
+<span class="c"># Notice that in both the examples, the data is enclosed in single quotes. Using double quotes is okay but it may cause problems if the body also contains double quotes like JSON. Using single quotes is the safer approach.</span>
+
+<span class="c"># POST data in form data format</span>
+curl <span class="nt">-F</span> <span class="s2">"name=John Doe"</span> <span class="nt">-F</span> <span class="s2">"course=linux"</span>  httpbin.org/post
+
+<span class="c"># Uploading Files - Using curl, you can upload files both as a part of a form field or to a ReST API endpoint. We'll first create a file and then upload it both as a part of a form and to a ReST endpoint.</span>
+curl <span class="nt">-F</span> <span class="s2">"file=@file.txt"</span> httpbin.org/post
+
+<span class="c"># Uploading to a ReST endpoint is similar. We just use the -d flag instead.</span>
+curl <span class="nt">-d</span> @file.txt httpbin.org/post
+
+<span class="c"># PUT request - ReST APIs use the PUT request to update an existing resource that the server manages. Making a PUT request with curl is similar to making a POST request. Here’s how you’d make a PUT request:</span>
+curl <span class="nt">-X</span> PUT <span class="nt">-d</span> <span class="s1">'{"name":"Jane Doe"}'</span> httpbin.org/put
+
+
+<span class="c"># only print out header</span>
+curl <span class="nt">-I</span> http://example.com
+
+<span class="c"># DELETE Request - Similarly, ReST APIs use DELETE request to delete an existing resource. Here's how to make a delete request:</span>
+curl <span class="nt">-X</span> DELETE httpbin.org/delete
+
+<span class="c"># BASIC Authentication</span>
+curl <span class="nt">-u</span> john:abc123 httpbin.org/basic-auth/john/abc123
+curl john:abc123@httpbin.org/basic-auth/john/abc123
+
+<span class="c"># Setting Cookies -b</span>
+curl <span class="nt">--cookie</span> <span class="s2">"name=john;course=linux beginner"</span> httpbin.org/cookies
+
+curl <span class="nt">-s</span> google.com | egrep <span class="nt">-ci</span> <span class="s2">"301 moved"</span> <span class="o">&gt;</span> /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"file has moved"</span>
+
+<span class="c"># Curl supports client- side certificates. All certificates are locked with a pass phrase, which you need to enter before the certificate can be used by curl. The pass phrase can be specified on the command line or if not, entered interactively when curl queries for it. Use a certificate with curl on a HTTPS server like:</span>
+
+ curl <span class="nt">--cert</span> mycert.pem https://secure.example.com
+
+<span class="c"># At times you may end up with your own CA cert store and then you can tell curl to use that to verify the server's certificate:</span>
+
+ curl <span class="nt">--cacert</span> ca-bundle.pem https://example.com/
+
+curl httpbin.org/ip 
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

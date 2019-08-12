@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/openssl.html" />
+<meta property="og:url" content="http://localhost:4000/openssl.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/openssl.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The commands below may be run in sequence to generate a self-signed SSL certificate.)</span>
+<span class="c"># or use digicert.com wizard</span>
+<span class="c"># Note: If you're generating an Apache CSR for a Wildcard certificate, make sure your common name starts with an asterisk (e.g., *.example.com).</span>
+
+<span class="c"># versions of openssl and TLS</span>
+openssl ciphers <span class="nt">-v</span> | awk <span class="s1">'{print $2}'</span> | sort | uniq
+
+<span class="c"># To connect to a web server</span>
+openssl s_client connect https://
+
+<span class="c">## Generate files - private and csr keys</span>
+
+<span class="c"># To create a 2048-bit private key:</span>
+openssl genrsa <span class="nt">-out</span> server.key 2048
+
+<span class="c"># To create the Certificate Signing Request (CSR):</span>
+openssl req <span class="nt">-new</span> <span class="nt">-key</span> server.key <span class="nt">-out</span> server.csr
+
+
+<span class="c">## Order Your SSL/TLS Certificate</span>
+
+Open the .csr file you created with a text editor.
+Copy the text, including the <span class="nt">-----BEGIN</span> NEW CERTIFICATE REQUEST----- and <span class="nt">-----END</span> NEW CERTIFICATE REQUEST----- tags, and paste it <span class="k">in </span>to the DigiCert order form.
+
+<span class="c">## Save private key </span>
+<span class="c">## Install certificate</span>
+
+<span class="c"># To sign a certificate using a private key and CSR:</span>
+openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 365 <span class="nt">-in</span> server.csr <span class="nt">-signkey</span> server.key <span class="nt">-out</span> server.crt
+
+<span class="c"># (The above commands may be run in sequence to generate a self-signed SSL certificate.)</span>
+
+
+<span class="c"># To show certificate information for a certificate signing request</span>
+openssl req <span class="nt">-text</span> <span class="nt">-noout</span> <span class="nt">-in</span> server.csr
+
+<span class="c"># To view certificate expiration:</span>
+<span class="nb">echo</span> | openssl s_client <span class="nt">-connect</span> &lt;hostname&gt;:443 2&gt; /dev/null | <span class="se">\</span>
+awk <span class="s1">'/-----BEGIN/,/END CERTIFICATE-----/'</span> | <span class="se">\</span>
+openssl x509 <span class="nt">-noout</span> <span class="nt">-enddate</span>
+
+<span class="c"># If you use the 'openssl' tool, this is one way to get extract the CA cert for a particular server:</span>
+
+openssl s_client <span class="nt">-connect</span> xxxxx.com:443 |tee logfile
+<span class="nb">type</span> <span class="s2">"QUIT"</span>, followed by the <span class="s2">"ENTER"</span> key
+
+<span class="c"># 5 top CA companies</span>
+Lets Encrypt
+Comodo
+Symantec
+Digicert
+GeoTrust
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

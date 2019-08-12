@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/awscli.html" />
+<meta property="og:url" content="http://localhost:4000/awscli.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/awscli.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># AWS CLI commands</span>
+aws <span class="nt">--version</span>
+aws ec2 iam <span class="nb">help</span>
+
+<span class="c"># AWS CLI EC2 commands</span>
+aws ec2 describe-security-groups <span class="nt">--output</span> table
+aws ec2 describe-regions <span class="nt">--output</span> table
+aws ec2 describe-availability-zones <span class="nt">--output</span> table
+aws ec2 describe-instances <span class="nt">--output</span> table
+aws ec2 describe-images <span class="nt">--image-id</span> ami-6df1e514 <span class="nt">--output</span> table
+aws ec2 describe-key-pairs
+aws ec2 describe-security-groups <span class="nt">--group-id</span> sg-51d1612b <span class="nt">--output</span> table
+aws ec2 run-instances <span class="nt">--image-id</span> ami-6df1e514 <span class="nt">--count</span> 1 <span class="nt">--instance-type</span> t2.micro <span class="nt">--key-name</span> MyWebAWS <span class="nt">--user-data</span> file://my_userdata.sh <span class="nt">--subnet-id</span> subnet-eec66eb5 <span class="nt">--security-group-ids</span> sg-51d1612b
+aws ec2 describe-instance-attribute <span class="nt">--instance-id</span> i-054acd6b61b1b3c91 <span class="nt">--attribute</span> userData <span class="nt">--output</span> text <span class="nt">--query</span> <span class="s2">"UserData.Value"</span> | base64 <span class="nt">--decode</span>
+aws ec2 describe-instances <span class="nt">--instance-id</span> i-054acd6b61b1b3c91 <span class="nt">--output</span> table
+aws ec2 describe-instances <span class="nt">--query</span> <span class="s1">'Reservations[].Instances[].[Placement.AvailabilityZone,InstanceId,InstanceType,State.Name,Tags[Key=='</span>Name<span class="s1">'] | [0].Value]'</span> <span class="nt">--output</span> table
+aws ec2 get-console-output <span class="nt">--instance-id</span> i-0cb92fcf5285829c1 | sed <span class="s1">'s/\\n/\n/g'</span> | sed <span class="s1">'s/\\r/\r/g'</span>
+aws ec2 terminate-instances <span class="nt">--instance-ids</span> i-0cb92fcf5285829c1 <span class="nt">--dry-run</span>
+
+<span class="c"># AWS CLI IAM commands</span>
+aws iam list-users
+aws iam list-groups
+aws iam list-roles
+aws iam create-user <span class="nt">--user-name</span> TaosUser
+aws iam create-access-key <span class="nt">--user-name</span> TaosUser
+aws iam create-group <span class="nt">--group-name</span> Developers
+aws iam add-user-to-group <span class="nt">--user-name</span> TaosUser <span class="nt">--group-name</span> Developers
+aws iam list-policies <span class="nt">--scope</span> AWS | more
+aws iam attach-group-policy <span class="nt">--policy-arn</span> arn:aws:iam::aws:policy/AmazonEC2FullAccess <span class="nt">--group-name</span> Developers
+aws iam list-attached-group-policies <span class="nt">--group-name</span> Developers
+aws iam list-attached-group-policies <span class="nt">--group-name</span> SystemAdmin
+aws iam create-service-linked-role <span class="nt">--aws-service-name</span> SERVICE-NAME-URL.amazonaws.com
+
+<span class="c"># AWS CLI S3 commands</span>
+<span class="c"># aws s3 cp ls mb mv presign rb rm sync website</span>
+aws s3 <span class="nb">ls </span>s3://mybucket
+aws s3 cp myfolder s3://mybucket/myfolder <span class="nt">--recursive</span>
+aws s3 sync myfolder s3://mybucket/myfolder <span class="nt">--exclude</span> <span class="k">*</span>.tmp
+
+<span class="c"># AWS CLI SSM commands</span>
+aws ssm list-documents <span class="nt">--output</span> table
+aws ssm describe-instance-information <span class="nt">--output</span> text <span class="nt">--query</span> <span class="s2">"InstanceInformationList[*]"</span>
+aws ssm send-command <span class="nt">--document-name</span> <span class="s2">"AWS-RunShellScript"</span> <span class="nt">--comment</span> <span class="s2">"listing services"</span> <span class="nt">--instance-ids</span> <span class="s2">"i-0cb92fcf5285829c1"</span> <span class="nt">--parameters</span> <span class="nv">commands</span><span class="o">=</span><span class="s2">"service --status-all"</span> <span class="nt">--region</span> us-west-2 <span class="nt">--output</span> text
+aws ssm list-command-invocations <span class="nt">--command-id</span> <span class="s2">"command ID"</span> <span class="nt">--details</span>
+aws ssm describe-document <span class="nt">--name</span> <span class="s2">"AWS-RunShellScript"</span> <span class="nt">--query</span> <span class="s2">"[Document.Name,Document.Description]"</span>
+aws ssm describe-document <span class="nt">--name</span> <span class="s2">"AWS-RunShellScript"</span> <span class="nt">--query</span> <span class="s2">"Document.Parameters[*]"</span>
+aws ssm describe-instance-information <span class="nt">--instance-information-filter-list</span> <span class="nv">key</span><span class="o">=</span>InstanceIds,valueSet<span class="o">=</span>i-0cb92fcf5285829c1
+aws ssm describe-instance-information <span class="nt">--instance-information-filter-list</span> <span class="nv">key</span><span class="o">=</span>AgentVersion,valueSet<span class="o">=</span>LATEST
+
+<span class="c"># AWS CLI All Resources</span>
+acm      	cognito-idp         elb             lightsail            servicecatalog 
+apigateway      cognito-sync        elbv2           logs                 ses 
+application-autoscaling        configservice        emr           machinelearning                shield 
+appstream        configure          es              marketplacecommerceanalytics   sms 
+athena           cur                events          marketplace-entitlement        snowball 
+autoscaling      datapipeline       firehose        meteringmarketplace            sns 
+batch            deploy             gamelift        mturk                          sqs 
+budgets          devicefarm         glacier         opsworks                       ssm 
+clouddirectory   directconnect      greengrass      opsworks-cm                    stepfunctions 
+cloudformation   discovery          health          organizations                  storagegateway 
+cloudfront       dms                iam             pinpoint                       sts 
+cloudhsm         ds                 importexport    polly                          support 
+cloudsearch      dynamodb           inspector       rds                            swf 
+cloudsearchdomain              dynamodbstreams      iot           redshift                       waf 
+cloudtrail       ec2                iot-data        rekognition                    waf-regional 
+cloudwatch       ecr                kinesis         resourcegroupstaggingapi       workdocs 
+codebuild        ecs                kinesisanalytics      route53                        workspaces 
+codecommit       efs                kms             route53domains                 xray 
+codepipeline     elasticache        lambda          s3                             
+codestar         elasticbeanstalk   lex-models      s3api                          
+cognito-identity               elastictranscoder              lex-runtime                    sdb
+
+<span class="c"># aws cloudformation</span>
+  create-stack
+<span class="nt">--stack-name</span> &lt;value&gt;
+<span class="o">[</span><span class="nt">--template-body</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--template-url</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--parameters</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--disable-rollback</span> | <span class="nt">--no-disable-rollback</span><span class="o">]</span>
+<span class="o">[</span><span class="nt">--rollback-configuration</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--timeout-in-minutes</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--notification-arns</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--capabilities</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--resource-types</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--role-arn</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--on-failure</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--stack-policy-body</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--stack-policy-url</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--tags</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--client-request-token</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--enable-termination-protection</span> | <span class="nt">--no-enable-termination-protection</span><span class="o">]</span>
+<span class="o">[</span><span class="nt">--cli-input-json</span> &lt;value&gt;]
+<span class="o">[</span><span class="nt">--generate-cli-skeleton</span> &lt;value&gt;]
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

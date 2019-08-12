@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To resize an image to a fixed width and proportional height: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To resize an image to a fixed width and proportional height:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/convert.html" />
+<meta property="og:url" content="http://localhost:4000/convert.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To resize an image to a fixed width and proportional height:","url":"http://localhost:4000/convert.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-resize-an-image-to-a-fixed-width-and-proportional-height">To resize an image to a fixed width and proportional height:</h1>
+<p>convert original-image.jpg -resize 100x converted-image.jpg</p>
+
+<h1 id="to-resize-an-image-to-a-fixed-height-and-proportional-width">To resize an image to a fixed height and proportional width:</h1>
+<p>convert original-image.jpg -resize x100 converted-image.jpg</p>
+
+<h1 id="to-resize-an-image-to-a-fixed-width-and-height">To resize an image to a fixed width and height:</h1>
+<p>convert original-image.jpg -resize 100x100 converted-image.jpg</p>
+
+<h1 id="to-resize-an-image-and-simultaneously-change-its-file-type">To resize an image and simultaneously change its file type:</h1>
+<p>convert original-image.jpg -resize 100x converted-image.png</p>
+
+<h1 id="to-resize-all-of-the-images-within-a-directory">To resize all of the images within a directory:</h1>
+<h1 id="to-implement-a-for-loop">To implement a for loop:</h1>
+<p>for file in <code class="highlighter-rouge">ls original/image/path/</code>;
+    do new_path=${file%.*};
+    new_file=<code class="highlighter-rouge">basename $new_path</code>;
+    convert $file -resize 150 conerted/image/path/$new_file.png;
+done</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

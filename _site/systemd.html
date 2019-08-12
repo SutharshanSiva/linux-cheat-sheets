@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Display process startup time | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Display process startup time" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/systemd.html" />
+<meta property="og:url" content="http://localhost:4000/systemd.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Display process startup time","url":"http://localhost:4000/systemd.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="display-process-startup-time">Display process startup time</h1>
+<p>systemd-analyze</p>
+
+<h1 id="display-process-startup-time-at-service-level">Display process startup time at service level</h1>
+<p>systemd-analyze blame</p>
+
+<h1 id="list-running-units">List running units</h1>
+<p>systemctl list-units</p>
+
+<h1 id="load-a-unit-at-startup">Load a unit at startup</h1>
+<p>systemctl enable foo.service</p>
+
+<h1 id="start-or-stop-a-unit">Start or Stop a unit</h1>
+<p>systemctl &lt;start | stop&gt; foo.service</p>
+
+<h1 id="unit-file-locations">Unit file locations</h1>
+<p>/etc/systemd/system
+/usr/lib/systemd/system</p>
+
+<h5 id="creating-a-timer-service-to-backup-web-files---linuxacademy-learn-linux-by-doing">Creating a timer service to backup web files - LinuxAcademy Learn Linux by doing</h5>
+<h5 id="scheduling-a-systemd-service-job-with-timer-units">Scheduling a Systemd Service Job with Timer units</h5>
+
+<p>-rw-r–r–. 1 root root  176 Jul  6 09:03 web-backup.service
+-rwxr-xr-x. 1 root root   92 Jul  6 09:03 web-backup.sh
+-rw-r–r–. 1 root root  153 Jul  6 10:12 web-backup.timer</p>
+
+<h2 id="web-backupservice">[web-backup.service]</h2>
+<p>[Unit]
+Description=Backup the web site, every day, or the boss will be mad</p>
+
+<p>[Service]
+Type=simple
+ExecStart=/usr/local/sbin/web-backup.sh</p>
+
+<p>[Install]
+WantedBy=multi-user.target</p>
+
+<h2 id="web-backupsh">[web-backup.sh]</h2>
+<p>#!/bin/bash</p>
+
+<p>DATE=$(date “+%d”)</p>
+
+<p>/bin/tar -czf /root/site-backup-$DATE.tar.gz /var/www/html</p>
+
+<h2 id="web-backuptimer">[web-backup.timer]</h2>
+<p>[Unit]
+Description=Fire off the backup</p>
+
+<p>[Timer]
+OnCalendar=<em>-</em>-* 23:00:00
+Persistent=true
+Unit=web-backup.service</p>
+
+<p>[Install]
+WantedBy=multi-user.target</p>
+
+<p>[root@ip-10-0-1-66 ~]# chmod 0755 web-backup.sh
+[root@ip-10-0-1-66 ~]# cp web-backup.sh /usr/local/sbin
+[root@ip-10-0-1-66 ~]# cp web-backup.{service,timer} /etc/systemd/system
+[root@ip-10-0-1-66 ~]# systemctl daemon-reload
+[root@ip-10-0-1-66 ~]# systemctl enable web-backup.timer web-backup.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/web-backup.timer to /etc/systemd/system/web-backup.timer.
+Created symlink from /etc/systemd/system/multi-user.target.wants/web-backup.service to /etc/systemd/system/web-backup.service.
+[root@ip-10-0-1-66 ~]# systemctl start web-backup.timer web-backup.service
+[root@ip-10-0-1-66 ~]# systemctl status web-backup.timer
+● web-backup.timer - Fire off the backup
+   Loaded: loaded (/etc/systemd/system/web-backup.timer; enabled; vendor preset: disabled)
+   Active: active (waiting) since Sat 2019-07-06 10:20:06 EDT; 13s ago</p>
+
+<p>Jul 06 10:20:06 ip-10-0-1-66.ec2.internal systemd[1]: Started Fire off the backup.
+[root@ip-10-0-1-66 ~]# systemctl status web-backup.service
+● web-backup.service - Backup the web site, every day, or the boss will be mad
+   Loaded: loaded (/etc/systemd/system/web-backup.service; enabled; vendor preset: disabled)
+   Active: inactive (dead) since Sat 2019-07-06 10:20:06 EDT; 21s ago
+  Process: 4538 ExecStart=/usr/local/sbin/web-backup.sh (code=exited, status=0/SUCCESS)
+ Main PID: 4538 (code=exited, status=0/SUCCESS)</p>
+
+<p>Jul 06 10:20:06 ip-10-0-1-66.ec2.internal systemd[1]: Started Backup the web site, every day, or the boss will be mad.
+Jul 06 10:20:06 ip-10-0-1-66.ec2.internal web-backup.sh[4538]: /bin/tar: Removing leading `/’ from member names</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

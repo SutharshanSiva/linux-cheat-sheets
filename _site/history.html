@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To see most used top 10 commands: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To see most used top 10 commands:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/history.html" />
+<meta property="og:url" content="http://localhost:4000/history.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To see most used top 10 commands:","url":"http://localhost:4000/history.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-see-most-used-top-10-commands">To see most used top 10 commands:</h1>
+<p>history | awk ‘{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] “ “ CMD[a]/count*100 “% “ a;}’ | grep -v “./” | column -c3 -s “ “ -t | sort -nr | nl | head -n10</p>
+
+<h1 id="history-shortcuts">History shortcuts</h1>
+<p>alt-&lt; 	# Move to beginning of history
+alt-&gt; 	# Move to end of history
+ctrl-r	# Reverse incremental search
+alt-p	# Reverse search, non-incremental
+alt-n	# Forward search, non-incremental
+ctrl-o	# Execute the current item in the history list and advance to next one</p>
+
+<p>!! 	# Repeat the last command
+!#	# Repeat history number item
+!string	# Repeat last history starting with string
+!?strg	# Repeat history item containing string
+!$ 	# Modify last command - ls /home &gt; ls -l /home</p>
+
+<h1 id="reviewing-commands-and-their-arguments">Reviewing commands and their arguments</h1>
+<p>touch /home/avi/Desktop/1.txt
+cp /home/avi/Desktop/1.txt /home/avi/Downloads
+echo “1st Argument is : !^”	# 1st argument of last command
+echo “2nd Argument is : !cp:2”	# 2nd argument of the last cp command in history
+“!<em>” 	# all arguments, possible syntax “!xyz:</em>”</p>
+
+<h1 id="execute-last-history-items-by-keyword">Execute last history items by keyword</h1>
+<p>ls /home &gt; /dev/null
+ls -l /home/avi/ &gt; /dev/null
+ls -Al /home/avi/Download &gt; /dev/null</p>
+
+<p>!ls
+!ls -l
+!ls -Al</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

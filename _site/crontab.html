@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>set a shell | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="set a shell" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/crontab.html" />
+<meta property="og:url" content="http://localhost:4000/crontab.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"set a shell","url":"http://localhost:4000/crontab.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+<h1 id="set-a-shell">set a shell</h1>
+<p>SHELL=/bin/bash</p>
+
+<h1 id="crontab-format">crontab format</h1>
+<ul>
+  <li>
+    <ul>
+      <li>
+        <ul>
+          <li>
+            <ul>
+              <li>
+                <ul>
+                  <li>command_to_execute</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <hr />
+    <p>| | | | |
+| | | | +- day of week (0 - 7) (where sunday is 0 and 7)
+| | | +— month (1 - 12)
+| | +—– day (1 - 31)
+| +——- hour (0 - 23)
++——— minute (0 - 59)</p>
+  </li>
+</ul>
+
+<h1 id="example-entries">example entries</h1>
+<h1 id="every-15-min">every 15 min</h1>
+<p>*/15 * * * * /home/user/command.sh</p>
+<h1 id="every-midnight">every midnight</h1>
+<p>0 * * * * /home/user/command.sh</p>
+<h1 id="every-saturday-at-805-am">every Saturday at 8:05 AM</h1>
+<p>5 8 * * 6 /home/user/command.sh</p>
+
+<h1 id="read-the-crontab-of-every-user-in-passwd">read the crontab of every user in passwd</h1>
+<p>for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done
+for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; done</p>
+
+<h1 id="schedule-a-job">schedule a job</h1>
+<p>@yearly
+@monthly
+@daily
+@reboot</p>
+
+<h1 id="redirect-mail-from-cron-job">Redirect mail from cron job</h1>
+<p>MAIL=”user”
+MAIL=””		# Will stop sending output mail</p>
+
+<h1 id="specify-path-variable">Specify PATH variable</h1>
+<p>PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/user</p>
+
+<h1 id="installing-a-crontab-from-a-cron-file">Installing a crontab from a cron file</h1>
+<h2 id="this-will-remove-old-crontab-entries">this will remove old crontab entries</h2>
+<p>crontab cron-file.txt
+crontab -l user
+@reboot CMD
+*/10 * * * * /home/user/sysadmin-tasks.sh</p>
+
+<h1 id="example-of-etccrondstat">example of /etc/cron.d/stat</h1>
+<p>MAIL=”david”</p>
+
+<p>*/1 * * * * david sh /home/david/bin/stat.sh</p>
+
+<h1 id="cronallow-and-crondeny">cron.allow and cron.deny</h1>
+<p>The cron.deny and cron.allow files consist of a list of user names, one user name per line.</p>
+
+<p>These access control files work together as follows:</p>
+
+<p>If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.</p>
+
+<p>If cron.allow does not exist, all users can submit crontab files, except for users who are listed in cron.deny.</p>
+
+<p>If neither cron.allow nor cron.deny exists, superuser privileges are required to run the crontab command.</p>
+
+<p>Superuser privileges are required to edit or create the cron.deny and cron.allow files</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

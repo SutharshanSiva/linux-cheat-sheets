@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Basic usage | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Basic usage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/emacs.html" />
+<meta property="og:url" content="http://localhost:4000/emacs.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Basic usage","url":"http://localhost:4000/emacs.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="basic-usage">Basic usage</h1>
+
+<p>Indent              Select text then press TAB
+  Cut                 CTRL-w
+  Copy                ALT-w
+  Paste               CTRL-y
+  Search/Find         CTRL-s
+  Replace             ALT-% (ALT-SHIFT-5)
+  Save                CTRL-x CTRL-s
+  Load/Open           CTRL-x CTRL-f
+  Undo                CTRL-x u
+  Highlight all text  CTRL-x h
+  Directory listing   CTRL-x d
+  Cancel a command    ESC ESC ESC
+  Font size bigger    CTRL-x CTRL-+
+  Font size smaller   CTRL-x CTRL–</p>
+
+<h1 id="buffers">Buffers</h1>
+
+<p>Split screen vertically                         CTRL-x 2
+  Split screen vertically with 5 row height       CTRL-u 5 CTRL-x 2
+  Split screen horizontally                       CTRL-x 3
+  Split screen horizontally with 24 column width  CTRL-u 24 CTRL-x 3
+  Revert to single screen                         CTRL-x 1
+  Hide the current screen                         CTRL-x 0
+  Kill the current screen                         CTRL-x k
+  Move to the next buffer                         CTRL-x O
+  Select a buffer                                 CTRL-x b
+  Run command in the scratch buffer               CTRL-x CTRL-e</p>
+
+<h1 id="other-stuff">Other stuff</h1>
+
+<p>Open a shell         ALT-x eshell
+  Goto a line number   ALT-x goto-line
+  Word wrap            ALT-x toggle-word-wrap
+  Spell checking       ALT-x flyspell-mode
+  Line numbers         ALT-x linum-mode
+  Toggle line wrap     ALT-x visual-line-mode
+  Compile some code    ALT-x compile
+  List packages        ALT-x package-list-packages</p>
+
+<h1 id="sudoing-within-eshell">Sudoing within eshell</h1>
+
+<p>By default when using the sudo command within eshell you’ll just
+  get “permission denied” messages. To overcome that type:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias sudo '*sudo $*'
+</code></pre></div></div>
+
+<h1 id="line-numbers">Line numbers</h1>
+
+<p>To add line numbers and enable moving to a line with CTRL-l:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(global-set-key "\C-l" 'goto-line)
+(add-hook 'find-file-hook (lambda () (linum-mode 1)))
+</code></pre></div></div>
+
+<h1 id="org-mode">Org-mode</h1>
+
+<p>To begin org-mode                            ALT-x org-mode
+  Table column separator                       Vertical/pipe character
+  Reorganize table                             TAB
+  Section heading                              *
+  Open/collapse section                        TAB
+  Open/collapse All                            CTRL-TAB
+  Export in other file formats (eg HTML,PDF)   CTRL-c CTRL-e</p>
+
+<p>To make org-mode automatically wrap lines:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(add-hook 'org-mode-hook
+          '(lambda ()
+             (visual-line-mode 1)))
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

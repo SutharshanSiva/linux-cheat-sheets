@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>For reading smart card devices in Linux | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="For reading smart card devices in Linux" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/smartcard.html" />
+<meta property="og:url" content="http://localhost:4000/smartcard.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"For reading smart card devices in Linux","url":"http://localhost:4000/smartcard.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="for-reading-smart-card-devices-in-linux">For reading smart card devices in Linux</h3>
+<p>install libusb-1.0-0-dev pcsc-lite pcscd pcsc-tools</p>
+
+<h2 id="tools-installed-for-smart-card-readers">tools installed for smart card readers</h2>
+<p>opensc-explorer
+opensc-tool
+pscsc_scan</p>
+
+<h1 id="use-opensc-explorer-to-see-the-smartcard">use opensc-explorer to see the smartcard</h1>
+<h1 id="use-opensc-tool--l--n-to-see-the-details-of-the-card-reader-and-inserted-card">use opensc-tool -l -n to see the details of the card reader and inserted card</h1>
+<h1 id="use-pcsc_scan-to-view-the-reader-and-if-the-pcscd-crashed-or-not-insert-or">use pcsc_scan to view the reader and if the pcscd crashed or not, insert or</h1>
+<h1 id="remove-the-card-to-view-the-status-of-the-daemon">remove the card to view the status of the daemon.</h1>
+
+<h1 id="add-the-smartcard-reader-module-as-a-certificate-reader">add the smartcard reader module as a Certificate reader</h1>
+
+<h4 id="firefox">Firefox</h4>
+<p>Preferences -&gt; Privacy &amp; Security -&gt; Certificates
+Security Devices…
+Select Load -&gt; Name: New PKCS#11 Module
+Module Path=/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so</p>
+<h3 id="loads-device-manager-rocketek-rt-scr1-00-00">Loads Device Manager Rocketek RT-SCR1 00 00</h3>
+<p>Status Logged in
+Description</p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

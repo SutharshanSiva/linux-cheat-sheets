@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>INSTALL | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="INSTALL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/distcc.html" />
+<meta property="og:url" content="http://localhost:4000/distcc.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"INSTALL","url":"http://localhost:4000/distcc.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="install">INSTALL</h1>
+<h1>==============================================================================</h1>
+<h1 id="edit-etcdefaultdistcc-and-set-theses-vars">Edit /etc/default/distcc and set theses vars</h1>
+<h1 id="startdistcctrue">STARTDISTCC=”true”</h1>
+<h1 id="allowednets127001-1921681024-your-computer-and-local-computers">ALLOWEDNETS=”127.0.0.1 192.168.1.0/24”# Your computer and local computers</h1>
+<h1 id="listener127001-comment-it">#LISTENER=”127.0.0.1”# Comment it</h1>
+<h1 id="zeroconftrue-auto-configuration">ZEROCONF=”true”# Auto configuration</h1>
+
+<h1 id="remember-1">REMEMBER 1:</h1>
+<h1 id="startrestart-your-distccd-servers-before-using-one-of-these-commands">Start/Restart your distccd servers before using one of these commands.</h1>
+<h1 id="service-distccd-start">service distccd start</h1>
+
+<h1 id="remember-2">REMEMBER 2:</h1>
+<h1 id="do-not-forget-to-install-on-each-machine-distcc">Do not forget to install on each machine DISTCC.</h1>
+<h1 id="no-need-to-install-libs--only-main-host-need-libs-">No need to install libs ! Only main host need libs !</h1>
+
+<h1 id="usage">USAGE</h1>
+<h1 id="-1">==============================================================================</h1>
+
+<h1 id="run-make-with-4-thread-a-cross-network-in-auto-configuration">Run make with 4 thread (a cross network) in auto configuration.</h1>
+<h1 id="note-for-gcc-replace-cxx-by-cc-and-g-by-gcc">Note: for gcc, Replace CXX by CC and g++ by gcc</h1>
+<p>ZEROCONF=’+zeroconf’ make -j4 CXX=’distcc g++’</p>
+
+<h1 id="run-make-with-4-thread-a-cross-network-in-static-configuration-2-ip">Run make with 4 thread (a cross network) in static configuration (2 ip)</h1>
+<h1 id="note-for-gcc-replace-cxx-by-cc-and-g-by-gcc-1">Note: for gcc, Replace CXX by CC and g++ by gcc</h1>
+<p>DISTCC_HOSTS=’127.0.0.1 192.168.1.69’ make -j4 CXX=’distcc g++’</p>
+
+<h1 id="show-hosts-aviables">Show hosts aviables</h1>
+<p>ZEROCONF=’+zeroconf’ distcc –show-hosts</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

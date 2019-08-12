@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Actively follow log (like tail -f) | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Actively follow log (like tail -f)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/journalctl.html" />
+<meta property="og:url" content="http://localhost:4000/journalctl.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Actively follow log (like tail -f)","url":"http://localhost:4000/journalctl.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="actively-follow-log-like-tail--f">Actively follow log (like tail -f)</h1>
+<p>journalctl -f</p>
+
+<h1 id="display-all-errors-since-last-boot">Display all errors since last boot</h1>
+<p>journalctl -b -p err</p>
+
+<h1 id="filter-by-time-period">Filter by time period</h1>
+<p>journalctl –since=2012-10-15 –until=”2011-10-16 23:59:59”</p>
+
+<h1 id="show-list-of-systemd-units-logged-in-journal">Show list of systemd units logged in journal</h1>
+<p>journalctl -F _SYSTEMD_UNIT</p>
+
+<h1 id="filter-by-specific-unit">Filter by specific unit</h1>
+<p>journalctl -u dbus</p>
+
+<h1 id="filter-by-executable-name">Filter by executable name</h1>
+<p>journalctl /usr/bin/dbus-daemon</p>
+
+<h1 id="filter-by-pid">Filter by PID</h1>
+<p>journalctl _PID=123</p>
+
+<h1 id="filter-by-command-eg-sshd">Filter by Command, e.g., sshd</h1>
+<p>journalctl _COMM=sshd</p>
+
+<h1 id="filter-by-command-and-time-period">Filter by Command and time period</h1>
+<p>journalctl _COMM=crond –since ‘10:00’ –until ‘11:00’</p>
+
+<h1 id="list-all-available-boots">List all available boots</h1>
+<p>journalctl –list-boots</p>
+
+<h1 id="filter-by-specific-user-id-eg-user-id-1000">Filter by specific User ID e.g., user id 1000</h1>
+<p>journalctl _UID=1000</p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

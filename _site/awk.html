@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/awk.html" />
+<meta property="og:url" content="http://localhost:4000/awk.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/awk.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#### Awk is a programming language which allows easy manipulation of structured data and the generation of formatted reports</span>
+<span class="c">#### https://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/</span>
+<span class="c">### Features include</span>
+<span class="c"># Awk views a text file as records and fields.</span>
+<span class="c"># Like common programming language, Awk has variables, conditionals and loops</span>
+<span class="c"># Awk has arithmetic and string operators.</span>
+<span class="c"># Awk can generate formatted reports</span>
+
+Awk Working Methodology
+1. Awk reads the input files one line at a time.
+2. For each line, it matches with given pattern <span class="k">in </span>the given order, <span class="k">if </span>matches performs the corresponding action.
+3. If no pattern matches, no action will be performed.
+4. In the above syntax, either search pattern or action are optional, But not both.
+5. If the search pattern is not given, <span class="k">then </span>Awk performs the given actions <span class="k">for </span>each line of the input.
+6. If the action is not given, print all that lines that matches with the given patterns which is the default action.
+7. Empty braces with out any action does nothing. It wont perform default printing operation.
+8. Each statement <span class="k">in </span>Actions should be delimited by semicolon.
+
+<span class="c"># examples from employee.txt</span>
+awk <span class="s1">'{print;}'</span> employee.txt
+100  Thomas  Manager    Sales       <span class="nv">$5</span>,000
+200  Jason   Developer  Technology  <span class="nv">$5</span>,500
+300  Sanjay  Sysadmin   Technology  <span class="nv">$7</span>,000
+400  Nisha   Manager    Marketing   <span class="nv">$9</span>,500
+500  Randy   DBA        Technology  <span class="nv">$6</span>,000
+
+awk <span class="s1">'/Thomas/
+&gt; /Nisha/'</span> employee.txt
+100  Thomas  Manager    Sales       <span class="nv">$5</span>,000
+400  Nisha   Manager    Marketing   <span class="nv">$9</span>,500
+
+<span class="c"># Awk has number of built in variables. For each record i.e line, it splits the record delimited by whitespace character by default and stores it in the $n variables. If the line has 4 words, it will be stored in $1, $2, $3 and $4. $0 represents whole line. NF is a built in variable which represents total number of fields in a record.</span>
+<span class="nv">$ </span>awk <span class="s1">'{print $2,$5;}'</span> employee.txt
+Thomas <span class="nv">$5</span>,000
+Jason <span class="nv">$5</span>,500
+Sanjay <span class="nv">$7</span>,000
+Nisha <span class="nv">$9</span>,500
+Randy <span class="nv">$6</span>,000
+
+<span class="nv">$ </span>awk <span class="s1">'{print $2,$NF;}'</span> employee.txt
+Thomas <span class="nv">$5</span>,000
+Jason <span class="nv">$5</span>,500
+Sanjay <span class="nv">$7</span>,000
+Nisha <span class="nv">$9</span>,500
+Randy <span class="nv">$6</span>,000
+
+<span class="nv">$ </span>awk <span class="s1">'BEGIN {print "Name\tDesignation\tDepartment\tSalary";}
+&gt; {print $2,"\t",$3,"\t",$4,"\t",$NF;}
+&gt; END{print "Report Generated\n--------------";
+&gt; }'</span> employee.txt
+
+Name	Designation	Department	Salary
+Thomas 	 Manager 	 Sales 	         <span class="nv">$5</span>,000
+Jason 	 Developer 	 Technology 	 <span class="nv">$5</span>,500
+Sanjay 	 Sysadmin 	 Technology 	 <span class="nv">$7</span>,000
+Nisha 	 Manager 	 Marketing 	 <span class="nv">$9</span>,500
+Randy 	 DBA 	 	 Technology 	 <span class="nv">$6</span>,000
+Report Generated
+<span class="nt">--------------</span>
+
+<span class="nv">$ </span>awk <span class="s1">'$1 &gt;200'</span> employee.txt
+300  Sanjay  Sysadmin   Technology  <span class="nv">$7</span>,000
+400  Nisha   Manager    Marketing   <span class="nv">$9</span>,500
+500  Randy   DBA        Technology  <span class="nv">$6</span>,000
+
+
+<span class="c"># sum integers from a file or stdin, one integer per line:</span>
+<span class="nb">printf</span> <span class="s1">'1\n2\n3\n'</span> | awk <span class="s1">'{ sum += $1} END {print sum}'</span>
+
+<span class="c"># using specific character as separator to sum integers from a file or stdin</span>
+<span class="nb">printf</span> <span class="s1">'1:2:3'</span> | awk <span class="nt">-F</span> <span class="s2">":"</span> <span class="s1">'{print $1+$2+$3}'</span>
+
+<span class="c"># print a multiplication table</span>
+seq 9 | sed <span class="s1">'H;g'</span> | awk <span class="nt">-v</span> <span class="nv">RS</span><span class="o">=</span><span class="s1">''</span> <span class="s1">'{for(i=1;i&lt;=NF;i++)printf("%dx%d=%d%s", i, NR, i*NR, i==NR?"\n":"\t")}'</span>
+
+<span class="c"># To print the 12th column in a grep</span>
+<span class="nb">grep</span> <span class="nt">-i</span> break-in auth.log | awk <span class="o">{</span><span class="s1">'print $12'</span><span class="o">}</span>
+
+<span class="c"># List of commands you use most often</span>
+<span class="nb">history</span> | awk <span class="s1">'{a[$2]++}END{for(i in a){print a[i] " " i}}'</span> | sort <span class="nt">-rn</span> | head
+
+<span class="c"># Display a block of text</span>
+awk <span class="s1">'/sudo/,/^$/'</span> host_vars/ussrv860
+
+<span class="c"># Remove duplicate entries in a file without sorting</span>
+awk <span class="s1">'!x[$0]++'</span> file
+
+<span class="c"># List the number and type of active network connections</span>
+netstat <span class="nt">-ant</span> | awk <span class="s1">'{print $NF}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'[a-z]'</span> | sort | uniq <span class="nt">-c</span>
+
+<span class="c"># Showbiggest files/directories, biggest first with 'k,m,g' eyecandy</span>
+du –max-depth<span class="o">=</span>1 | sort <span class="nt">-r</span> <span class="nt">-n</span> | awk <span class="s1">'{split("k m g",v); s=1; while($1&gt;1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}'</span>
+
+<span class="c"># from a list that is more than 50 characters long remove the characters</span>
+dig <span class="nt">-4</span> www.linuxacademy.com +trace | awk <span class="s1">'length($0)&lt;50'</span>
+
+
+</code></pre></div></div>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

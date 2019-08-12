@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/gpg.html" />
+<meta property="og:url" content="http://localhost:4000/gpg.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/gpg.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Create a key</span>
+
+ gpg <span class="nt">--gen-key</span>
+
+
+<span class="c"># Show keys</span>
+
+  To list a summary of all keys
+
+    gpg <span class="nt">--list-keys</span>
+
+  To show your public key
+
+    gpg <span class="nt">--armor</span> <span class="nt">--export</span>
+
+  To show the fingerprint <span class="k">for </span>a key
+
+    gpg <span class="nt">--fingerprint</span> KEY_ID
+
+<span class="c"># Search for keys</span>
+
+  gpg <span class="nt">--search-keys</span> <span class="s1">'user@emailaddress.com'</span>
+
+
+<span class="c"># To Encrypt a File</span>
+
+  gpg <span class="nt">--encrypt</span> <span class="nt">--recipient</span> <span class="s1">'user@emailaddress.com'</span> example.txt
+
+
+<span class="c"># To Decrypt a File</span>
+
+  gpg <span class="nt">--output</span> example.txt <span class="nt">--decrypt</span> example.txt.gpg
+
+
+<span class="c"># Export keys</span>
+
+  gpg <span class="nt">--output</span> ~/public_key.txt <span class="nt">--armor</span> <span class="nt">--export</span> KEY_ID
+  gpg <span class="nt">--output</span> ~/private_key.txt <span class="nt">--armor</span> <span class="nt">--export-secret-key</span> KEY_ID
+
+  Where KEY_ID is the 8 character GPG key ID.
+
+  Store these files to a safe location, such as a USB drive, <span class="k">then
+  </span>remove the private key file.
+
+    shred <span class="nt">-zu</span> ~/private_key.txt
+
+<span class="c"># Import keys</span>
+
+  Retrieve the key files which you previously exported.
+
+    gpg <span class="nt">--import</span> ~/public_key.txt
+    gpg <span class="nt">--allow-secret-key-import</span> <span class="nt">--import</span> ~/private_key.txt
+
+  Then delete the private key file.
+
+    shred <span class="nt">-zu</span> ~/private_key.txt
+
+<span class="c"># Revoke a key</span>
+
+  Create a revocation certificate.
+
+    gpg <span class="nt">--output</span> ~/revoke.asc <span class="nt">--gen-revoke</span> KEY_ID
+
+  Where KEY_ID is the 8 character GPG key ID.
+
+  After creating the certificate import it.
+
+    gpg <span class="nt">--import</span> ~/revoke.asc
+
+  Then ensure that key servers know about the revokation.
+
+    gpg <span class="nt">--send-keys</span> KEY_ID
+
+<span class="c"># Signing and Verifying files</span>
+
+  If you<span class="s1">'re uploading files to launchpad you may also want to include
+  a GPG signature file.
+
+    gpg -ba filename
+
+  or if you need to specify a particular key:
+
+    gpg --default-key &lt;key ID&gt; -ba filename
+
+  This then produces a file with a .asc extension which can be uploaded.
+  If you need to set the default key more permanently then edit the
+  file ~/.gnupg/gpg.conf and set the default-key parameter.
+
+  To verify a downloaded file using its signature file.
+
+  gpg --verify filename.asc
+
+# Signing Public Keys
+
+  Import the public key or retrieve it from a server.
+
+    gpg --keyserver &lt;keyserver&gt; --recv-keys &lt;Key_ID&gt;
+
+  Check its fingerprint against any previously stated value.
+
+    gpg --fingerprint &lt;Key_ID&gt;
+
+  Sign the key.
+
+    gpg --sign-key &lt;Key_ID&gt;
+
+  Upload the signed key to a server.
+
+    gpg --keyserver &lt;keyserver&gt; --send-key &lt;Key_ID&gt;
+
+# Change the email address associated with a GPG key
+
+  gpg --edit-key &lt;key ID&gt;
+  adduid
+
+  Enter the new name and email address. You can then list the addresses with:
+
+    list
+
+  If you want to delete a previous email address first select it:
+
+    uid &lt;list number&gt;
+
+  Then delete it with:
+
+    deluid
+
+  To finish type:
+
+    save
+
+  Publish the key to a server:
+
+    gpg --send-keys &lt;key ID&gt;
+
+# Creating Subkeys
+
+  Subkeys can be useful if you don'</span>t wish to have your main GPG key
+  installed on multiple machines. In this way you can keep your
+  master key safe and have subkeys with expiry periods or which may be
+  separately revoked installed on various machines. This avoids
+  generating entirely separate keys and so breaking any web of trust
+  which has been established.
+
+    gpg <span class="nt">--edit-key</span> &lt;key ID&gt;
+
+  At the prompt <span class="nb">type</span>:
+
+    addkey
+
+  Choose RSA <span class="o">(</span>sign only<span class="o">)</span>, 4096 bits and <span class="k">select </span>an expiry period.
+  Entropy will be gathered.
+
+  At the prompt <span class="nb">type</span>:
+
+    save
+
+  You can also repeat the procedure, but selecting RSA <span class="o">(</span>encrypt only<span class="o">)</span><span class="nb">.</span>
+  To remove the master key, leaving only the subkey/s <span class="k">in </span>place:
+
+    gpg <span class="nt">--export-secret-subkeys</span> &lt;subkey ID&gt; <span class="o">&gt;</span> subkeys
+    gpg <span class="nt">--export</span> &lt;key ID&gt; <span class="o">&gt;</span> pubkeys
+    gpg <span class="nt">--delete-secret-key</span> &lt;key ID&gt;
+
+  Import the keys back.
+
+    gpg <span class="nt">--import</span> pubkeys subkeys
+
+  Verify the import.
+
+    gpg <span class="nt">-K</span>
+
+  Should show sec# instead of just sec.
+
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

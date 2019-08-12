@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Display network settings of the first ethernet adapter | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Display network settings of the first ethernet adapter" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ifconfig.html" />
+<meta property="og:url" content="http://localhost:4000/ifconfig.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Display network settings of the first ethernet adapter","url":"http://localhost:4000/ifconfig.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="display-network-settings-of-the-first-ethernet-adapter">Display network settings of the first ethernet adapter</h1>
+<p>ifconfig wlan0</p>
+
+<h1 id="display-all-interfaces-even-if-down">Display all interfaces, even if down</h1>
+<p>ifconfig -a</p>
+
+<h1 id="take-down--up-the-wireless-adapter">Take down / up the wireless adapter</h1>
+<p>ifconfig wlan0 {up|down}</p>
+
+<h1 id="set-a-static-ip-and-netmask">Set a static IP and netmask</h1>
+<p>ifconfig eth0 192.168.1.100 netmask 255.255.255.0</p>
+
+<h1 id="you-may-also-need-to-add-a-gateway-ip">You may also need to add a gateway IP</h1>
+<p>route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

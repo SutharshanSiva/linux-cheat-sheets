@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/az-900.html" />
+<meta property="og:url" content="http://localhost:4000/az-900.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/az-900.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#####  Microsoft AZ-900 Certification notes</span>
+<span class="c">### Azure Services </span>
+Public Preview
+Private Preview:
+
+<span class="c">###  Compliance Offerings</span>
+Criminal Justice Information Services - CJIS
+Cloud Security Alliance <span class="o">(</span>CSA<span class="o">)</span> STAR Certification
+General Data Protection Regulation <span class="o">(</span>GDPR<span class="o">)</span>
+EU Model Clauses
+Health Insurance Portability and Accountability Act <span class="o">(</span>HIPAA<span class="o">)</span>
+International Organization <span class="k">for </span>Standardization<span class="o">(</span>ISO<span class="o">)</span> and the International Electrotechnical Commission <span class="o">(</span>IEC<span class="o">)</span>
+Multi-Tier Cloud Security <span class="o">(</span>MTCS<span class="o">)</span> Singapore
+Service Organization Controls <span class="o">(</span>SOC<span class="o">)</span> 1,2, and 3.
+National Institute of Standards and Technology <span class="o">(</span>NIST<span class="o">)</span> Cybersecurity Framework <span class="o">(</span>CSF<span class="o">)</span>
+UK Government G-Cloud
+
+<span class="c">## Economies of scale - lower power, cooling, network costs</span>
+
+<span class="c">### Infrastructure as a Service(IaaS)</span>
+<span class="c">## Definition: Managed by cloud - networking,storage,servers,virtualization.  Managed by Client - OS,Middleware,runtime,data,applications </span>
+
+Migrating workloads
+Test and development
+Website hosting
+Storage, backup, and recovery
+
+<span class="c">#### Platform as a service (PaaS)</span>
+<span class="c">## Definition:  is a complete development and deployment environment in the cloud - OS, Middleware and runtime.  Client managed Data, applications</span>
+Development framework
+Analytics or business intelligence 
+
+<span class="c">### Software as a service (SaaS)</span>
+<span class="c"># Definition:  provides a complete software solution that you purchage on a pay as you go.</span>
+Salesforce, Office365
+
+
+IaaS requires the most user management of all the cloud services. The user is responsible <span class="k">for </span>managing the operating systems, data, and applications.
+PaaS requires less user management. The cloud provider manages the operating systems, and the user is responsible <span class="k">for </span>the applications and data they run and store.
+SaaS requires the least amount of management. The cloud provider is responsible <span class="k">for </span>managing everything, and the end user just uses the software.
+
+<span class="c">### Public, private, hybrid cloud</span>
+<span class="c"># Public</span>
+Multi-tenant implementation
+Owned and operated by Service provider
+Bound by multi-tenant data management policies
+Similar self-service and automation capabilities as private cloud
+
+<span class="c"># Private cloud</span>
+<span class="c"># A private cloud consists of computing resources used exclusively by one business or organization.</span>
+On site datacenter or isolated <span class="k">in </span>a public datacenter
+Flexibility
+upfront capital expenses
+
+<span class="c"># Hybrid Cloud</span>
+Often called “the best of both worlds,” hybrid clouds combine on-premises infrastructure, or private clouds, with public clouds so organizations can reap the advantages of both
+
+<span class="c">## public cloud best use</span>
+Transitioning to cloud
+new applications
+standard workloads
+not as much customization
+
+Private
+Highly secure
+customization
+
+Hybrid
+transition to cloud
+enhanced security
+some data apps system on prem.
+
+
+<span class="c">### 8 services</span>
+<span class="c"># Compute:</span>
+Azure Virtual Machines			<span class="c"># Windows or Linux virtual machines (VMs) hosted in Azure</span>
+Azure Virtual Machine Scale Sets	<span class="c"># Scaling for Windows or Linux VMs hosted in Azure</span>
+Azure Kubernetes Service		<span class="c"># Enables management of a cluster of VMs that run containerized services</span>
+Azure Service Fabric			<span class="c"># Distributed systems platform. Runs in Azure or on-premises</span>
+Azure Batch				<span class="c"># Managed service for parallel and high-performance computing applications</span>
+Azure Container Instances		<span class="c"># Run containerized apps on Azure without provisioning servers or VMs</span>
+Azure Functions				<span class="c"># An event-driven, serverless compute service</span>
+
+<span class="c"># Networking:</span>
+Azure Virtual Network			<span class="c"># Connects VMs to incoming Virtual Private Network (VPN) connections</span>
+Azure Load Balancer			<span class="c"># Balances inbound and outbound connections to applications or service endpoints</span>
+Azure Application Gateway		<span class="c"># Optimizes app server farm delivery while increasing application security</span>
+Azure VPN Gateway			<span class="c"># Accesses Azure Virtual Networks through high-performance VPN gateways</span>
+Azure DNS				<span class="c"># Provides ultra-fast DNS responses and ultra-high domain availability</span>
+Azure Content Delivery Network		<span class="c"># Delivers high-bandwidth content to customers globally</span>
+Azure DDoS Protection			<span class="c"># Protects Azure-hosted applications from distributed denial of service (DDOS) attacks</span>
+Azure Traffic Manager			<span class="c"># Distributes network traffic across Azure regions worldwide</span>
+Azure ExpressRoute			<span class="c"># Connects to Azure over high-bandwidth dedicated secure connections</span>
+Azure Network Watcher			<span class="c"># Monitors and diagnoses network issues using scenario-based analysis</span>
+Azure Firewall				<span class="c"># Implements high-security, high-availability firewall with unlimited scalability</span>
+Azure Virtual WAN			<span class="c"># Creates a unified wide area network (WAN), connecting local and remote sites</span>
+
+<span class="c"># Storage:</span>
+Azure Blob storage			<span class="c"># Storage service for very large objects, such as video files or bitmaps</span>
+Azure File storage			<span class="c"># File shares that you can access and manage like a file server</span>
+Azure Queue storage			<span class="c"># A data store for queuing and reliably delivering messages between applications</span>
+Azure Table storage			<span class="c"># A NoSQL store that hosts unstructured data independent of any schema</span>
+
+<span class="c"># Databases:</span>
+Azure Cosmos DB				<span class="c"># Globally distributed database that supports NoSQL options</span>
+Azure SQL Database			<span class="c"># Fully managed relational database with auto-scale, integral intelligence, and robust security</span>
+Azure Database <span class="k">for </span>MySQL		<span class="c"># Fully managed and scalable MySQL relational database with high availability and security</span>
+Azure Database <span class="k">for </span>PostgreSQL		<span class="c"># Fully managed and scalable PostgreSQL relational database with high availability and security</span>
+SQL Server on VMs			<span class="c"># Host enterprise SQL Server apps in the cloud</span>
+Azure SQL Data Warehouse		<span class="c"># Fully managed data warehouse with integral security at every level of scale at no extra cost</span>
+Azure Database Migration Service	<span class="c"># Migrates your databases to the cloud with no application code changes</span>
+Azure Cache <span class="k">for </span>Redis			<span class="c"># Caches frequently used and static data to reduce data and application latency</span>
+Azure Database <span class="k">for </span>MariaDB		<span class="c"># Fully managed and scalable MariaDB relational database with high availability and security</span>
+
+<span class="c"># Web:</span>
+Azure App Service			<span class="c"># Quickly create powerful cloud web-based apps</span>
+Azure Notification Hubs			<span class="c"># Send push notifications to any platform from any back end.</span>
+Azure API Management			<span class="c"># Publish APIs to developers, partners, and employees securely and at scale.</span>
+Azure Search				<span class="c"># Fully managed search as a service.</span>
+Web Apps feature of Azure App Service	<span class="c"># Create and deploy mission-critical web apps at scale.</span>
+Azure SignalR Service			<span class="c"># Add real-time web functionalities easily.</span>
+
+<span class="c"># Internet of Things</span>
+IoT Central		<span class="c"># Fully-managed global IoT software as a service (SaaS) solution that makes it easy to connect, monitor, and manage your IoT assets at scale</span>
+Azure IoT Hub		<span class="c"># Messaging hub that provides secure communications and monitoring between millions of IoT devices</span>
+IoT Edge		<span class="c"># Push your data analysis onto your IoT devices instead of in the cloud allowing them to react more quickly to state changes.</span>
+
+<span class="c"># Big Data</span>
+Azure SQL Data Warehouse		<span class="c"># Run analytics at a massive scale using a cloud-based Enterprise Data Warehouse (EDW) that leverages massive parallel processing (MPP) to run complex queries quickly across petabytes of data</span>
+Azure HDInsight				<span class="c"># Process massive amounts of data with managed clusters of Hadoop clusters in the cloud</span>
+Azure Databricks <span class="o">(</span>preview<span class="o">)</span>		<span class="c"># Collaborative Apache Spark–based analytics service that can be integrated with other Big Data services in Azure.</span>
+
+<span class="c"># Artificial Intelligence</span>
+Azure Machine Learning Service		<span class="c"># Cloud-based environment you can use to develop, train, test, deploy, manage, and track machine learning models. It can auto-generate a model and auto-tune it for you. It will let you start training on your local machine, and then scale out to the cloud</span>
+Azure Machine Learning Studio		<span class="c"># Collaborative, drag-and-drop visual workspace where you can build, test, and deploy machine learning solutions using pre-built machine learning algorithms and data-handling modules</span>
+
+<span class="c"># Cognitive Service</span>
+Vision					<span class="c"># Image-processing algorithms to smartly identify, caption, index, and moderate your pictures and videos.</span>
+Speech					<span class="c"># Convert spoken audio into text, use voice for verification, or add speaker recognition to your app.</span>
+Knowledge mapping			<span class="c"># Map complex information and data in order to solve tasks such as intelligent recommendations and semantic search.</span>
+Bing Search				<span class="c"># Add Bing Search APIs to your apps and harness the ability to comb billions of webpages, images, videos, and news with a single API call.</span>
+Natural Language processing		<span class="c"># Allow your apps to process natural language with pre-built scripts, evaluate sentiment and learn how to recognize what users want.</span>
+
+<span class="c"># DevOps</span>
+Azure DevOps				<span class="c"># Azure DevOps Services (formerly known as Visual Studio Team Services, or VSTS), provides development collaboration tools including high-performance pipelines, free private Git repositories, configurable Kanban boards, and extensive automated and cloud-based load testing</span>
+Azure DevTest Labs			<span class="c"># Quickly create on-demand Windows and Linux environments you can use to test or demo your applications directly from your deployment pipelines</span>
+
+<span class="c">## Azure account services</span>
+
+Azure Management group:			<span class="c"># manages subscritions, resources ..</span>
+
+An Azure free subscription includes a <span class="nv">$200</span> credit to spend on any service <span class="k">for </span>the first 30 days, free access to the most popular Azure products <span class="k">for </span>12 months, and access to more than 25 products that are always free. This is an excellent way <span class="k">for </span>new users to get started. To <span class="nb">set </span>up a free subscription, you need a phone number, a credit card, and a Microsoft account.
+
+A Pay-As-You-Go <span class="o">(</span>PAYG<span class="o">)</span> subscription charges you monthly <span class="k">for </span>the services you used <span class="k">in </span>that billing period.
+
+An Enterprise Agreement provides flexibility to buy cloud services and software licenses under one agreement
+
+An Azure <span class="k">for </span>Students subscription includes <span class="nv">$100</span> <span class="k">in </span>Azure credits to be used within the first 12 months plus <span class="k">select </span>free services without requiring a credit card at sign-up
+
+You can create multiple subscriptions under a single Azure account. This is particularly useful <span class="k">for </span>businesses because access control and billing occur at the subscription level, not the account level.
+
+One bill is generated <span class="k">for </span>every Azure subscription on a monthly basis
+
+
+<span class="c"># Authentication with Azure Active Directory</span>
+Azure AD is a modern identity provider that supports multiple authentication protocols to secure applications and services <span class="k">in </span>the cloud.
+Azure AD is all about web-based authentication standards such as OpenID and OAuth.
+
+
+
+<span class="c"># Pricing for VMs - Pay as you go</span>
+Burstable VMs—B1S	B1S1 vCPU1 GiB RAM	<span class="nv">$0</span>.068/hour	<span class="c"># normally don't use a lot of CPU, burst to handle higher workloads. Free for 12 months.</span>
+Compute optimized—Fsv2	F2s v22 vCPU4 GiB RAM	<span class="nv">$0</span>.145/hour	<span class="c"># Fsv2 is our newest compute-optimized VM family and uses the Intel Skylake processor</span>
+General purpose—Dv3	D2 v32 vCPU8 GiB RAM	<span class="nv">$0</span>.156/hour	<span class="c"># general purpose VMs. It's appropriate for a variety of workloads</span>
+Memory optimized—Ev3	E2 v32 vCPU16 GiB RAM	<span class="nv">$0</span>.186/hour	<span class="c"># High memory-to-core ratio memory-optimized VM. Relational database servers, caches, in-memory analytics</span>
+
+<span class="c"># Pricing for VMs - 1yr reservation</span>
+Burstable VMs—B1S				<span class="nv">$0</span>.067/hour
+Compute optimized—Fsv2				<span class="nv">$0</span>.11/hour
+General purpose—Dv3				<span class="nv">$0</span>.115/hour
+Memory optimized—Ev3				<span class="nv">$0</span>.136/hour
+
+<span class="c"># Pricing for VMs - 3yr reservation</span>
+Burstable VMs—B1S				<span class="nv">$0</span>.064/hour
+Compute optimized—Fsv2				<span class="nv">$0</span>.091/hour
+General purpose—Dv3				<span class="nv">$0</span>.097/hour
+Memory optimized—Ev3				<span class="nv">$0</span>.109/hour
+
+
+<span class="c"># Focus a bit extra on non technical questions like - pricing, support, SLA, subscription,cost management, pricing calculator, advisor (inlucding cloudyn).</span>
+<span class="c"># Hey folks! @Mike G. just told me that there is a discount code for the Whizlabs practice test.  Use azure50, and you will get a 50% discount for the paid practice test.  Many of your peers have reported that this test was extremely helpful in their exam prep.</span>
+<span class="c">#</span>
+<span class="c"># https://www.whizlabs.com/microsoft-azure-certification-az-900/free-test/</span>
+<span class="c"># https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/</span>
+<span class="c"># https://www.microsoft.com/en-us/learning/exam-AZ-900.aspx</span>
+
+<span class="c"># App Service costs</span>
+You pay <span class="k">for </span>the Azure compute resources your app uses <span class="k">while </span>it processes requests based on the App Service Plan you choose. The App Service plan determines how much hardware is devoted to your host - <span class="k">for </span>example, whether it<span class="s1">'s dedicated or shared hardware, and how much memory is reserved for it. There is even a free tier you can use to host small, low-traffic sites.
+
+Web Apps
+App Service includes full support for hosting web apps using ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. You can choose either Windows or Linux as the host operating system.
+
+API Apps
+Much like hosting a website, you can build REST-based Web APIs using your choice of language and framework. You get full Swagger support, and the ability to package and publish your API in the Azure Marketplace
+
+Web Jobs
+WebJobs allows you to run a program (.exe, Java, PHP, Python or Node.js) or script (.cmd, .bat, PowerShell, or Bash) in the same context as a web app, API app, or mobile app
+
+Mobile Apps
+Use the Mobile Apps feature of Azure App Service to quickly build a back-end for iOS and Android apps. With just a few clicks in the Azure portal you can:
+
+	Store mobile app data in a cloud-based SQL database
+	Authenticate customers against common social providers such as MSA, Google, Twitter and Facebook
+	Send push notifications
+	Execute custom back-end logic in C# or Node.js
+
+On the mobile app side, there is SDK support for native iOS &amp; Android, Xamarin, and React native apps.
+
+## Serverless computing
+Azure Functions which can execute code in almost any modern language.
+Azure Logic Apps which are designed in a web-based designer and can execute logic triggered by Azure services without writing any code.
+
+-		Functions								Logic Apps
+State		Normally stateless, but Durable Functions provide state			Stateful
+Development	Code-first (imperative)							Designer-first (declarative)
+Connectivity	About a dozen built-in binding types, write code for custom bindings	Large collection of connectors, Enterprise Integration Pack for B2B scenarios, build custom connectors
+Actions		Each activity is an Azure function; write code for activity functions	Large collection of ready-made actions
+Monitoring	Azure Application Insights						Azure portal, Log Analytics
+Management	REST API, Visual Studio							Azure portal, REST API, PowerShell, Visual Studio
+Execution context	Can run locally or in the cloud					Runs only in the cloud.
+
+
+## Storage
+# SQL, NoSQL, Blob
+Azure SQL Database 		# a relational database as a service (DaaS) based on the latest stable version of the Microsoft SQL Server database engine
+Azure Cosmos DB 		# globally distributed database service. It supports schema-less data 
+Azure Blob Storage 		# unstructured, meaning that there are no restrictions on the kinds of data it can hold
+Azure Data Lake Storage Gen2	# The Data Lake feature allows you to perform analytics on your data usage and prepare reports. Data Lake is a large repository that stores both structured and unstructured data.
+Azure Files 			# fully managed file shares in the cloud that are accessible via the industry standard Server Message Block (SMB) protocol
+Azure Queue storage 		# is a service for storing large numbers of messages that can be accessed from anywhere in the world
+Disk storage 			# provides disks for virtual machines, applications, and other services to access 
+
+Storage tiers
+		# Hot storage tier: optimized for storing data that is accessed frequently.
+		# Cool storage tier: optimized for data that is infrequently accessed and stored for at least 30 days.
+		# Archive storage tier: for data that is rarely accessed and stored for at least 180 days with flexible latency requirements.
+Encryption
+		# Azure Storage Service Encryption (SSE) to meet the organization'</span>s security and regulatory compliance
+		<span class="c"># Client-side encryption is where the data is already encrypted by the client libraries. </span>
+Replication <span class="k">for </span>storage availability	<span class="c"># A replication type is set up when you create a storage account. The replication feature ensures that your data is durable and always available</span>
+
+
+<span class="c">## Networking</span>
+Azure region: 			<span class="c"># geographic location. East US, West US, and North Europe are examples of region</span>
+Virtual network: 		<span class="c"># a logically isolated network on Azure</span>
+Network security group: 	<span class="c"># A network security group, or NSG, allows or denies inbound network traffic to your Azure resources. Think of a network security group as a cloud-level firewall for your network</span>
+
+Azure Load Balancer: 		<span class="c"># Azure Load Balancer is a load balancer service that Microsoft provides that helps take care of the maintenance for you. Load Balancer supports inbound and outbound scenarios, provides low latency and high throughput, and scales up to millions of flows for all Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) applications</span>
+
+Azure Application Gateway:  	<span class="c"># If all your traffic is HTTP, a potentially better option is to use Azure Application Gateway. Application Gateway is a load balancer designed for web applications. It uses Azure Load Balancer at the transport level (TCP) and applies sophisticated URL-based routing rules to support several advanced scenarios.</span>
+
+Content Delivery Network:  	<span class="c"># A content delivery network (CDN) is a distributed network of servers that can efficiently deliver web content to users. It is a way to get content to users in their local region to minimize latency. CDN can be hosted in Azure or any other location. You can cache content at strategically placed physical nodes across the world and provide better performance to end users. Typical usage scenarios include web applications containing multimedia content, a product launch event in a particular region, or any event where you expect a high-bandwidth requirement in a region.</span>
+
+Azure DNS: 
+
+Latency:
+Traffic Manager: 		<span class="c"># Traffic Manager uses the DNS server that's closest to the user to direct user traffic to a globally distributed endpoint</span>
+
+Azure Load Balancer 		<span class="c"># distributes traffic within the same region to make your services more highly available and resilient. Traffic Manager works at the DNS level, and directs the client to a preferred endpoint</span>
+
+<span class="c">## Security</span>
+Azure Security Center:
+		<span class="c"># Free. Available as part of your Azure subscription, this tier is limited to assessments and recommendations of Azure resources only.</span>
+		<span class="c"># Standard. This tier provides a full suite of security-related services including continuous monitoring, threat detection, just-in-time access control for ports, and more.</span>
+		<span class="c"># After the 60-day trial period is over, Azure Security Center is $15 per node per month</span>
+
+Azure Active Directory Identity Protection:
+		<span class="c"># Authentication. This includes verifying identity to access applications and resources, and providing functionality such as self-service password reset, multi-factor authentication (MFA), a custom banned password list, and smart lockout services.</span>
+		<span class="c"># Single-Sign-On (SSO). SSO enables users to remember only one ID and one password to access multiple applications. A single identity is tied to a user, simplifying the security model. As users change roles or leave an organization, access modifications are tied to that identity, greatly reducing the effort needed to change or disable accounts.</span>
+		<span class="c"># Application management. You can manage your cloud and on-premises apps using Azure AD Application Proxy, SSO, the My apps portal (also referred to as Access panel), and SaaS apps.</span>
+		<span class="c"># Business to business (B2B) identity services. Manage your guest users and external partners while maintaining control over your own corporate data Business-to-Customer (B2C) identity services. Customize and control how users sign up, sign in, and manage their profiles when using your apps with services.</span>
+		<span class="c"># Device Management. Manage how your cloud or on-premises devices access your corporate data.</span>
+
+Azure Advanced Threat protection: 	<span class="c"># Azure Advanced Threat Protection (ATP) is a cloud-based security solution that leverages your on-premises Active Directory signals to identify, detect, and investigate advanced threats, compromised identities, and malicious insider actions directed at your organization. Azure ATP enables SecOp analysts and security professionals struggling to detect advanced attacks in hybrid environments to:</span>
+
+Monitor users, entity behavior, and activities with learning-based analytics
+Protect user identities and credentials stored <span class="k">in </span>Active Directory
+Identify and investigate suspicious user activities and advanced attacks throughout the <span class="nb">kill </span>chain
+Provide clear incident information on a simple timeline <span class="k">for </span>fast triage
+
+Encryption
+		<span class="c"># Symmetric encryption uses the same key to encrypt and decrypt the data</span>
+		<span class="c"># Asymmetric encryption uses a public key and private key pair.</span>
+		<span class="c"># encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it</span>
+		<span class="c"># Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure.</span>
+Types of Encryption
+Encrypt raw storage: 	<span class="c"># Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments</span>
+Encrypt Virtual machine disks:	<span class="c"># Azure Disk Encryption is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks</span>
+Encrypt databases: 		<span class="c"># Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity</span>
+Encrypt secrets:		<span class="c"># Azure Key Vault to protect our secrets.</span>
+
+Firewalls:
+	<span class="c"># Azure Firewall is a managed, cloud-based, network security service that protects your Azure Virtual Network resources</span>
+	<span class="c"># Azure Application Gateway is a load balancer that includes a Web Application Firewall (WAF) that provides protection from common, known vulnerabilities in websites</span>
+	<span class="c"># Network virtual appliances (NVAs) are ideal options for non-HTTP services or advanced configurations, and are similar to hardware firewall appliances.</span>
+
+Microsoft Azure Information Protection <span class="o">(</span>MSIP or sometimes referred to as AIP<span class="o">)</span> <span class="c"># is a cloud-based solution that helps organizations classify and optionally protect documents and emails by applying labels.</span>
+
+
+<span class="c">##  Azure Policy</span>
+Azure Policy		<span class="c"># is a service in Azure that you use to define, assign, and, manage standards for resources in your environment. It can prevent the creation of disallowed resources, ensure new resources have specific settings applied, and run evaluations of your existing resources to scan for non-compliance.</span>
+
+Policy definition:	<span class="c"># expresses what to evaluate and what action to take. For example, you could ensure all public websites are secured with HTTPS, prevent a particular storage type from being created, or force a specific version of SQL Server to be used.</span>
+
+Initiatives:		<span class="c"># Initiatives work alongside policies in Azure Policy. An initiative definition is a set or group of policy definitions to help track your compliance state for a larger goal. Even if you have a single policy, we recommend using initiatives if you anticipate increasing the number of policies over time.</span>
+
+Enterprise governance management	<span class="c"># Access management occurs at the Azure subscription level. This allows an organization to configure each division of the company in a specific fashion based on their responsibilities and requirements</span>
+
+Azure Blueprints	<span class="c"># allows you to define a repeatable set of Azure resources that implement and adhere to your organization's standards, patterns, and requirements</span>
+
+Compliance Manager	<span class="c"># is a workflow-based risk assessment dashboard within the Trust Portal that enables you to track, assign, and verify your organization's regulatory compliance activities related to Microsoft professional services and Microsoft cloud services such as Office 365, Dynamics 365, and Azure.</span>
+
+Microsoft Privacy Statement: 	<span class="c"># The Microsoft privacy statement explains what personal data Microsoft processes, how Microsoft processes it, and for what purposes.</span>
+
+Microsoft Trust Center:		<span class="c"># Trust Center is a website resource containing information and details about how Microsoft implements and supports security, privacy, compliance, and transparency in all Microsoft cloud products and services</span>
+
+Service Trust Portal <span class="o">(</span>STP<span class="o">)</span>:	<span class="c"># hosts the Compliance Manager service, and is the Microsoft public site for publishing audit reports and other compliance-related information relevant to Microsoft’s cloud services</span>
+
+Azure Monitor:		<span class="c"># Azure Monitor maximizes the availability and performance of your applications by delivering a comprehensive solution for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments.</span>
+
+Azure Service Health:	<span class="c"># Azure Service Health is a suite of experiences that provide personalized guidance and support when issues with Azure services affect you. It can notify you, help you understand the impact of issues, and keep you updated as the issue is resolved. Azure Service Health can also help you prepare for planned maintenance and changes that could affect the availability of your resources.</span>
+			<span class="c"># Resource Health can view the Virtual Machine blade</span>
+
+<span class="c">## Azure Resource Manager</span>
+Resource groups		<span class="c"># A resource group is a logical container for resources deployed on Azure.</span>
+			<span class="c"># Logical grouping is the aspect that we're most interested in here, since there's a lot of disorder among our resources.</span>
+			<span class="c"># If you delete a resource group, all resources contained within are also deleted. Organizing resources by life cycle can be useful in non-production environments</span>
+			<span class="c"># Resource groups are also a scope for applying role-based access control (RBAC) permissions</span>
+			<span class="c"># Azure portal</span>
+			<span class="c"># Azure PowerShell</span>
+			<span class="c"># Azure CLI</span>
+			<span class="c"># Templates</span>
+			<span class="c"># Azure SDKs (like .NET, Java)</span>
+			<span class="c"># A resource can have up to 15 tags. The name is limited to 512 characters for all types of resources except storage accounts, which have a limit of 128 characters</span>
+
+Azure Policy		<span class="c"># Azure Policy is a service you can use to create, assign, and manage policies. These policies apply and enforce rules that your resources need to follow.</span>
+
+role-based access control <span class="o">(</span>RBAC<span class="o">)</span>	<span class="c"># RBAC provides fine-grained access management for Azure resources, enabling you to grant users the specific rights they need to perform their jobs. RBAC is considered a core service and is included with all subscription levels at no cost</span>
+					<span class="c"># Segregate duties within your team and grant only the amount of access to users that they need to perform their jobs. Instead of giving everybody unrestricted permissions in your Azure subscription or resources, allow only specific actions at a particular scope.</span>
+					<span class="c"># When planning your access control strategy, grant users the lowest privilege level that they need to do their work.</span>
+					<span class="c"># Use Resource Locks to ensure critical resources aren't modified or deleted (more on that next!)</span>
+
+resource locks		<span class="c"># Resource locks are a setting that can be applied to any resource to block modification or deletion. Resource locks can set to either Delete or Read-only</span>
+
+
+<span class="c">##  Predict costs and optimize spending</span>
+Enterprise 		<span class="c"># Enterprise customers sign an Enterprise Agreement with Azure that commits them to spend a negotiated amount on Azure services, which they typically pay annually. Enterprise customers also have access to customized Azure pricing.</span>
+
+Web direct		<span class="c"># Direct Web customers pay general public prices for Azure resources, and their monthly billing and payments occur through the Azure website.</span>
+
+Cloud Solution Provider 	<span class="c"># Cloud Solution Provider (CSP) typically are Microsoft partner companies that a customer hires to build solutions on top of Azure. Payment and billing for Azure usage occur through the customer's CSP.</span>
+
+Usage Meters:		<span class="c"># When you provision an Azure resource, Azure creates one or more meter instances for that resource. The meters track the resources' usage, and generate a usage record that is used to calculate your bill.</span>
+
+Resource <span class="nb">type</span>:		<span class="c"># Each meter tracks a particular kind of usage. For example, a meter might track bandwidth usage (ingress or egress network traffic in bits-per-second), the number of operations, size (storage capacity in bytes), or similar items.</span>
+
+Services: 		<span class="c"># The Azure team develops and offers first-party products and services, while products and services from third-party vendors are available in the Azure Marketplace . Different billing structures apply to each of these categories.</span>
+
+Azure billing zones:	<span class="c"># Most of the time inbound data transfers (data going into Azure datacenters) are free. For outbound data transfers (data going out of Azure datacenters), the data transfer pricing is based on Billing Zones.</span>
+Zone		Areas
+Zone 1		United States, Europe, Canada, UK, France
+Zone 2		Asia Pacific, Japan, Australia, India, Korea
+Zone 3		Brazil
+DE Zone 1	Germany
+<span class="c"># In most zones, the first outbound 5 GB per month is free. After that, you are billed a fixed price per GB.</span>
+
+Azure pricing calculator:  	<span class="c"># The Azure pricing calculator is a free web-based tool that allows you to input Azure services and modify properties and options of the services. It outputs the costs per service and total cost for the full estimate.</span>
+
+Region				<span class="c"># Lists the regions from which you can provision a product. Southeast Asia, central Canada, the western United States, and Northern Europe are among the possible regions available for some resources.</span>
+Tier				<span class="c"># Sets the type of tier you wish to allocate to a selected resource, such as Free Tier, Basic Tier, etc.</span>
+Billing Options			<span class="c"># Highlights the billing options available to different types of customer and subscriptions for a chosen product.</span>
+Support Options			<span class="c"># Allows you to pick from included or paid support pricing options for a selected product.</span>
+Programs and Offers		<span class="c"># Allows you to choose from available price offerings according to your customer or subscription type.</span>
+Azure Dev/Test Pricing		<span class="c"># Lists the available development and test prices for a product. Dev/Test pricing applies only when you run resources within an Azure subscription that is based on a Dev/Test offer.</span>
+
+Products. 			<span class="c"># This tab is where you'll do most of your activity. This tab has all the Azure services listed and is where you'll add or remove services to put together your estimate.</span>
+Estimates. 			<span class="c"># This tab has all of your previously saved estimates. We'll go through this process in a moment.</span>
+FAQ. 				<span class="c"># Just as it says, this tab has answers to some frequently asked questions.</span>
+
+Azure Advisor:		<span class="c"># is a free service built into Azure that provides recommendations on high availability, security, performance, and cost. Advisor analyzes your deployed services and looks for ways to improve your environment across those four areas</span>
+Reduce costs by eliminating unprovisioned Azure ExpressRoute circuits
+Buy reserved instances to save money over pay-as-you-go.
+Right-size or shutdown underutilized virtual machines
+
+Azure Cost Management:		<span class="c"># Azure Cost Management is another free, built-in Azure tool that can be used to gain greater insights into where your cloud money is going. You can see historical breakdowns of what services you are spending your money on and how it is tracking against budgets that you have set. You can set budgets, schedule reports, and analyze your cost areas.</span>
+
+Cloudyn:		<span class="c"># Cloudyn, a Microsoft subsidiary, allows you to track cloud usage and expenditures for your Azure resources and other cloud providers including Amazon Web Services and Google. Easy-to-understand dashboard reports help with cost allocation and chargebacks</span>
+
+Azure TCO calculator	<span class="c"># If you are starting to migrate to the cloud, a useful tool you can use to predict your cost savings is the Total Cost of Ownership (TCO) calculator</span>
+
+Azure credits:
+Spending limits:
+Use reserved instances
+low-cost locations and regions
+cost-saving offers
+right-size underutilized virtual machines
+deallocate virtual machines <span class="k">in </span>off hours
+delete unused virt mach
+migrate to PaaS or SaaS services
+
+<span class="c"># Licensing costs</span>
+Azure Hybrid Benefit <span class="k">for </span>Windows Server		<span class="c"># To be eligible for this benefit, your Windows licenses must be covered by Software Assurance. The following guidelines will also apply:</span>
+
+Each two-processor 	<span class="c"># license or each set of 16-core licenses is entitled to two instances of up to 8 cores or one instance of up to 16 cores.</span>
+
+Standard Edition 	<span class="c"># licenses can only be used once either on-premises or in Azure. That means you can't use the same license for an Azure VM and a local computer.</span>
+
+Datacenter Edition 	<span class="c"># benefits allow for simultaneous usage both on-premises and in Azure so that the license will cover two running Windows machines.</span>
+
+Azure Hybrid Benefit <span class="k">for </span>SQL Server:		<span class="c"># Azure Hybrid Benefit for SQL Server is an Azure-based benefit that enables you to use your SQL Server licenses with active Software Assurance to pay a reduced rate.</span>
+
+Standard Edition per core licenses with active Software Assurance 	<span class="c"># you can get one vCore in the General Purpose service tier for every one license core you own on-premises.</span>
+
+Enterprise Edition per core licenses with active Software Assurance	<span class="c"># you can get one vCore in the Business Critical service tier for every one license core you own on-premises. Note that the Azure Hybrid Benefit for SQL Server for the Business Critical service tier is available only to customers who have Enterprise Edition licenses.</span>
+
+highly virtualized Enterprise Edition per core licenses with active Software Assurance	<span class="c"># you can get four vCores in the General Purpose service tier for every one license core you own on-premises. This is a unique virtualization benefit available only on Azure SQL Database.</span>
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

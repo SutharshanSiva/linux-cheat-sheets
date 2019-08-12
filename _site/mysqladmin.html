@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/ | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/mysqladmin.html" />
+<meta property="og:url" content="http://localhost:4000/mysqladmin.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/","url":"http://localhost:4000/mysqladmin.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="httpswwwtecmintcommysqladmin-commands-for-database-administration-in-linux">https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/</h3>
+
+<h1 id="how-to-set-mysql-root-password">How to set MySQL root password</h1>
+<p>mysqladmin -u root password YOURNEWPASSWORD</p>
+
+<h1 id="how-to-change-mysql-root-password">How to change MySQL root password</h1>
+<p>mysqladmin -u root -p123456 password ‘xyz123’</p>
+
+<h1 id="how-to-check-mysql-server-is-running">How to check MySQL server is running</h1>
+<p>mysqladmin -u root -p ping
+Enter password:
+mysqld is alive</p>
+
+<p>mysqladmin -u root -p version</p>
+
+<h1 id="how-to-find-out-current-status-of-mysql-server">How to find out current status of MySQL server</h1>
+<p>mysqladmin -u root -p status
+Enter password:
+Uptime: 606704  Threads: 2  Questions: 36003  Slow queries: 0  Opens: 15  Flush tables: 1  Open tables: 8  Queries per second avg: 0.059m</p>
+
+<p>mysqladmin -u root -p extended-status
+mysqladmin -u root -p variables
+mysqladmin -u root -p processlist</p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

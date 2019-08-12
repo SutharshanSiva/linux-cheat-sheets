@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Display all interfaces with addresses | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Display all interfaces with addresses" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ip.html" />
+<meta property="og:url" content="http://localhost:4000/ip.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Display all interfaces with addresses","url":"http://localhost:4000/ip.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="display-all-interfaces-with-addresses">Display all interfaces with addresses</h1>
+<p>ip addr</p>
+
+<h1 id="display-network-ip-address">Display network IP address</h1>
+<p>hostname -I
+hostname -i</p>
+
+<h1 id="take-down--up-the-wireless-adapter">Take down / up the wireless adapter</h1>
+<p>ip link set dev wlan0 {up|down}</p>
+
+<h1 id="set-a-static-ip-and-netmask">Set a static IP and netmask</h1>
+<p>ip addr add 192.168.1.100/32 dev eth0</p>
+
+<h1 id="remove-a-ip-from-an-interface">Remove a IP from an interface</h1>
+<p>ip addr del 192.168.1.100/32 dev eth0</p>
+
+<h1 id="remove-all-ips-from-an-interface">Remove all IPs from an interface</h1>
+<p>ip address flush dev eth0</p>
+
+<h1 id="display-all-routes">Display all routes</h1>
+<p>ip route</p>
+
+<h1 id="display-all-routes-for-ipv6">Display all routes for IPv6</h1>
+<p>ip -6 route</p>
+
+<h1 id="add-default-route-via-gateway-ip">Add default route via gateway IP</h1>
+<p>ip route add default via 192.168.1.1</p>
+
+<h1 id="add-route-via-interface">Add route via interface</h1>
+<p>ip route add 192.168.0.0/24 dev eth0</p>
+
+<h1 id="change-your-mac-address">Change your mac address</h1>
+<p>ip link set dev eth0 address aa:bb:cc:dd:ee:ff</p>
+
+<h1 id="view-neighbors-using-arp-and-ndp">View neighbors (using ARP and NDP)</h1>
+<p>ip neighbor show</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

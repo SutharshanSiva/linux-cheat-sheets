@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To dump a database to a file (Note that your password will appear in your command history!): | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To dump a database to a file (Note that your password will appear in your command history!):" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/mysqldump.html" />
+<meta property="og:url" content="http://localhost:4000/mysqldump.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To dump a database to a file (Note that your password will appear in your command history!):","url":"http://localhost:4000/mysqldump.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-dump-a-database-to-a-file-note-that-your-password-will-appear-in-your-command-history">To dump a database to a file (Note that your password will appear in your command history!):</h1>
+<p>mysqldump -uusername -ppassword the-database &gt; db.sql</p>
+
+<h1 id="to-dump-a-database-to-a-file">To dump a database to a file:</h1>
+<p>mysqldump -uusername -p the-database &gt; db.sql</p>
+
+<h1 id="to-dump-a-database-to-a-tgz-file-note-that-your-password-will-appear-in-your-command-history">To dump a database to a .tgz file (Note that your password will appear in your command history!):</h1>
+<p>mysqldump -uusername -ppassword the-database | gzip -9 &gt; db.sql</p>
+
+<h1 id="to-dump-a-database-to-a-tgz-file">To dump a database to a .tgz file:</h1>
+<p>mysqldump -uusername -p the-database | gzip -9 &gt; db.sql</p>
+
+<h1 id="to-dump-all-databases-to-a-file-note-that-your-password-will-appear-in-your-command-history">To dump all databases to a file (Note that your password will appear in your command history!):</h1>
+<p>mysqldump -uusername -ppassword –all-databases &gt; all-databases.sql</p>
+
+<h1 id="to-dump-all-databases-to-a-file">To dump all databases to a file:</h1>
+<p>mysqldump -uusername -p –all-databases &gt; all-databases.sql</p>
+
+<h1 id="to-export-the-database-structure-only">To export the database structure only:</h1>
+<p>mysqldump –no-data -uusername -p the-database &gt; dump_file</p>
+
+<h1 id="to-export-the-database-data-only">To export the database data only:</h1>
+<p>mysqldump –no-create-info -uusername -p the-database &gt; dump_file</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

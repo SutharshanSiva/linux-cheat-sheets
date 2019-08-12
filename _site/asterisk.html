@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To connect to a running Asterisk session: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To connect to a running Asterisk session:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/asterisk.html" />
+<meta property="og:url" content="http://localhost:4000/asterisk.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To connect to a running Asterisk session:","url":"http://localhost:4000/asterisk.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-connect-to-a-running-asterisk-session">To connect to a running Asterisk session:</h1>
+<p>asterisk -rvvv</p>
+
+<h1 id="to-issue-a-command-to-asterisk-from-the-shell">To issue a command to Asterisk from the shell:</h1>
+<p>asterisk -rx “<command />”</p>
+
+<h1 id="to-originate-an-echo-call-from-a-sip-trunk-on-an-asterisk-server-to-a-specified-number">To originate an echo call from a SIP trunk on an Asterisk server, to a specified number:</h1>
+<p>asterisk -rx “channel originate SIP/<trunk>/<number> application echo"</number></trunk></p>
+
+<h1 id="to-print-out-the-details-of-sip-accounts">To print out the details of SIP accounts:</h1>
+<p>asterisk -rx “sip show peers”</p>
+
+<h1 id="to-print-out-the-passwords-of-sip-accounts">To print out the passwords of SIP accounts:</h1>
+<p>asterisk -rx “sip show users”</p>
+
+<h1 id="to-print-out-the-current-active-channels">To print out the current active channels:</h1>
+<p>asterisk -rx “core show channels”</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

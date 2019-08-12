@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ss.html" />
+<meta property="og:url" content="http://localhost:4000/ss.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/ss.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ss</span>
+<span class="c"># Utility to investigate sockets</span>
+
+<span class="c"># Args</span>
+<span class="nt">-4</span>/-6 list ipv4/ipv6 sockets
+<span class="nt">-n</span> numeric addresses instead of hostnames
+<span class="nt">-l</span> list listing sockets
+<span class="nt">-u</span>/-t/-x list udp/tcp/unix sockets
+<span class="nt">-p</span> Show process<span class="o">(</span>es<span class="o">)</span> that using socket
+
+<span class="c"># show all listing tcp sockets including the corresponding process</span>
+ss <span class="nt">-tlp</span>
+
+<span class="c"># show all sockets connecting to 192.168.2.1 on port 80</span>
+ss <span class="nt">-t</span> dst 192.168.2.1:80
+
+<span class="c"># show all ssh related connection</span>
+ss <span class="nt">-t</span> state established <span class="s1">'( dport = :ssh or sport = :ssh )'</span>
+
+<span class="c"># List all the tcp sockets in state FIN-WAIT-1 for our apache to network 193.233.7/24 and look at their timers.</span>
+ss <span class="nt">-o</span> state fin-wait-1 <span class="s1">'( sport = :http or sport = :https )'</span> dst 193.233.7/24
+
+<span class="c"># Display all TCP sockets with process SELinux security contexts.</span>
+ss <span class="nt">-t</span> <span class="nt">-a</span> <span class="nt">-Z</span>
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

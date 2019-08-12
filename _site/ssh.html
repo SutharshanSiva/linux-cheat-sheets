@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ssh.html" />
+<meta property="og:url" content="http://localhost:4000/ssh.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/ssh.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># To check to see if openssh-server is running on local system</span>
+<span class="c"># install netcat a swiss army knife for tcp/ip</span>
+nc <span class="nt">-v</span> <span class="nt">-z</span> 127.0.0.1 22
+
+<span class="c"># To ssh via pem file (which normally needs 0600 permissions):</span>
+ssh <span class="nt">-i</span> /path/to/file.pem user@example.com
+
+<span class="c"># To connect on an non-standard port:</span>
+<span class="c"># Configure openssh config - /etc/ssh/sshd_config - backup original</span>
+<span class="c"># Configure OpenSSH banner - Banner /etc/issue.net</span>
+<span class="c">## What ports, IPs and protocols we listen for</span>
+Port 2222
+<span class="nb">sudo</span> /etc/init.d/ssh restart	<span class="c">#restarts OpenSSH server</span>
+ssh <span class="nt">-p</span> 2222 user@example.com
+
+<span class="c"># For more information to protect ssh server:</span>
+<span class="c"># http://www.tecmint.com/5-best-practices-to-secure-and-protect-ssh-server/</span>
+
+<span class="c">## To restrict ssh access to specific subnet</span>
+<span class="c"># /etc/hosts.allow</span>
+sshd : 192.168.0.0/24
+
+<span class="c"># /etc/hosts.deny</span>
+sshd : ALL
+
+<span class="c"># To connect and forward the authentication agent</span>
+ssh <span class="nt">-A</span> user@example.com
+
+<span class="c"># To execute a command on a remote server:</span>
+ssh <span class="nt">-t</span> user@example.com <span class="s1">'the-remote-command'</span>	<span class="c"># -t force pseudo-tty allocation execute arbitrary screen based apps</span>
+
+<span class="c"># To tunnel an x session over SSH:</span>
+ssh <span class="nt">-X</span> user@example.com
+
+<span class="c"># Redirect traffic with a tunnel between local host (port 8080) and a remote</span>
+<span class="c"># host (remote.example.com:5000) through a proxy (personal.server.com):</span>
+ssh <span class="nt">-f</span> <span class="nt">-L</span> 8080:remote.example.com:80 user@personal.server.com <span class="nt">-N</span>
+ssh <span class="nt">-f</span> cloud_user@remote.server <span class="nt">-L</span> 8080:remote.server:80 <span class="nt">-N</span>
+
+<span class="c"># To launch a specific x application over SSH:</span>
+ssh <span class="nt">-X</span> <span class="nt">-t</span> user@example.com <span class="s1">'chromium-browser'</span>
+
+<span class="c"># To launch multiple commands to a remote host</span>
+ssh user@server1 <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+date
+hostname
+cat /etc/resolv.conf
+</span><span class="no">EOF
+
+</span><span class="c"># To launch it with sudo access</span>
+ssh <span class="nt">-t</span> user@server1 <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+date
+sudo -l 
+</span><span class="no">EOF
+
+</span><span class="c"># SUDO will not work inside EOF unless it is set up with the NOPASSWD option in sudoers, because your STDIN is not a standard terminal.</span>
+<span class="c"># The correct format would be.</span>
+
+ssh server <span class="nb">sudo</span> <span class="nt">-S</span> shutdown <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+SUDOPASSWORD
+</span><span class="no">EOF
+
+</span><span class="c"># -S will instruct sudo to get the password from STDIN (in this case the EOF) instead of a terminal. One disadvantage to this is your password will be captured in your session logs if it is set up. You can avoid that by running it inside a script.</span>
+
+<span class="nv">SSHPASS</span><span class="o">=</span><span class="s2">"password"</span>
+<span class="nv">SSHCOMMAND</span><span class="o">=</span><span class="s2">"ssh -p 22 -T -o StrictHostKeyChecking=no -o BatchMode=no"</span>
+<span class="nv">SSHACCOUNT</span><span class="o">=</span><span class="s2">"xyz@abc.com"</span>
+sshpass <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$SSHPASS</span><span class="s2">"</span> <span class="nv">$SSHCOMMAND</span> <span class="nv">$SSHACCOUNT</span> <span class="o">&lt;&lt;</span> <span class="no">EOF_run_commands</span><span class="sh">
+uptime
+</span><span class="no">EOF_run_commands
+
+</span><span class="c"># To run a bash script on remote host</span>
+<span class="nb">cat </span>remote-command.bash | ssh user@server1
+
+<span class="c"># on demand ssh socket</span>
+systemctl status sshd.socket
+<span class="nb">sudo </span>at now + 3 minutes
+at&gt; systemctl stop sshd.service
+at&gt; systemctl start sshd.socket
+systemctl status sshd.socket
+systemctl <span class="nb">enable </span>sshd.socket
+systemctl disable sshd.service
+ldd /usr/sbin/sshd | <span class="nb">grep </span>libwrap
+sshd2 sshd : ALL	<span class="c"># /etc/hosts.allow</span>
+ALL : ALL		<span class="c"># /etc/hosts.deny</span>
+
+<span class="c"># To create a SOCKS proxy on localhost and port 9999</span>
+ssh <span class="nt">-D</span> 9999 user@example.com
+
+<span class="c"># -X use an xsession, -C compress data, "-c blowfish" use the encryption blowfish</span>
+ssh user@example.com <span class="nt">-C</span> <span class="nt">-c</span> blowfish <span class="nt">-X</span>
+
+<span class="c"># For more information, see:</span>
+<span class="c"># http://unix.stackexchange.com/q/12755/44856</span>
+
+<span class="c"># Copy files and folders through ssh from remote host to pwd with tar.gz compression</span>
+<span class="c"># when there is no rsync command available</span>
+ssh user@example.com <span class="s2">"cd /var/www/Shared/; tar zcf - asset1 asset2"</span> | <span class="nb">tar </span>zxf -
+
+<span class="c"># To check ssh access from a list of servers</span>
+<span class="k">for </span>i <span class="k">in</span> <span class="sb">`</span><span class="nb">cat </span>servers.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="s2">"### </span><span class="nv">$i</span><span class="s2"> ###"</span><span class="p">;</span> ssh <span class="nt">-tq</span> <span class="nv">$i</span> <span class="s1">'echo "Yay, I have access"'</span><span class="p">;</span> <span class="k">done</span>
+
+<span class="c"># To run several sshd daemons copy sshd to a sshd2 </span>
+<span class="c"># Use different pam authentication file with the separate daemon</span>
+
+<span class="c"># To ssh without password from one host to another</span>
+ssh-keygen
+ssh-copy-id server2
+ssh server2
+
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Print file metadata etc. | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Print file metadata etc." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ffmpeg.html" />
+<meta property="og:url" content="http://localhost:4000/ffmpeg.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Print file metadata etc.","url":"http://localhost:4000/ffmpeg.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="print-file-metadata-etc">Print file metadata etc.</h1>
+<p>ffmpeg -i path/to/file.ext</p>
+
+<h1 id="convert-all-m4a-files-to-mp3">Convert all m4a files to mp3</h1>
+<p>for f in *.m4a; do ffmpeg -i “$f” -acodec libmp3lame -ab 320k “${f%.m4a}.mp3”; done</p>
+
+<h1 id="listen-to-10-seconds-of-audio-from-a-video-file">Listen to 10 seconds of audio from a video file</h1>
+<p>#</p>
+<h1 id="-ss--start-time">-ss : start time</h1>
+<h1 id="-t---seconds-to-cut">-t  : seconds to cut</h1>
+<h1 id="-autoexit--closes-ffplay-as-soon-as-the-audio-finishes">-autoexit : closes ffplay as soon as the audio finishes</h1>
+<p>ffmpeg -ss 00:34:24.85 -t 10 -i path/to/file.mp4 -f mp3 pipe:play | ffplay -i pipe:play -autoexit</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

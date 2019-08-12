@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/tcpdump.html" />
+<meta property="og:url" content="http://localhost:4000/tcpdump.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/tcpdump.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TCPDump is a packet analyzer. It allows the user to intercept and display TCP/IP</span>
+<span class="c"># and other packets being transmitted or received over a network. (cf Wikipedia).</span>
+<span class="c"># Note: 173.194.40.120 =&gt; google.com</span>
+
+<span class="c"># Intercepts all packets on eth0</span>
+tcpdump <span class="nt">-i</span> eth0
+
+<span class="c"># Intercepts all packets from/to 173.194.40.120</span>
+tcpdump host 173.194.40.120
+
+<span class="c"># Intercepts all packets on all interfaces from / to 173.194.40.120 port 80</span>
+<span class="c"># -nn =&gt; Disables name resolution for IP addresses and port numbers.</span>
+tcpdump <span class="nt">-nn</span> <span class="nt">-i</span> any host 173.194.40.120 and port 80
+
+<span class="c"># Make a grep on tcpdump (ASCII)</span>
+<span class="c"># -A  =&gt; Show only ASCII in packets.</span>
+<span class="c"># -s0 =&gt; By default, tcpdump only captures 68 bytes.</span>
+tcpdump <span class="nt">-i</span> <span class="nt">-A</span> any host 173.194.40.120 and port 80 | <span class="nb">grep</span> <span class="s1">'User-Agent'</span>
+
+<span class="c"># With ngrep</span>
+<span class="c"># -d eth0 =&gt; To force eth0 (else ngrep work on all interfaces)</span>
+<span class="c"># -s0 =&gt; force ngrep to look at the entire packet. (Default snaplen: 65536 bytes)</span>
+ngrep <span class="s1">'User-Agent'</span> host 173.194.40.120 and port 80
+
+<span class="c"># Intercepts all packets on all interfaces from / to 8.8.8.8 or 173.194.40.127 on port 80</span>
+tcpdump <span class="s1">'host ( 8.8.8.8 or 173.194.40.127 ) and port 80'</span> <span class="nt">-i</span> any
+
+<span class="c"># Intercepts all packets SYN and FIN of each TCP session.</span>
+tcpdump <span class="s1">'tcp[tcpflags] &amp; (tcp-syn|tcp-fin) != 0'</span>
+
+<span class="c"># To display SYN and FIN packets of each TCP session to a host that is not on our network</span>
+tcpdump <span class="s1">'tcp[tcpflags] &amp; (tcp-syn|tcp-fin) != 0 and not src and dst net local_addr'</span>
+
+<span class="c"># To display all IPv4 HTTP packets that come or arrive on port 80 and that contain only data (no SYN, FIN no, no packet containing an ACK)</span>
+tcpdump <span class="s1">'tcp port 80 and (((ip[2:2] - ((ip[0]&amp;0xf)&lt;&lt;2)) - ((tcp[12]&amp;0xf0)&gt;&gt;2)) != 0)'</span>
+
+<span class="c"># Saving captured data</span>
+tcpdump <span class="nt">-w</span> file.cap
+
+<span class="c"># Capture specific ports</span>
+tcpdump <span class="nt">-i</span> eth0 <span class="s1">'port 8052 or port 8056'</span> <span class="nt">-w</span> file.pcap
+
+<span class="c"># Reading from capture file</span>
+tcpdump <span class="nt">-r</span> file.cap
+
+<span class="c"># Show content in hexa</span>
+<span class="c"># Change -x to -xx =&gt; show extra header (ethernet).</span>
+tcpdump <span class="nt">-x</span>
+
+<span class="c"># Show content in hexa and ASCII</span>
+<span class="c"># Change -X to -XX =&gt; show extra header (ethernet).</span>
+tcpdump <span class="nt">-X</span>
+
+<span class="c"># Note on packet maching:</span>
+<span class="c"># Port matching:</span>
+<span class="c"># - portrange 22-23</span>
+<span class="c"># - not port 22</span>
+<span class="c"># - port ssh</span>
+<span class="c"># - dst port 22</span>
+<span class="c"># - src port 22</span>
+<span class="c">#</span>
+<span class="c"># Host matching:</span>
+<span class="c"># - dst host 8.8.8.8</span>
+<span class="c"># - not dst host 8.8.8.8</span>
+<span class="c"># - src net 67.207.148.0 mask 255.255.255.0</span>
+<span class="c"># - src net 67.207.148.0/24</span>
+
+
+<span class="c"># write to a file and capture tcp traffic to a destination IP</span>
+<span class="c"># tcpdump -w ~/0001.pcap -i eth0 dst 10.192.4.11</span>
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

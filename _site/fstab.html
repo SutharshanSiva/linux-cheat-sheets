@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>View the /etc/mtab file for list of currently mounted fs | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="View the /etc/mtab file for list of currently mounted fs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/fstab.html" />
+<meta property="og:url" content="http://localhost:4000/fstab.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"View the /etc/mtab file for list of currently mounted fs","url":"http://localhost:4000/fstab.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="view-the-etcmtab-file-for-list-of-currently-mounted-fs">View the /etc/mtab file for list of currently mounted fs</h1>
+<h1 id="add-entries-in-etcfstab">Add entries in /etc/fstab</h1>
+<h1 id="to-mount-filesystems-using-the-filesystem-label">To mount filesystems using the filesystem LABEL</h1>
+<p>blkid		# to display existing UUID partition properties
+e2label /dev/sdc1 /data		# to set the LABEL to /data</p>
+
+<p>cat /etc/mtab to view the mounted properties of the existing mounts
+vim /etc/fstab
+LABEL=/data /data	ext4	defaults	1 2</p>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

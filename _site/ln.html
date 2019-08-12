@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ln.html" />
+<meta property="og:url" content="http://localhost:4000/ln.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/ln.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Symlink, while overwriting existing destination files</span>
+ln <span class="nt">-sf</span> /some/dir/exec /usr/bin/exec
+
+<span class="c"># To create a symlink:</span>
+<span class="nv">$ </span><span class="nb">cd</span> /home/chris/lib 
+<span class="nv">$ </span>ln <span class="nt">-s</span> /home/chris/src/library.so library.so
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> library.so
+lrwxrwxrwx  1 chris chris       21 2010-09-18 07:23 library.so -&gt; /home/chris/src/library.so
+
+<span class="c"># ln sybolic link for a directory</span>
+<span class="nv">$ </span>mkdir /home/chris/obj
+<span class="nv">$ </span><span class="nb">cd </span>tmp
+<span class="nv">$ </span>ln <span class="nt">-s</span> /home/chris/obj objects
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> objects
+lrwxrwxrwx 1 chris chris       6 2010-09-19 16:48 objects -&gt; /home/chris/obj
+
+<span class="c"># ln hard link - more than one file name references same inode number</span>
+ln /full/path/of/original/file /full/path/of/hard/link/file
+ln src_original.txt dst_link.txt
+
+<span class="c"># Create Links across different partitions</span>
+mount /dev/sda5 /mnt
+<span class="nb">cd</span> /mnt
+<span class="nb">ls
+</span>main.c Makefile
+
+ln Makefile /tmp/Makefile
+ln: creating hard link <span class="sb">`</span>/tmp/Makefile<span class="s1">' to `Makefile'</span>: Invalid cross-device link
+
+ln <span class="nt">-s</span> Makefile /tmp/Makefile
+
+<span class="c"># Create Link using "No-Diference" ln command option</span>
+<span class="c"># Following example create soft link inside a directory</span>
+<span class="nv">$ </span>mkdir example
+<span class="nv">$ </span>ln <span class="nt">-s</span> /etc/passwd example
+
+<span class="nv">$ </span><span class="nb">cd </span>example/
+lrwxrwxrwx 1 root root 16 2010-09-19 17:24 passwd -&gt; /etc/passwd
+
+<span class="c"># In case the “example” directory in the above code-snippet is a </span>
+<span class="c"># symbolic link pointing to some other directory (for example second-dir),</span>
+<span class="c"># the ln command shown will still create the link under second-dir. </span>
+<span class="c"># If you don’t want that to happen, use ln -n option as shown below.</span>
+<span class="nv">$ </span>rm <span class="nt">-rf</span> example
+<span class="nv">$ </span>mkdir second-dir
+
+<span class="nv">$ </span>ln <span class="nt">-s</span> second-dir example
+
+<span class="nv">$ </span>ln <span class="nt">-n</span> <span class="nt">-s</span> /etc/passwd example
+ln: creating symbolic link <span class="sb">`</span>example<span class="s1">': File exists
+
+# Create Link for Multiple files at the same time
+$ ls
+first-dir second-dir
+
+$ ls first-dir
+ex1.c  ex2.c
+
+$ cd second-dir
+$ ln -s ../first-dir/*.c -t .
+
+$ ls -l
+lrwxrwxrwx 1 chris chris 14 2010-09-19 15:20 ex1.c -&gt; ../first-dir/ex1.c
+lrwxrwxrwx 1 chris chris 14 2010-09-19 15:20 ex2.c -&gt; ../first-dir/ex2.c
+
+# Keep in mind that whenever you are creating link files with -t option, 
+# it is better to go into target directory and perform the link creation process. 
+# Otherwise, you would face the broken link files as shown below.
+$ cd first-dir
+
+$ ln -s *.c /home/chris/second-dir
+
+$ cd /home/chris/second-dir
+$ ls -l
+lrwxrwxrwx 1 chris chris 5 2010-09-19 15:26 ex1.c -&gt; ex1.c
+lrwxrwxrwx 1 chris chris 5 2010-09-19 15:26 ex2.c -&gt; ex2.c
+
+# Removing original file when a soft link is pointing to it
+$ ln -s file.txt /tmp/link
+
+$ ls -l /tmp/link
+lrwxrwxrwx 1 chris chris 9 2010-09-19 15:38 /tmp/link -&gt; file1.txt
+
+$ rm file.txt
+
+$ ls -l /tmp/link
+lrwxrwxrwx 1 chris chris 9 2010-09-19 15:38 /tmp/link -&gt; file1.txt
+
+# Links help increase partition size
+$ mkdir /mnt/logs
+
+$ cd /logs
+
+$ mv * /mnt/logs
+
+$ cd /; rmdir logs
+
+$ ln -s /mnt/logs logs
+
+
+# Remove the Hard Linked files
+ln src_original.txt dst_link.txt
+rm src_original.txt
+cat dst_link.txt
+
+# Credit to The Geek Stuff
+# https://www.thegeekstuff.com/2010/10/linux-ln-command-examples/
+
+# To create a symlink:
+ln -s path/to/the/target/directory name-of-symlink
+
+# Symlink, while overwriting existing destination files
+ln -sf /some/dir/exec /usr/bin/exec
+
+</span></code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Desc: Allows to update the operating system | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Desc: Allows to update the operating system" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/apt-get.html" />
+<meta property="og:url" content="http://localhost:4000/apt-get.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Desc: Allows to update the operating system","url":"http://localhost:4000/apt-get.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="desc-allows-to-update-the-operating-system">Desc: Allows to update the operating system</h1>
+
+<h1 id="to-fetch-package-list">To fetch package list</h1>
+<p>apt-get update</p>
+
+<h1 id="to-download-and-install-updates-without-installing-new-package">To download and install updates without installing new package.</h1>
+<p>apt-get upgrade</p>
+
+<h1 id="to-download-and-install-the-updates-and-install-new-necessary-packages">To download and install the updates AND install new necessary packages</h1>
+<p>apt-get dist-upgrade</p>
+
+<h1 id="full-command">Full command:</h1>
+<p>apt-get update &amp;&amp; apt-get dist-upgrade</p>
+
+<h1 id="to-install-a-new-packages">To install a new package(s)</h1>
+<p>apt-get install package(s)</p>
+
+<h1 id="download-a-package-without-installing-it-the-package-will-be-downloaded-in-your-current-working-dir">Download a package without installing it. (The package will be downloaded in your current working dir)</h1>
+<p>apt-get download modsecurity-crs</p>
+
+<h1 id="change-cache-dir-and-archive-dir-where-deb-are-stored">Change Cache dir and archive dir (where .deb are stored).</h1>
+<p>apt-get -o Dir::Cache=”/path/to/destination/dir/” -o Dir::Cache::archives=”./” install …</p>
+
+<h1 id="show-apt-get-installed-packages">Show apt-get installed packages.</h1>
+<p>grep ‘install ‘ /var/log/dpkg.log</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

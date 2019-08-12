@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To shred a file (5 passes) and verbose output: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To shred a file (5 passes) and verbose output:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/shred.html" />
+<meta property="og:url" content="http://localhost:4000/shred.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To shred a file (5 passes) and verbose output:","url":"http://localhost:4000/shred.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-shred-a-file-5-passes-and-verbose-output">To shred a file (5 passes) and verbose output:</h1>
+<p>shred -n 5 -v file.txt</p>
+
+<h1 id="to-shred-a-file-5-passes-and-a-final-overwrite-of-zeroes">To shred a file (5 passes) and a final overwrite of zeroes:</h1>
+<p>shred -n 5 -vz file.txt</p>
+
+<h1 id="to-do-the-above-and-then-truncate-and-rm-the-file">To do the above, and then truncate and rm the file:</h1>
+<p>shred -n 5 -vzu file.txt</p>
+
+<h1 id="to-shred-a-partition">To shred a partition:</h1>
+<p>shred -n 5 -vz /dev/sda</p>
+
+<h1 id="remember-that-shred-may-not-behave-as-expected-on-journaled-file-systems-if-file-data-is-being-journaled">Remember that shred may not behave as expected on journaled file systems if file data is being journaled.</h1>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

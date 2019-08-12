@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a92024cdf68470534dc7022800bf9aca2878458">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To setup a local git lab repository | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To setup a local git lab repository" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/gitlabs.html" />
+<meta property="og:url" content="http://localhost:4000/gitlabs.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To setup a local git lab repository","url":"http://localhost:4000/gitlabs.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-setup-a-local-git-lab-repository">To setup a local git lab repository</h1>
+
+<h1 id="on-the-git-server">On the Git Server</h1>
+<p>sudo apt-get install git-core
+sudo useradd git
+passwd git</p>
+
+<h1 id="on-local-system">On local system</h1>
+<p>ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub | ssh git@remote-server “mkdir -p ~/.ssh &amp;&amp; cat »  ~/.ssh/authorized_keys”</p>
+
+<h1 id="back-on-git-server">Back on Git Server</h1>
+<p>git@server:~ $ mkdir -p /home/swapnil/project-1.git
+cd /home/swapnil/project-1.git
+git init –bare</p>
+<h1 id="initialized-empty-git-repository-in-homegitgitocadmingit">Initialized empty Git repository in /home/git/git/ocadmin.git/</h1>
+
+<h1 id="on-local-system-1">On local system</h1>
+<p>mkdir -p /home/swapnil/git/project
+cd /home/swapnil/git/project
+git init 
+#Initialized empty Git repository in /home/swapnil/git/project
+git add .</p>
+
+<p>git commit -m “message” -a
+[master (root-commit) 57331ee] message
+ 2 files changed, 2 insertions(+)
+ create mode 100644 GoT.txt
+ create mode 100644 writing.txt</p>
+
+<h1 id="new-project">New project</h1>
+<p>Command line instructions</p>
+
+<p>Git global setup</p>
+
+<p>git config –global user.name “John Doe”
+git config –global user.email “johndoe@email.com”</p>
+
+<p>Create a new repository</p>
+
+<p>cd Projects
+touch README.md
+git add README.md
+git commit -m “add README”
+git push -u origin master</p>
+
+<p>Existing folder</p>
+
+<p>cd existing_folder
+git init
+git add .
+git commit -m “Initial commit”
+git push -u origin master</p>
+
+<p>Existing Git repository</p>
+
+<p>cd existing_repo
+git push -u origin –all
+git push -u origin –tags</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
