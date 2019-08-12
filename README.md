@@ -1,13 +1,29 @@
 ## Cheatsheets
 
-| COLUMN 1 | COLUMN 2 | COLUMN 3 | COLUMN 4 | COLUMN 5
-| --- | --- | --- | --- | --- |
-[7z](7z.md) | [ab](ab.md) | [alias](alias.md) | [ansible](ansible.md) | [ansi](ansi.md) 
-[apache](apache.md)| [apk](apk.md) | [apparmor](apparmor.md) | [apt-cache](apt-cache.md) | [apt-get](apt-get.md)
-[aptitude](aptitude.md) | [apt](apt.md) | [asciiart](asciiart.md) | [asterisk](asterisk.md) | [at](at.md)
-[awk](awk.md) | [awscli](awscli.md) | [awscli-profile](awscli-profile.md) | [axel](axel.md) | [az-900](az-900.md)
+
+- [7z](7z.md)
+- [ab](ab.md)
+- [alias](alias.md)
+- [ansible](ansible.md)
+- [ansi](ansi.md)
+- [apache](apache.md)
+- [apk](apk.md)
+- [apparmor](apparmor.md)
+- [apt-cache](apt-cache.md)
+- [apt-get](apt-get.md)
+- [aptitude](aptitude.md)
+- [apt](apt.md)
+- [asciiart](asciiart.md)
+- [asterisk](asterisk.md)
+- [at](at.md)
+- [awk](awk.md)
+- [awscli](awscli.md)
+- [awscli-profile](awscli-profile.md)
+- [axel](axel.md)
+- [az-900](az-900.md)
+
 --------------------------------
-[bash](bash.md)
+- [bash](bash.md)
 - [bower](bower.md)
 - [cheat](cheat.md)
 - [chmod](chmod.md)
