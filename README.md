@@ -2,16 +2,10 @@
 
 | COLUMN 1 | COLUMN 2 | COLUMN 3 | COLUMN 4 |
 | --- | --- | --- | --- |
-| [7z](7z.md) | [ab](ab.md) | [alias](alias.md) | [ansible](ansible.md) | 
-| [ansi](ansi.md) | [apache](apache.md)| [apk](apk.md) | [apparmor](apparmor.md) |
-- [apt-cache](apt-cache.md)
-- [apt-get](apt-get.md)
-- [aptitude](aptitude.md)
-- [apt](apt.md)
-- [asciiart](asciiart.md)
-- [asterisk](asterisk.md)
-- [at](at.md)
-- [awk](awk.md)
+[7z](7z.md) | [ab](ab.md) | [alias](alias.md) | [ansible](ansible.md)  
+[ansi](ansi.md) | [apache](apache.md)| [apk](apk.md) | [apparmor](apparmor.md) 
+[apt-cache](apt-cache.md) | [apt-get](apt-get.md) | [aptitude](aptitude.md) | [apt](apt.md)
+[asciiart](asciiart.md) | [asterisk](asterisk.md) | [at](at.md) | [awk](awk.md)
 - [awscli](awscli.md)
 - [awscli-profile](awscli-profile.md)
 - [axel](axel.md)
