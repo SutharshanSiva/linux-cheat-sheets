@@ -1,6 +1,6 @@
 ## Cheatsheets
 
-- [7z](7z.md)
+:beer: [7z](7z.md)
 - [ab](ab.md)
 - [alias](alias.md)
 - [ansible](ansible.md)
