@@ -29,27 +29,26 @@
 | [chown](chown.md) | Change ownership |
 | [cmus](cmus.md) | Commandline music player |
 | [convert](convert.md) | image editor |
+| [cpdf](cpdf.md) | A PDF modifier |
+| [cp](cp.md) | Copy command |
+| [crontab](crontab.md) | An automated job scheduler |
+| [csharp](csharp.md) | an Object Oriented Language |
+| [csplit](csplit.md) | A file splitter |
+| [curl](curl.md) | Transfer a URL |
+| [cut](cut.md) | cut fields of text or stdoutput |
+| [date](date.md) | Print or set the system date and time |
+| [dd](dd.md) | convert and copy a file |
+| [devops](devops.md) | Devops meaning |
+| [df](df.md) | disk free |
+| [dhclient](dhclient.md) | release and renew IP address |
+| [diff](diff.md) | compare files line by line |
+| [displayresolutions](displayresolutions.md) | Display resolutions |
+| [distcc](distcc.md) | Comment on this |
+| [dnf](dnf.md) | fedora package installer |
+| [docker](docker.md) | Container program |
+| [dpkg](dpkg.md) | Debian package installer |
+| [du](du.md) | Disk usage |
 
-
-- [cpdf](cpdf.md)
-- [cp](cp.md)
-- [crontab](crontab.md)
-- [csharp](csharp.md)
-- [csplit](csplit.md)
-- [curl](curl.md)
-- [cut](cut.md)
-- [date](date.md)
-- [dd](dd.md)
-- [devops](devops.md)
-- [df](df.md)
-- [dhclient](dhclient.md)
-- [diff](diff.md)
-- [displayresolutions](displayresolutions.md)
-- [distcc](distcc.md)
-- [dnf](dnf.md)
-- [docker](docker.md)
-- [dpkg](dpkg.md)
-- [du](du.md)
 - [echo](echo.md)
 - [emacs](emacs.md)
 - [expand](expand.md)
