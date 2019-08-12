@@ -1,5 +1,4 @@
 ### Cheatsheets
----
 
 | Command | Description |
 | ------- | ----------- |
