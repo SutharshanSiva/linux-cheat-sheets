@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/pssh.html" />
+<meta property="og:url" content="http://localhost:4000/pssh.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/pssh.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>#PSSH - parallel ssh is a python based application to ssh into multiple systems
+#PSCP - copy files in parallel to multiple systems
+#PRSYNC - copies files to multiple hosts in parallel
+#PNUKE - kills processes on multiple hosts
+#PSLURP - copies files from multiple hosts to a central server</p>
+
+<h1 id="pssh-requires-python-pip">PSSH requires python-pip</h1>
+<p>sudo pip install pssh</p>
+
+<h1 id="pssh-examples">PSSH examples</h1>
+<p>pssh -h pssh-hosts -l root -A -i “uptime”</p>
+
+<h1 id="to-read-hosts-file-include-the--h-host_file-name-or-hosts-host_file_name-option">To read hosts file, include the -h host_file-name or –hosts host_file_name option.</h1>
+<h1 id="to-include-a-default-username-on-all-hosts-that-do-not-define-a-specific-user-use-the--l-username-or-user-username-option">To include a default username on all hosts that do not define a specific user, use the -l username or –user username option.</h1>
+<h1 id="you-can-also-display-standard-output-and-standard-error-as-each-host-completes-by-using-the--i-or-inline-option">You can also display standard output and standard error as each host completes. By using the -i or –inline option.</h1>
+<h1 id="you-may-wish-to-make-connections-time-out-after-the-given-number-of-seconds-by-including-the--t-number_of_seconds-option">You may wish to make connections time out after the given number of seconds by including the -t number_of_seconds option.</h1>
+<h1 id="to-save-standard-output-to-a-given-directory-you-can-use-the--o-directorypath-option">To save standard output to a given directory, you can use the -o /directory/path option.</h1>
+<h1 id="to-ask-for-a-password-and-send-to-ssh-use-the--a-option">To ask for a password and send to ssh, use the -A option.</h1>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/nc.html" />
+<meta property="og:url" content="http://localhost:4000/nc.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/nc.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># To open a TCP connection to port 42 of host.example.com, using port 31337 as the source port, with a timeout of 5 seconds:</span>
+nc <span class="nt">-p</span> 31337 <span class="nt">-w</span> 5 host.example.com 42
+
+<span class="c"># To open a UDP connection to port 53 of host.example.com:</span>
+nc <span class="nt">-u</span> host.example.com 53
+
+<span class="c"># To open a TCP connection to port 42 of host.example.com using 10.1.2.3 as the IP for the local end of the connection:</span>
+nc <span class="nt">-s</span> 10.1.2.3 host.example.com 42
+
+<span class="c"># To create and listen on a UNIX-domain stream socket:</span>
+nc <span class="nt">-lU</span> /var/tmp/dsocket
+
+<span class="c"># To connect to port 42 of host.example.com via an HTTP proxy at 10.2.3.4, port 8080. This example could also be used by ssh(1); see the ProxyCommand directive in ssh_config(5) for more information.</span>
+nc <span class="nt">-x10</span>.2.3.4:8080 <span class="nt">-Xconnect</span> host.example.com 42
+
+<span class="c"># The same example again, this time enabling proxy authentication with username "ruser" if the proxy requires it:</span>
+nc <span class="nt">-x10</span>.2.3.4:8080 <span class="nt">-Xconnect</span> <span class="nt">-Pruser</span> host.example.com 42
+
+<span class="c"># To choose the source IP for the testing using the -s option</span>
+nc <span class="nt">-zv</span> <span class="nt">-s</span> source_IP target_IP Port
+
+
+<span class="c"># Example of nc server and client testing failed</span>
+<span class="o">[</span>ansible@server1 ~]<span class="nv">$ </span>nc <span class="nt">-v</span> usserver2 3208
+nc: connect to usserver2 port 3208 <span class="o">(</span>tcp<span class="o">)</span> failed: Connection timed out
+
+<span class="o">[</span>root@usserver1 ~]# tcpdump host usserver2 and port 3208
+<span class="o">[</span>root@usserver1 ~]# iptables <span class="nt">-n</span> <span class="nt">-L</span> | <span class="nb">grep </span>3208
+ACCEPT tcp <span class="nt">--</span> 0.0.0.0/0 0.0.0.0/0 tcp dpt:3208
+
+
+<span class="c"># Example of nc server and client testing pass</span>
+<span class="o">[</span>bwdave@server1]<span class="nv">$ </span>nc <span class="nt">-l</span> 80
+
+<span class="o">[</span>bwdave@server2]<span class="nv">$ </span>nc <span class="nt">-v</span> server1 80
+Hello
+
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

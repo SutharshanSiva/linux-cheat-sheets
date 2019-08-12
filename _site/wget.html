@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To download a single file | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To download a single file" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/wget.html" />
+<meta property="og:url" content="http://localhost:4000/wget.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To download a single file","url":"http://localhost:4000/wget.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-download-a-single-file">To download a single file</h1>
+<p>wget http://path.to.the/file</p>
+
+<h1 id="to-download-a-file-and-change-its-name">To download a file and change its name</h1>
+<p>wget http://path.to.the/file -O newname</p>
+
+<h1 id="to-download-a-file-into-a-directory">To download a file into a directory</h1>
+<p>wget -P path/to/directory http://path.to.the/file</p>
+
+<h1 id="to-continue-an-aborted-downloaded">To continue an aborted downloaded</h1>
+<p>wget -c http://path.to.the/file</p>
+
+<h1 id="to-download-multiples-files-with-multiple-urls">To download multiples files with multiple URLs</h1>
+<p>wget URL1 URL2</p>
+
+<h1 id="to-parse-a-file-that-contains-a-list-of-urls-to-fetch-each-one">To parse a file that contains a list of URLs to fetch each one</h1>
+<p>wget -i url_list.txt</p>
+
+<h1 id="to-mirror-a-whole-page-locally">To mirror a whole page locally</h1>
+<p>wget -pk http://path.to.the/page.html</p>
+
+<h1 id="to-mirror-a-whole-site-locally">To mirror a whole site locally</h1>
+<p>wget -mk http://site.tl/</p>
+
+<h1 id="to-download-files-according-to-a-pattern">To download files according to a pattern</h1>
+<p>wget http://www.myserver.com/files-{1..15}.tar.bz2</p>
+
+<h1 id="to-download-all-the-files-in-a-directory-with-a-specific-extension-if-directory-indexing-is-enabled">To download all the files in a directory with a specific extension if directory indexing is enabled</h1>
+<p>wget -r -l1 -A.extension http://myserver.com/directory</p>
+
+<h1 id="allows-you-to-download-just-the-headers-of-responses--s-spider-and-display-them-on-stdout--o--">Allows you to download just the headers of responses (-S –spider) and display them on Stdout (-O -).</h1>
+<p>wget -S –spider -O - http://google.com</p>
+
+<h1 id="change-the-user-agent-to-user-agent-toto">Change the User-Agent to ‘User-Agent: toto’</h1>
+<p>wget -U ‘toto’ http://google.com</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

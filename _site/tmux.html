@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/tmux.html" />
+<meta property="og:url" content="http://localhost:4000/tmux.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/tmux.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start tmux:</span>
+tmux
+
+<span class="c"># Detach from tmux:</span>
+Ctrl-b d
+
+<span class="c"># Restore tmux session:</span>
+tmux attach-session <span class="nt">-t</span> &lt;target session id&gt;  <span class="c"># use display session to list</span>
+
+<span class="c"># Detach an already attached session (great if you are moving devices with different screen resolutions)</span>
+tmux attach <span class="nt">-d</span>
+
+<span class="c"># Display session:</span>
+tmux <span class="nb">ls</span>
+
+<span class="c"># Display windows</span>
+Ctrl-b w
+
+<span class="c"># Start a shared session:</span>
+tmux <span class="nt">-S</span> /tmp/your_shared_session new <span class="nt">-s</span> shared
+chmod 777 /tmp/your_shared_session
+chgrp users /tmp/your_shared_session
+
+<span class="c"># tmux host commands</span>
+tmux list-client
+tmux detach-client <span class="nt">-s</span> shared		<span class="c"># disconnect all sessions attached to shared</span>
+tmux detach-client <span class="nt">-t</span> /dev/pts/X	<span class="c"># disconnect individual connections</span>
+
+<span class="c"># connect to a shared session</span>
+tmux <span class="nt">-S</span> /tmp/your_shared_session attach <span class="nt">-t</span> shared <span class="nt">-r</span>	<span class="c"># read-only</span>
+
+<span class="c"># Help screen (Q to quit):</span>
+Ctrl-b ?
+
+<span class="c"># Scroll in window:</span>
+Ctrl-b PageUp/PageDown
+
+<span class="c"># Reload configuation file</span>
+Ctrl-b : source-file /path/to/file
+
+<span class="c"># Window management</span>
+<span class="c"># =================</span>
+
+<span class="c"># Create window:</span>
+Ctrl-b c
+
+<span class="c"># Destroy window:</span>
+Ctrl-b x
+
+<span class="c"># Kill window:</span>
+tmux kill-window t#
+
+<span class="c"># Switch between windows:</span>
+Ctrl-b <span class="o">[</span>0-9]
+or
+Ctrl-b Arrows
+
+<span class="c"># Split windows horizontally:</span>
+Ctrl-b %
+
+<span class="c"># Split windows vertically:</span>
+Ctrl-b <span class="s2">"
+</span></code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

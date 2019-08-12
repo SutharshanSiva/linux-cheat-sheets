@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To list every process on the system: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To list every process on the system:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ps.html" />
+<meta property="og:url" content="http://localhost:4000/ps.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To list every process on the system:","url":"http://localhost:4000/ps.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-list-every-process-on-the-system">To list every process on the system:</h1>
+<p>ps aux</p>
+
+<h1 id="to-list-a-process-tree">To list a process tree</h1>
+<p>ps axjf</p>
+
+<h1 id="to-list-every-process-owned-by-foouser">To list every process owned by foouser:</h1>
+<p>ps -aufoouser</p>
+
+<h1 id="to-list-every-process-with-a-user-defined-format">To list every process with a user-defined format:</h1>
+<p>ps -eo pid,user,command</p>
+
+<h1 id="exclude-grep-from-your-grepped-output-of-ps">Exclude grep from your grepped output of ps.</h1>
+<h1 id="add--to-the-first-letter-ex-sshd---sshd">Add [] to the first letter. Ex: sshd -&gt; [s]shd</h1>
+<p>ps aux | grep ‘[h]ttpd’</p>
+
+<h1 id="list-all-processes-that-are-waiting-for-io-activity">List all processes that are waiting for i/o activity</h1>
+<p>ps aux | grep D+</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

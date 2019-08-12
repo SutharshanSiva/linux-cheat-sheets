@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/grep.html" />
+<meta property="og:url" content="http://localhost:4000/grep.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/grep.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Search a file for a pattern</span>
+<span class="nb">grep </span>pattern file
+
+<span class="c"># Case insensitive search (with line numbers)</span>
+<span class="nb">grep</span> <span class="nt">-in</span> pattern file
+
+<span class="c"># Recursively grep for string &lt;pattern&gt; in folder:</span>
+<span class="nb">grep</span> <span class="nt">-R</span> pattern folder
+
+<span class="c"># Read search patterns from a file (one per line)</span>
+<span class="nb">grep</span> <span class="nt">-f</span> pattern_file file
+
+<span class="c"># Find lines NOT containing pattern</span>
+<span class="nb">grep</span> <span class="nt">-v</span> pattern file
+
+<span class="c"># find words not patterns</span>
+<span class="nb">grep</span> <span class="nt">-w</span> file	<span class="c"># not files</span>
+
+<span class="c"># You can grep with regular expressions</span>
+<span class="nb">grep</span> <span class="s2">"^00"</span> file  <span class="c">#Match lines starting with 00</span>
+<span class="nb">grep</span> <span class="nt">-E</span> <span class="s2">"[0-9]{1,3}</span><span class="se">\.</span><span class="s2">[0-9]{1,3}</span><span class="se">\.</span><span class="s2">[0-9]{1,3}</span><span class="se">\.</span><span class="s2">[0-9]{1,3}"</span> file  <span class="c">#Find IP add</span>
+
+<span class="c"># Find all files which match {pattern} in {directory}</span>
+<span class="c"># This will show: "file:line my research"</span>
+<span class="nb">grep</span> <span class="nt">-rnw</span> <span class="s1">'directory'</span> <span class="nt">-e</span> <span class="s2">"pattern"</span>
+
+<span class="c"># Exclude grep from your grepped output of ps.</span>
+<span class="c"># Add [] to the first letter. Ex: sshd -&gt; [s]shd</span>
+ps aux | <span class="nb">grep</span> <span class="s1">'[h]ttpd'</span>
+
+<span class="c"># Colour in red {bash} and keep all other lines</span>
+ps aux | <span class="nb">grep</span> <span class="nt">-E</span> <span class="nt">--color</span> <span class="s1">'bash|$'</span>
+
+<span class="c"># search files for information from a file</span>
+<span class="nb">grep</span> <span class="nt">-f</span> grepinput file1		<span class="c"># grepinput has hello</span>
+
+<span class="c"># egrep for multiple words</span>
+egrep <span class="nt">-i</span> <span class="s1">'hello.*world'</span> file1	<span class="c"># looks for hello world</span>
+egrep <span class="nt">-i</span> <span class="s1">'hello|world'</span> file1 	<span class="c"># looks for hello or world in lines</span>
+egrep <span class="nt">-iv</span> <span class="s1">'hello|world'</span> file1 	<span class="c"># lines that do not contain hello world</span>
+egrep <span class="nt">-r</span> <span class="s1">'hello|world|friend'</span> file<span class="k">*</span>	<span class="c"># grep or statement </span>
+
+<span class="c"># fgrep literal pattern</span>
+fgrep hello<span class="nv">$ </span>file1		<span class="c"># literal line found hello$</span>
+
+<span class="c"># grep to remove cmments and empty lines in config files</span>
+<span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'^#\|^$'</span> /etc/some/conf/file
+<span class="nb">grep</span> <span class="nt">-v</span> <span class="nt">-e</span> <span class="s1">'^ *#'</span> <span class="nt">-e</span> <span class="s1">'^$'</span> /etc/httpd/conf/httpd.conf 
+
+<span class="c"># fgrep literal pattern</span>
+fgrep hello<span class="nv">$ </span>file1		<span class="c"># literal line found hello$</span>
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/troubleshooting.html" />
+<meta property="og:url" content="http://localhost:4000/troubleshooting.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/troubleshooting.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#################### BOOTING INTO SINGLE USER MODE ######################</span>
+<span class="c">#									#</span>
+<span class="c">#									#</span>
+Boot to GRUB menu - highlight kernel version - press e to edit
+Down arrow to the kernel line - linux16
+Change the <span class="s1">'ro'</span> argument to <span class="s1">'rw init=/sysroot/bin/sh'</span>
+Use Ctrl-x or F10 to reboot
+Mount root / <span class="s1">'chroot /sysroot/'</span>
+edit /etc/fstab, passwd <span class="k">for </span>root, fsck /dev/sda2-x
+reboot system - <span class="s1">'reboot -f'</span>									
+<span class="c">#									#</span>
+<span class="c">#									#</span>
+<span class="c">#################### BOOTING INTO SINGLE USER MODE ######################</span>
+
+
+<span class="c">#################### BOOTING INTO RUNLEVEL 3  ######################</span>
+<span class="c">#</span>
+cp /etc/default/grub /etc/default/grub.bak
+change linux line at end add space 3
+<span class="nb">sudo </span>update-grub
+<span class="c">#</span>
+<span class="c">#################### BOOTING INTO RUNLEVEL 3  ######################</span>
+
+
+<span class="c">################ /etc/passwd deleted - Get error Login incorrect ########</span>
+<span class="c">#### BOOTING INTO SINGLE USER MODE ######</span>
+<span class="c">#					#</span>
+Reboot into GRUB - press down key - e <span class="k">for </span>edit - highlight kernel - 
+<span class="nb">type </span>1 or single after a space - press Enter - b to <span class="k">continue </span>booting.
+<span class="c">#					#</span>
+<span class="c">#### BOOTING INTO SINGLE USER MODE ######</span>
+
+
+<span class="c">## /etc/passwd deleted - Get error Login incorrect ##</span>
+cp /etc/passwd- /etc/passwd
+init 5
+
+/etc/shadow- /etc/gshadow-	<span class="c"># backups of these as well</span>
+
+
+<span class="c">################# /etc/pam.d/login is deleted - indicator will be login prompt but does not ask password ##</span>
+Boot into single user mode
+cp /etc/pam.d/system-auth /etc/pam.d/login
+
+<span class="c">################# /etc/inittab file is deleted - Asks what runlevel to run, no processes left in this runlevel ##</span>
+First need to boot into Linux Rescue disk and <span class="nb">type </span>Linux rescue
+chroot /mnt/sysimage			<span class="c"># Local hard drive will be mounted at this location</span>
+rpm <span class="nt">-q</span> <span class="nt">--whatprovides</span> /etc/inittab
+mkdir /a
+mount /dev/hdc /a			<span class="c"># mount your CD drive</span>
+
+<span class="c">## /etc/pam.d/login is deleted - indicator will be login prompt but does not ask password ##</span>
+Boot into single user mode
+cp /etc/pam.d/system-auth /etc/pam.d/login
+
+<span class="c">## /etc/inittab file is deleted - Asks what runlevel to run, no processes left in this runlevel ##</span>
+First need to boot into Linux Rescue disk and <span class="nb">type </span>Linux rescue
+chroot /mnt/sysimage	<span class="c"># Local hard drive will be mounted at this location</span>
+rpm <span class="nt">-q</span> <span class="nt">--whatprovides</span> /etc/inittab
+mkdir /a
+mount /dev/hdc /a	<span class="c"># mount your CD drive</span>
+rpm <span class="nt">-uvh</span> <span class="nt">--force</span> /a/Server/initscripts-8.45.25-1.el5.i386.rpm
+<span class="nb">exit</span>
+
+<span class="c">## /boot/grub/grub.conf is deleted - Grub is missing ##</span>
+<span class="nb">type </span>root and <span class="s1">'tab'</span> to find out hard drives - root <span class="o">(</span>hd0,0<span class="o">)</span> press enter
+<span class="nb">type </span>kernel /v and <span class="s1">'tab'</span> to auto <span class="nb">complete</span> - write its entry down
+<span class="nb">type </span>initrd /i and <span class="s1">'tab'</span> to auto <span class="nb">complete</span> - write its entry down
+<span class="nb">type </span>boot and <span class="s1">'Enter'</span>
+
+Create a /boot/grub/grub.conf file
+<span class="nv">splashimage</span><span class="o">=(</span>hd0,0<span class="o">)</span>/grub/splash.xpm.gz
+<span class="nv">default</span><span class="o">=</span>0
+<span class="nv">timeout</span><span class="o">=</span>5
+title Red Hat
+root <span class="o">(</span>hd0,0<span class="o">)</span>
+kernel /vmlinuz-2.6.18-128.el5
+initrd /initrd-26.18-128.el5.img
+
+<span class="c">## fork: Resource temporarily unavailable su - user</span>
+<span class="c"># Check total processes</span>
+ps <span class="nt">-eLf</span> | wc <span class="nt">-l</span>		<span class="c"># if above 16384</span>
+
+<span class="c"># edit security limits</span>
+vim /etc/security/limits.conf	<span class="c"># increase hard nproc to above ps count</span>
+vim /etc/security/limits.d/90-nproc.conf	<span class="c"># increase to same number</span>
+
+<span class="c">## Extend xfs file system</span>
+
+<span class="c">## Extend ext4 file system</span>
+<span class="nb">sudo </span>lsblk
+<span class="nb">sudo </span>growpart /dev/sda 1
+<span class="nb">sudo </span>resize2fs /dev/sda1
+
+<span class="c">## Network interface in VM not binding/pingable</span>
+Migrate VM to another host
+
+<span class="c">## Static IP address configs</span>
+/etc/sysconfig/network		<span class="c"># Global settings</span>
+/etc/sysconfig/network-scripts/	<span class="c"># Interface settings</span>
+
+<span class="c">## Disable NetworkManager</span>
+systemctl stop NetworkManager
+systemctl disable NetworkManager
+service NetworkManager off
+service network on
+service network restart
+
+<span class="c">#### Execute commands on a remote Linux machine</span>
+ssh <span class="o">[</span>USER]@[IP] <span class="o">[</span><span class="nb">command </span>or script]	ssh root@172.16.223.128 <span class="nb">ls</span> <span class="nt">-l</span> /root
+<span class="c">#### Execute commands on a remote Linux machine</span>
+
+
+<span class="c">#### Run a Linux command after every reboot</span>
+<span class="nv">$crontab</span> <span class="nt">-e</span>
+@reboot /home/xyz/myscript.sh
+Do remember to <span class="nb">enable </span>crond on boot.
+<span class="c">#### Run a Linux command after every reboot</span>
+
+
+<span class="c">#### Comment out hashes in large configuration files</span>
+<span class="c"># Here is a small tip for system administrators, who need to tackle large configuration files,</span>
+<span class="c"># which include lots of commented lines (marked by #).</span>
+<span class="c"># With this tip you can remove all those hashes and provide only an uncommented configuration view for faster lookup into the file.</span>
+
+<span class="c"># If you want to check the configuration file of the Squid proxy server, run the following command:</span>
+
+<span class="nb">cat </span>squid.conf | egrep <span class="nt">-v</span> ^#
+
+<span class="c">#### Comment out hashes in large configuration files</span>
+
+
+<span class="c">#### Know your shell</span>
+<span class="c"># Here is a command that will let you know about the available shells on your Linux distribution:</span>
+chsh <span class="nt">-l</span>
+
+<span class="c"># To change your login shell, use the following command:</span>
+chsh
+<span class="c">#### Know your shell</span>
+
+lspci		<span class="c">#Lists all PCI devices. Use -v for verbose output.</span>
+lsusb		<span class="c">#Lists all USB devices. Use -v for verbose output.</span>
+lsmod		<span class="c">#Lists the status of modules in the Linux kernel.</span>
+lsattr		<span class="c">#Lists file attributes on a second extended Linux file system.</span>
+lsof		<span class="c">#Lists the file descriptors opened by all the processes. A very useful command when a process fails to close any file descriptors.</span>
+lsb_release <span class="nt">-a</span>	<span class="c">#Here is a tip that will let you know the name of the OS, along with other details</span>
+dmidecode <span class="nt">-t</span> l  <span class="c"># List hardware information</span>
+dmidecode <span class="nt">-s</span> system-serial-number
+
+
+<span class="c">#### Run a command as another user ####</span>
+/sbin/su <span class="nt">-l</span> user <span class="nt">--command</span><span class="o">=</span><span class="s1">'service ma restart'</span>
+
+<span class="c">#### View the contents of tar and rpm files</span>
+<span class="c"># 1. To view the content of a tar file, issue the following command:</span>
+
+<span class="nb">tar</span> <span class="nt">-tvf</span> /path/to/file.tar
+
+<span class="c"># 2. To view the content of an rpm file, use the command given below:</span>
+rpm <span class="nt">-qlp</span> /path/to/file.rpm
+<span class="c">#### View the contents of tar and rpm files</span>
+
+<span class="c">#### Auto mounting a partition on Linux</span>
+<span class="nb">sudo </span>mkdir location_of_dir/name_of_dir
+<span class="nb">sudo </span>gedit /etc/fstab
+
+<span class="c"># The order should be as follows: the device name, the default mount point, the file-system type, mount options, dump, and the fsck option.</span>
+
+<span class="c"># The device name is the name of the HDD partition (such as /dev/sda5): the mount point is the full path of the directory where the partition is to be mounted.</span>
+<span class="nb">sudo </span>gedit /etc/fstab 
+
+<span class="c"># The order should be as follows: the device name, the default mount point, the file-system type, mount options, dump, and the fsck option.</span>
+
+<span class="c"># The device name is the name of the HDD partition (such as /dev/sda5): the mount point is the full path of the directory where the partition is to be mounted. </span>
+<span class="c"># The file system type is the type of file system like ext4, fat, ntfs, etc. Mount options are normally given as defaults, while dump and fsck options are given as 0.</span>
+
+<span class="c"># I had a partition /dev/sda5 and I created the directory /media/mydisk. My partition was of type ext4, so to my /etc/fstab, I added the following command:</span>
+
+
+/dev/sda5 /media/mydisk ext4 defaults 0 0
+
+<span class="nb">sudo </span>mount <span class="nt">-a</span>
+<span class="c">#### Auto mounting a partition on Linux</span>
+
+<span class="c">#### Troubleshooting a stale NFS mount ####</span>
+<span class="c"># if df -h is unresponsive try restarting nfs service</span>
+umount /mount
+umount <span class="nt">-f</span> /mount
+umount <span class="nt">-lf</span> /mount
+service stop nfs
+service start nfs
+umount nfsmount
+mount <span class="nt">-a</span>
+mount <span class="nt">-o</span> remount,rw /opt	<span class="c"># if readonly mount exists</span>
+
+<span class="c">#### Working with log files</span>
+<span class="c"># insert information about logrotate here</span>
+
+<span class="c"># truncate an active log file</span>
+<span class="nb">sudo </span>truncate <span class="nt">-s</span> 0 <span class="k">${</span><span class="nv">LOGFILE</span><span class="k">}</span>
+
+<span class="c"># To install oracle or applications</span>
+<span class="nb">sudo </span>truncate <span class="nt">-s</span> 0 <span class="k">${</span><span class="nv">LOGFILE</span><span class="p">]
+
+# and security has locked down /tmp - noexec
+#
+TEMP=/spacious directory
+TMPDIR=/same dir
+export TEMP TMPDIR
+
+
+######  Identify who logged in last locally
+lastlog -b 30
+
+
+######  Problems restarting Apache/httpd service
+apachectl start|restart|stop|status|configtest  	# as apache owner
+systemctl status httpd -l
+journalctl -xe
+
+# clear semiphores
+ipcs -s | grep webops | awk </span><span class="s1">' { print $2 } '</span><span class="p"> | xargs ipcrm sem
+
+# add entries into sudoers.d files
+sudo visudo -f /etc/sudoers.d/web_admin
+Cmnd_Alias  WEB = /bin/systemctl restart httpd.service, /bin/systemctl reload httpd.service
+
+gfreeman ALL=WEB
+
+
+</span></code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

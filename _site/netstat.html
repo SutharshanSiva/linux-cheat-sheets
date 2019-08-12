@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>WARNING ! netstat is deprecated. Look below. | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="WARNING ! netstat is deprecated. Look below." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/netstat.html" />
+<meta property="og:url" content="http://localhost:4000/netstat.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"WARNING ! netstat is deprecated. Look below.","url":"http://localhost:4000/netstat.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="warning--netstat-is-deprecated-look-below">WARNING ! netstat is deprecated. Look below.</h1>
+
+<h1 id="to-view-which-usersprocesses-are-listening-to-which-ports">To view which users/processes are listening to which ports:</h1>
+<p>sudo netstat -lnptu</p>
+
+<h1 id="to-view-routing-table-use--n-flag-to-disable-dns-lookups">To view routing table (use -n flag to disable DNS lookups):</h1>
+<p>netstat -r</p>
+
+<h1 id="which-process-is-listening-to-port-">Which process is listening to port <port></port></h1>
+<p>netstat -pln | grep <port> | awk '{print $NF}'</port></p>
+
+<p>Example output: 1507/python</p>
+
+<h1 id="fast-display-of-ipv4-tcp-listening-programs">Fast display of ipv4 tcp listening programs</h1>
+<p>sudo netstat -vtlnp –listening -4</p>
+
+<h1 id="warning--netstat-is-deprecated">WARNING ! netstat is deprecated.</h1>
+<h1 id="replace-it-by">Replace it by:</h1>
+<p>ss</p>
+
+<h1 id="for-netstat-r">For netstat-r</h1>
+<p>ip route</p>
+
+<h1 id="for-netstat--i">For netstat -i</h1>
+<p>ip -s link</p>
+
+<h1 id="for-netstat-g">For netstat-g</h1>
+<p>ip maddr</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

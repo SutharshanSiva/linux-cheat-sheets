@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/sort.html" />
+<meta property="og:url" content="http://localhost:4000/sort.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/sort.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To sort a file:</span>
+sort file
+
+<span class="c"># To sort a file by keeping only unique:</span>
+sort <span class="nt">-u</span> file
+
+<span class="c"># To sort a file and reverse the result:</span>
+sort <span class="nt">-r</span> file
+
+<span class="c"># To sort a file randomly:</span>
+sort <span class="nt">-R</span> file
+
+<span class="c"># To sort multiple files into a single sorted whole</span>
+sort file1.txt file2.txt file3.txt <span class="o">&gt;</span> final_sorted_list.txt
+
+<span class="c"># Sort options</span>
+<span class="nt">-b</span>	<span class="c"># This option causes sort to ignore leading spaces in lines</span>
+<span class="nt">-f</span> 	<span class="c"># Makes sorting case insensitive.</span>
+<span class="nt">-n</span>	<span class="c"># Performs sorting based on the numeric evaluation of a string.</span>
+<span class="nt">-r</span>	<span class="c"># Sort in reverse order.</span>
+<span class="nt">-k</span>	<span class="c"># key=field1[,field2] Sort based on a key field located from field1 to field2 rather than the entire line.</span>
+<span class="nt">-m</span>	<span class="c"># Merge multiple files into a single sorted result without performing any additional sorting.</span>
+<span class="nt">-o</span>	<span class="c"># Send sorted output to file rather than to standard output.</span>
+<span class="nt">-t</span>	<span class="c"># Define the field-separator character. By default, fields are separated by spaces or tabs.</span>
+
+<span class="c"># Examples</span>
+<span class="nb">ls</span> <span class="nt">-l</span> /usr/bin | sort <span class="nt">-nr</span> <span class="nt">-k</span> 5 | head
+
+<span class="c"># to sort by field and keys</span>
+sort <span class="nt">-n</span> <span class="nt">-t</span><span class="nb">.</span> <span class="nt">--key</span><span class="o">=</span>1,4
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

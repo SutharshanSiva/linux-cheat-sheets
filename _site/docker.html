@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/docker.html" />
+<meta property="og:url" content="http://localhost:4000/docker.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/docker.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">#########  Installation methods  ############</span>
+<span class="c"># https://get.docker.com/	# script to install</span>
+<span class="c"># https://github.com/docker/docker-install</span>
+
+<span class="c">## Installation Centos</span>
+<span class="c"># uninstall previous version of Docker</span>
+
+<span class="nb">sudo </span>yum remove <span class="nt">-y</span> docker <span class="se">\</span>
+<span class="o">&gt;</span> docker-client <span class="se">\</span>
+<span class="o">&gt;</span> docker-client-latest <span class="se">\</span>
+<span class="o">&gt;</span> docker-common <span class="se">\</span>
+<span class="o">&gt;</span> docker-latest <span class="se">\</span>
+<span class="o">&gt;</span> docker-latest-logrotate <span class="se">\</span>
+<span class="o">&gt;</span> docker-logrotate <span class="se">\</span>
+<span class="o">&gt;</span> docker-engine
+
+<span class="c"># Add utilities for Docker</span>
+
+<span class="nb">sudo </span>yum install <span class="nt">-y</span> yum-utils <span class="se">\</span>
+<span class="o">&gt;</span> device-mapper-persistent-data <span class="se">\</span>
+<span class="o">&gt;</span> lvm2
+
+<span class="nb">sudo </span>yum-config-manager <span class="se">\</span>
+<span class="o">&gt;</span> <span class="nt">--add-repo</span> <span class="se">\</span>
+<span class="o">&gt;</span> https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="c"># Install Docker CE:</span>
+<span class="nb">sudo </span>yum <span class="nt">-y</span> install docker-ce
+<span class="nb">sudo </span>systemctl start docker <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>systemctl <span class="nb">enable </span>docker
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker cloud_user
+<span class="c">#########  Installation methods  ############</span>
+
+
+<span class="c">#########  Docker Commands  ##########</span>
+docker <span class="nt">-h</span> | more
+Usage:	docker <span class="o">[</span>OPTIONS] COMMAND
+
+A self-sufficient runtime <span class="k">for </span>containers
+
+Options:
+      <span class="nt">--config</span> string      Location of client config files <span class="o">(</span>default <span class="s2">"/home/cloud_user/.docker"</span><span class="o">)</span>
+  <span class="nt">-D</span>, <span class="nt">--debug</span>              Enable debug mode
+  <span class="nt">-H</span>, <span class="nt">--host</span> list          Daemon socket<span class="o">(</span>s<span class="o">)</span> to connect to
+  <span class="nt">-l</span>, <span class="nt">--log-level</span> string   Set the logging level <span class="o">(</span><span class="s2">"debug"</span>|<span class="s2">"info"</span>|<span class="s2">"warn"</span>|<span class="s2">"error"</span>|<span class="s2">"fatal"</span><span class="o">)</span> <span class="o">(</span>default <span class="s2">"info"</span><span class="o">)</span>
+      <span class="nt">--tls</span>                Use TLS<span class="p">;</span> implied by <span class="nt">--tlsverify</span>
+      <span class="nt">--tlscacert</span> string   Trust certs signed only by this CA <span class="o">(</span>default <span class="s2">"/home/cloud_user/.docker/ca.pem"</span><span class="o">)</span>
+      <span class="nt">--tlscert</span> string     Path to TLS certificate file <span class="o">(</span>default <span class="s2">"/home/cloud_user/.docker/cert.pem"</span><span class="o">)</span>
+      <span class="nt">--tlskey</span> string      Path to TLS key file <span class="o">(</span>default <span class="s2">"/home/cloud_user/.docker/key.pem"</span><span class="o">)</span>
+      <span class="nt">--tlsverify</span>          Use TLS and verify the remote
+  <span class="nt">-v</span>, <span class="nt">--version</span>            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  engine      Manage the docker engine
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+<span class="c"># Example of using management commands</span>
+docker image <span class="nb">ls</span> <span class="nt">--help</span>
+Usage:	docker image <span class="nb">ls</span> <span class="o">[</span>OPTIONS] <span class="o">[</span>REPOSITORY[:TAG]]
+
+List images
+
+Aliases:
+  <span class="nb">ls</span>, images, list
+
+Options:
+  <span class="nt">-a</span>, <span class="nt">--all</span>             Show all images <span class="o">(</span>default hides intermediate images<span class="o">)</span>
+      <span class="nt">--digests</span>         Show digests
+  <span class="nt">-f</span>, <span class="nt">--filter</span> filter   Filter output based on conditions provided
+      <span class="nt">--format</span> string   Pretty-print images using a Go template
+      <span class="nt">--no-trunc</span>        Dont truncate output
+  <span class="nt">-q</span>, <span class="nt">--quiet</span>           Only show numeric IDs
+
+<span class="c">####  docker image:  ####</span>
+
+build 			<span class="c"># Build an image from a dockerfile</span>
+<span class="nb">history</span> 		<span class="c"># Show the history of an image</span>
+import 			<span class="c"># Import the contents from a tarball to create a filesystem image</span>
+inspect 		<span class="c"># Display detailed information on one or more images</span>
+load 			<span class="c"># Load an image from a tar file or STDIN</span>
+<span class="nb">ls</span> 			<span class="c"># List images</span>
+prune 			<span class="c"># Remove unused images</span>
+pull 			<span class="c"># Pull an image or a repository from a registry</span>
+push 			<span class="c"># Push an image or a repository to a registry</span>
+rm 			<span class="c"># Remove one or more images</span>
+save 			<span class="c"># Save one or more images to a tar file (streamed to STDOUT by default)</span>
+tag 			<span class="c"># Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE</span>
+
+<span class="c">####  docker image:  ####</span>
+
+<span class="c">####  docker container:  ####</span>
+
+attach 			<span class="c"># Attach local standard input, output, and error streams to a running container</span>
+commit 			<span class="c"># Create a new image from a container's changes</span>
+cp 			<span class="c"># Copy files/folders between a container and the local filesystem</span>
+create 			<span class="c"># Create a new container</span>
+diff 			<span class="c"># Inspect changes to files or directories on a container's filesystem</span>
+<span class="nb">exec</span> 			<span class="c"># Run a command in a running container</span>
+<span class="nb">export</span> 			<span class="c"># Export a container's filesystem as a tar archive</span>
+inspect 		<span class="c"># Display detailed information on one or more containers</span>
+<span class="nb">kill</span> 			<span class="c"># Kill one or more running containers</span>
+logs 			<span class="c"># Fetch the logs of a container</span>
+<span class="nb">ls</span> 			<span class="c"># List containers</span>
+pause 			<span class="c"># Pause all processes within one or more containers</span>
+port 			<span class="c"># List port mappings or a specific mapping for the container</span>
+prune 			<span class="c"># Remove all stopped containers</span>
+rename 			<span class="c"># Rename a container</span>
+restart 		<span class="c"># Restart one or more containers</span>
+rm 			<span class="c"># Remove one or more containers</span>
+run 			<span class="c"># Run a command in a new container</span>
+start 			<span class="c"># Start one or more stopped containers</span>
+stats	 		<span class="c"># Display a live stream of container(s) resource usage statistics</span>
+stop  			<span class="c"># Stop one or more running containers</span>
+top			<span class="c"># Display the running processes of a container</span>
+unpause			<span class="c"># Unpause all processes within one or more containers</span>
+update			<span class="c"># Update configuration of one or more containers</span>
+<span class="nb">wait</span> 			<span class="c"># Block until one or more containers stop, then print their exit codes</span>
+
+<span class="c">####  docker container:  ####</span>
+
+<span class="c">#########  Docker Commands  ##########</span>
+
+
+<span class="c">#########  building a new docker image  #########</span>
+
+<span class="c">#### Dockerfile</span>
+FROM ubuntu:16.04
+LABEL <span class="nv">maintainer</span><span class="o">=</span><span class="s2">"username@example.com"</span>
+RUN apt-get update
+RUN apt-get install <span class="nt">-y</span> python3
+<span class="c">#### Dockerfile</span>
+
+docker build <span class="nt">-t</span> &lt;username&gt;/&lt;repository&gt; <span class="nb">.</span>
+<span class="c"># intermediate container images per run statement</span>
+
+<span class="c">#### Dockerfile</span>
+FROM debian:stable
+MAINTAINER latest123 &lt;latest123@linuxacademy.com&gt;
+
+RUN apt-get update <span class="nt">-y</span> <span class="o">&amp;&amp;</span> apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> apt-get install python python-pip apache 2 elinks openssh-server <span class="nt">-y</span>
+ENV MYVALUE my-value
+
+EXPOSE 80
+EXPOSE 22
+
+CMD <span class="o">[</span><span class="s2">"/usr/sbin/apache2ctl"</span>,<span class="s2">"-D"</span>,<span class="s2">"FOREGROUND"</span><span class="o">]</span>
+
+<span class="c">#########  building a new docker image  #########</span>
+
+<span class="c">## Docker Lifecycle</span>
+docker run 		<span class="c"># starts docker container runs it and stops it</span>
+docker run <span class="nt">-it</span>		<span class="c"># -i Keep STDIN open even if not attached; -t Allocate a pseudo-tty</span>
+docker container start	<span class="c"># starts and runs a detached session</span>
+docker restart &lt;containerid/name&gt;
+docker attach		<span class="c"># attaches to running docker</span>
+docker attach &lt;imagename&gt; 		<span class="c"># ctrl+c will exit the container</span>
+docker stop &lt;imagename&gt;
+
+<span class="c">####  docker commands  ####</span>
+<span class="c"># docker run 	# https://docs.docker.com/engine/reference/run/</span>
+docker images
+docker image <span class="nb">ls
+</span>docker images <span class="nt">--no-trunc</span>
+docker run ubuntu:16.04
+docker run <span class="nt">-d</span>				<span class="c"># Detached mode</span>
+docker run <span class="nt">-d</span> <span class="nt">-rm</span>			<span class="c"># the container is removed when exits</span>
+docker run <span class="nt">--name</span> &lt;uuid long&gt; &lt;uuid short&gt; &lt;Name&gt;
+docker container run hello-world
+docker container run <span class="nt">-it</span> <span class="nt">--name</span> python-container &lt;a3&gt; <span class="c">#IMAGE ID</span>
+docker container <span class="nb">ls</span> <span class="nt">-a</span> 		<span class="c"># active status</span>
+docker container ps <span class="nt">-a</span>		<span class="c"># Container IDs</span>
+docker container start &lt;container id/name&gt;
+docker attach &lt;uniq start container id/name&gt;
+docker image <span class="nb">history </span>nginx	<span class="c"># expose</span>
+docker container <span class="nb">exec</span> <span class="nt">-it</span> &lt;containerID&gt; <span class="nb">ls</span> /usr/share/nginx/html
+docker container <span class="nb">exec</span> <span class="nt">-it</span> &lt;containerID&gt; /bin/bash
+
+<span class="c">####  docker commands  ####</span>
+
+
+<span class="c">####  Docker container Logging  ####</span>
+<span class="c"># https://12factor.net/logs</span>
+<span class="c"># https://docs.python.org/2/howto/logging.html</span>
+docker container <span class="nb">ls</span> <span class="nt">-a</span>
+docker container logs &lt;containerID&gt;
+<span class="c">####  Docker container Logging  ####</span>
+
+
+<span class="c">####  Docker container management  ####</span>
+
+docker container rm &lt;container id/name&gt;
+docker container <span class="nb">ls</span> <span class="nt">-a</span>
+docker images
+docker rmi &lt;id&gt;
+docker rmi <span class="nt">-f</span> docker/whalesay		<span class="c"># removes docker image forces</span>
+docker rm <span class="sb">`</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="sb">`</span>		<span class="c"># removes all old ran images</span>
+docker system purge			<span class="c"># remove images, containers, volumes and networks</span>
+docker system purge <span class="nt">-a</span>			<span class="c"># remove all unused and stopped containers</span>
+docker images purge			<span class="c"># </span>
+
+<span class="c">####  Docker container management  ####</span>
+
+<span class="c">### Pushing docker images to DockerHub</span>
+docker login		<span class="c">#username and password "Warning password"</span>
+docker images
+docker tag &lt;ImageID&gt; username/repository:tag
+docker images
+docker push username/repository
+docker pull username/repository:tag
+docker container top &lt;name&gt;
+docker container stats &lt;name&gt;
+
+
+<span class="c">####  docker ports  ####</span>
+<span class="c"># Exposing ports</span>
+docker container run <span class="nt">-d</span> <span class="nt">--expose</span> 3000 nginx	<span class="c"># port 80 and 3000 exposed, nothing mapped to 3000</span>
+
+<span class="c"># publishing ports</span>
+docker container run <span class="nt">-d</span> <span class="nt">--expose</span> 3000 <span class="nt">-p</span> 80:3000 nginx	<span class="c"># 80/tcp, 0.0.0.0:80-&gt;3000/tcp, nothing mapped locally on 3000</span>
+docker container run <span class="nt">-d</span> <span class="nt">--expose</span> 3000 <span class="nt">-p</span> 8080:80 nginx	<span class="c"># curl localhost:8080</span>
+docker container run <span class="nt">-d</span> <span class="nt">-P</span> nginx		<span class="c"># Assigns random localhost port 0.0.0.0:32768-&gt;80/tcp</span>
+docker container port &lt;container id&gt; 		<span class="c"># lists all open ports on the container</span>
+
+curl <span class="nt">-4</span> icanhazip.com		<span class="c"># shows external IP address</span>
+docker container inspect &lt;containerid&gt; | <span class="nb">grep </span>IPAdd
+docker inspect &lt;container&gt; | <span class="nb">grep</span> <span class="nt">-i</span> ipaddress
+docker run <span class="nt">-d</span> <span class="nt">--name</span><span class="o">=</span>WebServer1 <span class="nt">-P</span> nginx:latest 
+docker container <span class="nb">ls
+</span>docker container run <span class="nt">-d</span> <span class="nt">-p</span> 80:80 httpd
+elinks external ip
+docker ps 32770-&gt;/443 32771-&gt;80
+docker port WebServer1 <span class="nv">$CONTAINERPORT</span>
+docker run <span class="nt">-d</span> <span class="nt">-p</span> 8080:80 8443:443 <span class="nt">--name</span><span class="o">=</span>WebServer2 nginx:latest
+elinks localhost:8080
+<span class="c">####  docker ports  ####</span>
+
+
+<span class="c">### docker container volumes</span>
+docker volume <span class="nb">ls
+</span>docker volume create devvolume
+docker volume inspect devvolume
+docker container run <span class="nt">-d</span> <span class="nt">--name</span> devcont <span class="nt">--mount</span> <span class="nb">source</span><span class="o">=</span>devvolume,target<span class="o">=</span>/app nginx
+docker container run <span class="nt">-d</span> <span class="nt">--name</span> devcont2 <span class="nt">-v</span> devvolume:/app nginx
+<span class="nb">sudo ls</span> /var/lib/docker/volumes/devvolume/_data
+docker container <span class="nb">exec</span> <span class="nt">-it</span> devcont sh
+
+<span class="c">####  Docker Networking  ####</span>
+<span class="c"># Docker Networking:</span>
+
+Open-source pluggable architecture
+Container Network Model <span class="o">(</span>CNM<span class="o">)</span>
+libnetwork implements CNM
+Drivers extend the network topologies
+
+<span class="c"># Network Drivers:</span>
+
+bridge
+host
+overlay
+macvlan
+none
+Network plugins
+
+<span class="c"># Container Network Model</span>
+Defines three building blocks:
+
+Sandboxes
+Endpoints
+Networks
+
+<span class="c">## Network config</span>
+docker network <span class="nt">-h</span>
+docker network <span class="nb">ls
+</span>docker network inspect bridge
+docker network rm br00		<span class="c"># created, caution</span>
+docker network connect
+docker network disconnect
+
+<span class="c">#  Create a new network</span>
+docker network create <span class="nt">--subnet</span> 10.1.0.0/24 <span class="nt">--gateway</span> 10.1.0.1 br02
+ifconfig
+docker network inspect br02
+docker network prune
+docker network create <span class="nt">--subnet</span> 10.1.0.0/16 <span class="nt">--gateway</span> 10.1.0.1 <span class="se">\</span>
+<span class="nt">--ip-range</span><span class="o">=</span>10.1.4.0/24 <span class="nt">--driver</span><span class="o">=</span>bridge <span class="nt">--label</span><span class="o">=</span>host4network br04
+docker network inspect br04
+docker container run <span class="nt">--name</span> network-test01 <span class="nt">-it</span> <span class="nt">--network</span> br04 centos /bin/bash
+yum update <span class="nt">-y</span>
+yum install <span class="nt">-y</span> net-tools
+ifconfig
+netstat <span class="nt">-rn</span>
+<span class="nb">cat</span> /etc/resolv.conf
+
+docker container run <span class="nt">-d</span> <span class="nt">--name</span> network-test02 <span class="nt">--ip</span> 10.1.4.102 <span class="nt">--network</span> br04 nginx
+docker container inspect network-test02 | <span class="nb">grep </span>IPAddr
+docker container inspect network-test04
+<span class="c"># network 2 containers</span>
+docker network create <span class="nt">-d</span> bridge <span class="nt">--internal</span> localhost
+
+docker container run <span class="nt">-d</span> <span class="nt">--name</span> test_mysql <span class="se">\</span>
+<span class="nt">-e</span> <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>P4SSw0rd0 <span class="se">\</span>
+<span class="nt">--network</span> localhost mysql:5.7
+
+docker container run <span class="nt">-it</span> <span class="nt">--name</span> ping-mysql <span class="se">\</span>
+<span class="nt">--network</span> bridge <span class="nt">--network</span> localhost <span class="se">\</span>
+centos
+
+docker container run <span class="nt">-it</span> <span class="nt">--name</span> cant-ping-mysql <span class="se">\</span>
+centos
+
+docker container run <span class="nt">-d</span> <span class="nt">--name</span> private-nginx <span class="nt">-p</span> 8081:80 <span class="nt">--network</span> localhost nginx
+docker container inspect private-nginx
+
+<span class="c">####  Docker Networking  ####</span>
+
+
+<span class="c">####  Docker Storage  ####</span>
+Non-persistent
+Persistent
+  Volumes
+storage location - /var/lib/docker/&lt;STORAGE-DRIVER&gt;/
+Storage drivers
+rhel overlay2
+ubuntu overlay2 or aufs
+suse btrfs
+
+<span class="c"># Docker volume</span>
+docker volume create <span class="nt">-h</span>
+docker volume inspect test-volume1
+docker volume prune or rm
+docker volume <span class="nb">ls</span>
+
+<span class="c"># Docker bind mounts</span>
+mkdir target		<span class="c"># localhost</span>
+docker container run <span class="nt">-d</span> <span class="se">\</span>
+<span class="o">&gt;</span> <span class="nt">--name</span> nginx-bind-mount1 <span class="se">\</span>
+<span class="o">&gt;</span> <span class="nt">--mount</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bind</span>,source<span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>/target,target<span class="o">=</span>/app <span class="se">\</span>
+<span class="o">&gt;</span> nginx
+
+docker container run <span class="nt">-d</span> <span class="se">\</span>
+<span class="o">&gt;</span> <span class="nt">--name</span> nginx-bind-mount2 <span class="se">\</span>
+<span class="o">&gt;</span> <span class="nt">-v</span> <span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>/target2:/app <span class="se">\</span>
+<span class="o">&gt;</span> nginx
+
+<span class="nb">bind </span>mount can be used <span class="k">for </span>configuration files.
+
+docker container run <span class="nt">-d</span> <span class="se">\</span>
+ <span class="nt">--name</span> nginx-volume1 <span class="se">\</span>
+ <span class="nt">--mount</span> <span class="nb">type</span><span class="o">=</span>volume,source<span class="o">=</span>html-volume,target<span class="o">=</span>/usr/share/nginx/html/ <span class="se">\</span>
+ nginx
+
+<span class="c">####  Docker Storage  ####</span>
+
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

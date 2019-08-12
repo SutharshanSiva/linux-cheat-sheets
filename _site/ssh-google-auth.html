@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Installing google-authenticator | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Installing google-authenticator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/ssh-google-auth.html" />
+<meta property="og:url" content="http://localhost:4000/ssh-google-auth.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Installing google-authenticator","url":"http://localhost:4000/ssh-google-auth.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="installing-google-authenticator">Installing google-authenticator</h1>
+
+<ol>
+  <li>Log into your server</li>
+  <li>Open up a terminal window</li>
+  <li>Install the necessary dependencies with the command sudo apt-get install libpam0g-dev</li>
+  <li>Install the tools for downloading and compiling the software with the command sudo apt-get install make gcc wget</li>
+  <li>Download the google-authenticator source with the command wget
+http://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2</li>
+  <li>Extract the downloaded file with the command tar xvfj libpam-google-authenticator-1.0-source.tar.bz2</li>
+  <li>Change into the newly created directory with the command cd libpam-google-authenticator-1.0</li>
+  <li>Compile the code with the command make</li>
+  <li>Install the tool with the command sudo make install</li>
+</ol>
+
+<h1 id="running-google-authenticator">Running google-authenticator</h1>
+<h1 id="from-the-same-terminal-window-issue-the-command-google-authenticator-and-walk-through-the-wizard-this-will-ask-you-the-following-questions-answer-y-to-all-questions">From the same terminal window, issue the command google-authenticator and walk through the wizard. This will ask you the following questions (answer “y” to all questions):</h1>
+
+<ul>
+  <li>Do you want authentication tokens to be time-based (y/n) y</li>
+  <li>Do you want me to update your “/root/.google_authenticator” file (y/n) y</li>
+  <li>Do you want to disallow multiple uses of the same authenticationtoken? This restricts you to one login about every 30s, but it increasesyour chances to notice or even prevent man-in-the-middle attacks (y/n) y</li>
+  <li>By default, tokens are good for 30 seconds and in order to compensate forpossible time-skew between the client and the server, we allow an extratoken before and after the current time. If you experience problems with poortime synchronization, you can increase the window from its defaultsize of 1:30min to about 4min. Do you want to do so (y/n) y</li>
+  <li>If the computer that you are logging into isn’t hardened against brute-forcelogin attempts, you can enable rate-limiting for the authentication module.By default, this limits attackers to no more than 3 login attempts every 30s.Do you want to enable rate-limiting (y/n) y</li>
+</ul>
+
+<p>After you answer the first question, the tool will echo back your secret key and emergency scratch codes. You need to save these to another file for reference. Very important</p>
+
+<h1 id="configure-ssh-to-use-google-authenticator-and-the-pam-module">Configure SSH to use Google Authenticator and the PAM module</h1>
+<h1 id="now-you-have-to-configure-ssh-to-use-the-new-tools-first-lets-enable-the-pam-module">Now you have to configure SSH to use the new tools. First, let’s enable the PAM module.</h1>
+
+<p>To do this, issue the command sudo nano /etc/pam.d/sshd. With the file open, add the following line under Read environment variables from /etc/environment and:</p>
+
+<p>auth required pam_google_authenticator.so</p>
+
+<p>Save that file and then open the file /etc/ssh/sshd_config. In this file, look for:</p>
+
+<p>ChallengeResponseAuthentication no</p>
+
+<p>and change it to:</p>
+
+<p>ChallengeResponseAuthentication yes</p>
+
+<p>Save that file and restart sshd with the command sudo service sshd restart.</p>
+
+<h1 id="setup-google-authenticator-app">Setup Google Authenticator app</h1>
+<h1 id="now-its-time-to-set-up-the-app-on-your-android-device-install-the-google-authenticator-and-open-it-up-from-the-main-screen-tap-the-settings-menu-three-vertical-dots-in-the-upper-right-corner-and-tap-set-up-account-in-the-new-window-tap-enter-provided-key-finally-go-back-to-the-information-the-google-authenticator-presented-you-and-get-your-secret-key-that-secret-key-is-what-you-use-to-set-up-the-account-in-the-manual-account-entry-screen-figure-a-give-the-entry-a-name-enter-your-secret-key-select-time-based-from-the-drop-down-and-tap-add">Now it’s time to set up the app on your Android device. Install the Google Authenticator and open it up. From the main screen, tap the Settings menu (three vertical dots in the upper right corner) and tap Set up account. In the new window, tap Enter provided key. Finally, go back to the information the google-authenticator presented you and get your secret key. That secret key is what you use to set up the account. In the Manual account entry screen (Figure A), give the entry a name, enter your secret key, select Time based from the drop-down, and tap Add.</h1>
+
+<h1 id="logging-in">Logging in</h1>
+<h1 id="its-time-to-log-in-go-to-another-linux-box-and-using-the-ssh-command-log-into-the-server-you-should-first-be-prompted-for-your-user-password-once-the-password-authenticates-you-will-then-be-asked-for-the-verification-code-to-get-the-verification-code-open-the-google-authenticator-app-on-your-android-device-and-enter-the-time-sensitive-code-displayed-for-the-newly-added-server-once-youve-entered-a-legitimate-code-you-will-be-given-access-to-the-server-if-you-dont-have-that-code-generated-by-the-google-authenticator-you-will-not-be-allowed-in-period">It’s time to log in. Go to another Linux box and, using the ssh command, log into the server. You should first be prompted for your user password. Once the password authenticates, you will then be asked for the verification code. To get the verification code, open the Google Authenticator app on your Android device, and enter the time-sensitive code displayed for the newly added server. Once you’ve entered a legitimate code, you will be given access to the server. If you don’t have that code generated by the Google Authenticator, you will not be allowed in. Period.</h1>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

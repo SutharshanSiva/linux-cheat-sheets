@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>To install a package: | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="To install a package:" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/rpm.html" />
+<meta property="og:url" content="http://localhost:4000/rpm.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"To install a package:","url":"http://localhost:4000/rpm.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="to-install-a-package">To install a package:</h1>
+<p>rpm -ivh <rpm></rpm></p>
+
+<h1 id="to-remove-a-package">To remove a package:</h1>
+<p>rpm -e <package></package></p>
+
+<h1 id="to-find-what-package-installs-a-file">To find what package installs a file:</h1>
+<p>rpm -qf &lt;/path/to/file&gt;</p>
+
+<h1 id="to-find-what-files-are-installed-by-a-package">To find what files are installed by a package:</h1>
+<p>rpm -ql <package>
+rpm -qpl <rpm></rpm></package></p>
+
+<h1 id="to-find-what-packages-require-a-package-or-file">To find what packages require a package or file:</h1>
+<p>rpm -q –whatrequires <package>
+rpm -q --whatrequires <file></file></package></p>
+
+<h1 id="to-list-all-installed-packages">To list all installed packages:</h1>
+<p>rpm -qa</p>
+
+<h1 id="verify-rpm-database">verify rpm database</h1>
+<p>cd /var/lib/rpm/
+/usr/lib/rpm/rpmdb_verify Packages
+mv Packages Packages.bad
+/usr/lib/rpm/rpmdb_dump Packages.bad | /usr/lib/rpm/rpmdb_load Packages
+/usr/lib/rpm/rpmdb_verify Packages
+rpm -qa &gt; /dev/null
+rpm -vv –rebuilddb</p>
+
+<h1 id="edit-etcyumconf-to-remove-the-exclusion-for-httpd">Edit /etc/yum.conf to remove the exclusion for httpd:</h1>
+<p>vim /etc/yum.conf</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

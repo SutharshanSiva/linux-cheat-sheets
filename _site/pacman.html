@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>All the following command work as well with multiple package names | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="All the following command work as well with multiple package names" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/pacman.html" />
+<meta property="og:url" content="http://localhost:4000/pacman.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"All the following command work as well with multiple package names","url":"http://localhost:4000/pacman.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="all-the-following-command-work-as-well-with-multiple-package-names">All the following command work as well with multiple package names</h1>
+
+<h1 id="to-search-for-a-package">To search for a package</h1>
+<p>pacman -Ss <package name=""></package></p>
+
+<h1 id="to-update-the-local-package-base-and-upgrade-all-out-of-date-packages">To update the local package base and upgrade all out of date packages</h1>
+<p>pacman -Suy</p>
+
+<h1 id="to-install-a-package">To install a package</h1>
+<p>pacman -S <package name=""></package></p>
+
+<h1 id="to-uninstall-a-package">To uninstall a package</h1>
+<p>pacman -R <package name=""></package></p>
+
+<h1 id="to-uninstall-a-package-and-his-depedencies-removing-all-new-orphans">To uninstall a package and his depedencies, removing all new orphans</h1>
+<p>pacman -Rcs <package name=""></package></p>
+
+<h1 id="to-get-informations-about-a-package">To get informations about a package</h1>
+<p>pacman -Si <package name=""></package></p>
+
+<h1 id="to-install-a-package-from-builded-package-file-tarxz">To install a package from builded package file (.tar.xz)</h1>
+<p>pacman -U &lt;file name/file url&gt;</p>
+
+<h1 id="to-list-the-commands-provided-by-an-installed-package">To list the commands provided by an installed package</h1>
+<p>pacman -Ql <package name=""> | sed -n -e 's/.*\/bin\///p' | tail -n +2</package></p>
+
+<h1 id="to-list-explicitly-installed-packages">To list explicitly installed packages</h1>
+<p>pacman -Qe</p>
+
+<h1 id="to-list-orphan-packages-installed-as-dependencies-and-not-required-anymore">To list orphan packages (installed as dependencies and not required anymore)</h1>
+<p>pacman -Qdt</p>
+
+<h1 id="you-cant-directly-install-packages-from-the-arch-user-database-aur-with-pacman">You can’t directly install packages from the Arch User Database (AUR) with pacman.</h1>
+<h1 id="you-need-yaourt-to-perform-that-but-considering-yaourt-itself-is-in-the-aur-here-is-how-to-build-a-package-from-its-tarball">You need yaourt to perform that. But considering yaourt itself is in the AUR, here is how to build a package from its tarball.</h1>
+<h1 id="installing-a-package-from-aur-is-a-relatively-simple-process">Installing a package from AUR is a relatively simple process:</h1>
+<h1 id="--retrieve-the-archive-corresponding-to-your-package-from-aur-website">- Retrieve the archive corresponding to your package from AUR website</h1>
+<h1 id="--extract-the-archive-preferably-in-a-folder-for-this-purpose">- Extract the archive (preferably in a folder for this purpose)</h1>
+<h1 id="--run-makepkg-in-the-extracted-directory-makepkg-s-allows-you-to-install-any-dependencies-automatically-from-deposits">- Run makepkg in the extracted directory. (makepkg-s allows you to install any dependencies automatically from deposits.)</h1>
+<h1 id="--install-the-package-created-using-pacman">- Install the package created using pacman</h1>
+<h1 id="assuming-pkgname-contains-the-package-name">Assuming $pkgname contains the package name.</h1>
+<p>wget “https://aur.archlinux.org/packages/${pkgname::2}/$pkgname/$pkgname.tar.gz”
+tar zxvf “$pkgname.tar.gz”
+cd “$pkgname”</p>
+<h1 id="build-the-package">Build the package</h1>
+<p>makepkg -s</p>
+<h1 id="install">Install</h1>
+<p>sudo pacman -U &lt;package file (.pkg.tar.xz)&gt;</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

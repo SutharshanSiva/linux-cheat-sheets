@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/sed.html" />
+<meta property="og:url" content="http://localhost:4000/sed.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/sed.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To replace all occurrences of "day" with "night" and write to stdout:</span>
+sed <span class="s1">'s/day/night/g'</span> file.txt
+sed <span class="s1">'s/day/night/w'</span> night.txt file.txt
+sed <span class="s1">'0./day/night/'</span>	<span class="c"># first occurance</span>
+
+<span class="c"># To replace all occurrences of "day" with "night" within file.txt:</span>
+sed <span class="nt">-i</span> <span class="s1">'s/day/night/g'</span> file.txt
+
+<span class="c"># To replace all occurrences of "day" with "night" on stdin:</span>
+<span class="nb">echo</span> <span class="s1">'It is daytime'</span> | sed <span class="s1">'s/day/night/g'</span>
+
+<span class="c"># To remove leading spaces</span>
+sed <span class="nt">-i</span> <span class="nt">-r</span> <span class="s1">'s/^\s+//g'</span> file.txt
+
+<span class="c"># To remove empty lines and print results to stdout:</span>
+sed <span class="s1">'/^$/d'</span> file.txt
+
+<span class="c"># To delete lines that begin with a character</span>
+sed <span class="nt">-i</span> <span class="s1">'/^usisi01/d'</span> file
+sed <span class="nt">-i</span> <span class="s1">'/usisi01/d'</span> /etc/fstab		<span class="c"># removes all instances including remarked out entries</span>
+
+<span class="c"># To delete lines from a file</span>
+sed <span class="nt">-i</span> <span class="s1">'$d'</span> file1			<span class="c"># delete last line</span>
+sed <span class="nt">-i</span> <span class="s1">'1d'</span> file1			<span class="c"># delete first line</span>
+sed <span class="nt">-i</span> <span class="s1">'m,nd'</span> file1			<span class="c"># remove lines from m to n '2,4d' 2 to 4</span>
+sed <span class="nt">-i</span> <span class="s1">'2,4!d'</span> file1			<span class="c"># remove all lines except range</span>
+
+<span class="c"># If you want to create a new file with the deleted entries removed from the original</span>
+sed <span class="s1">'/usisi01/d'</span> file <span class="o">&gt;</span> newfile
+
+<span class="c"># To replace newlines in multiple lines</span>
+sed <span class="s1">':a;N;$!ba;s/\n//g'</span>  file.txt
+
+
+<span class="c"># viewing the ntp.conf</span>
+sed <span class="nt">-i</span>.<span class="k">$(</span>date +%F<span class="k">)</span> <span class="s1">'/^#/d;/^$/d'</span> /etc/ntp.conf	<span class="c"># -i in place edit creating a backup with date extension formatted  # Delete commented and blank lines</span>
+
+<span class="nt">-i</span><span class="o">[</span>SUFFIX], <span class="nt">--in-place</span><span class="o">[=</span>SUFFIX]		<span class="c"># edit files in place (makes backup if SUFFIX supplied)</span>
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

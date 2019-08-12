@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/find.html" />
+<meta property="og:url" content="http://localhost:4000/find.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/find.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># To find files by case-insensitive extension (ex: .jpg, .JPG, .jpG):</span>
+find <span class="nb">.</span> <span class="nt">-iname</span> <span class="s2">"*.jpg"</span>
+
+<span class="c"># To find directories:</span>
+find <span class="nb">.</span> <span class="nt">-type</span> d
+
+<span class="c"># To find files:</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f
+
+<span class="c"># To find files by octal permission:</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-perm</span> 777
+
+<span class="c"># To find files with setuid bit set:</span>
+find <span class="nb">.</span> <span class="nt">-xdev</span> <span class="se">\(</span> <span class="nt">-perm</span> <span class="nt">-4000</span> <span class="se">\)</span> <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nb">ls</span> <span class="nt">-l</span>
+
+<span class="c"># To find files with extension '.txt' and remove them:</span>
+find ./path/ <span class="nt">-name</span> <span class="s1">'*.txt'</span> <span class="nt">-exec</span> rm <span class="s1">'{}'</span> <span class="se">\;</span>
+
+<span class="c"># To find files with extension '.txt' and look for a string into them:</span>
+find ./path/ <span class="nt">-name</span> <span class="s1">'*.txt'</span> | xargs <span class="nb">grep</span> <span class="s1">'string'</span>
+
+<span class="c"># To find files with size bigger than 5 Mb and sort them by size:</span>
+find <span class="nb">.</span> <span class="nt">-size</span> +5M <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nb">ls</span> <span class="nt">-Ssh</span> | sort <span class="nt">-z</span>
+
+<span class="c"># To find files bigger thank 2 MB and list them:</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-size</span> +20000k <span class="nt">-exec</span> <span class="nb">ls</span> <span class="nt">-lh</span> <span class="o">{}</span> <span class="se">\;</span> | awk <span class="s1">'{ print $9 ": " $5 }'</span>
+
+<span class="c"># To find files modified more than 7 days ago and list file information</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-mtime</span> +7d <span class="nt">-ls</span>
+
+<span class="c"># To find symlinks owned by a user and list file information</span>
+find <span class="nb">.</span> <span class="nt">-type</span> l <span class="nt">--user</span><span class="o">=</span>username <span class="nt">-ls</span>
+
+<span class="c"># To search for and delete empty directories</span>
+find <span class="nb">.</span> <span class="nt">-type</span> d <span class="nt">-empty</span> <span class="nt">-exec</span> rmdir <span class="o">{}</span> <span class="se">\;</span>
+
+<span class="c"># To search for directories named build at a max depth of 2 directories</span>
+find <span class="nb">.</span> <span class="nt">-maxdepth</span> 2 <span class="nt">-name</span> build <span class="nt">-type</span> d
+
+<span class="c"># To find files and copy them to a new directory in the current directory</span>
+find <span class="nb">.</span> <span class="nt">-maxdepth</span> 1 <span class="nt">-name</span> file <span class="nt">-exec</span> cp <span class="s1">'{}'</span> new1/ <span class="se">\;</span> <span class="nt">-print</span>
+
+<span class="c"># To search all files who are not in .git directory</span>
+find <span class="nb">.</span> <span class="o">!</span> <span class="nt">-iwholename</span> <span class="s1">'*.git*'</span> <span class="nt">-type</span> f
+
+<span class="c"># Find all files that have the same node (hard link) as MY_FILE_HERE</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-samefile</span> MY_FILE_HERE 2&gt;/dev/null
+
+<span class="c"># Find commands </span>
+find /path/to/dir <span class="nt">-empty</span> <span class="nt">-type</span> d <span class="nt">-delete</span>
+find /path/to/dir <span class="nt">-empty</span> <span class="nt">-type</span> f <span class="nt">-delete</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-empty</span> | wc <span class="nt">-l</span>
+find <span class="nb">.</span> <span class="nt">-type</span> d <span class="nt">-empty</span> | wc <span class="nt">-l</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-empty</span> <span class="nt">-delete</span>
+find /path/to/dir/ <span class="nt">-type</span> d <span class="nt">-empty</span> <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nt">-I</span> <span class="o">{}</span> /bin/rmdir <span class="s2">"{}"</span>
+find /path/to/dir <span class="nt">-type</span> f | xargs <span class="nb">grep</span> <span class="nt">-l</span> <span class="s2">"foo"</span>
+find <span class="nb">.</span> <span class="nt">-name</span> <span class="s2">"*.bak"</span> <span class="nt">-type</span> f <span class="nt">-print</span> | xargs /bin/rm <span class="nt">-f</span>
+find <span class="nb">.</span> or /directory/ <span class="nt">-mmin</span> +10 <span class="nt">-type</span> f <span class="nt">-exec</span> rm <span class="o">{}</span> <span class="se">\;</span>
+find <span class="nb">.</span> or /directory/ <span class="nt">-mtime</span> +10 <span class="nt">-type</span> f <span class="nt">-exec</span> rm <span class="o">{}</span> <span class="se">\;</span>
+find <span class="nb">.</span> /directory/ <span class="nt">-size</span> +10000k <span class="nt">-exec</span> <span class="nb">ls</span> <span class="nt">-lh</span> <span class="o">{}</span> <span class="se">\;</span>
+find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-printf</span> <span class="s1">'%s %p\n'</span>| sort <span class="nt">-nr</span> | head <span class="nt">-10</span>
+find /path/to/search/ <span class="nt">-type</span> f <span class="nt">-iname</span> <span class="s2">"*.mp4"</span> <span class="nt">-printf</span> <span class="s1">'%s %p\n'</span>| sort <span class="nt">-nr</span> | head <span class="nt">-10</span>
+find <span class="nt">-type</span> f <span class="nt">-printf</span> <span class="s2">"%s %p</span><span class="se">\n</span><span class="s2">"</span> | sort <span class="nt">-rn</span> | head <span class="nt">-n</span> 5
+
+<span class="c"># find actions</span>
+<span class="nt">-delete</span>		<span class="c"># delete currently matching file</span>
+<span class="nt">-ls</span>		<span class="c"># perform a ls -dils on matching files</span>
+<span class="nt">-print</span>		<span class="c"># output the full pathname of the matching file</span>
+<span class="nt">-quit</span>		<span class="c"># quit once a match has been made</span>
+
+<span class="c"># find options</span>
+<span class="nt">-depth</span>		<span class="c"># direct find to process a directory's files before the directory itself</span>
+<span class="nt">-maxdepth</span> lvls	<span class="c"># max numver of levels</span>
+<span class="nt">-mount</span>		<span class="c"># direct find not to traverse directories that are mounted</span>
+
+find /var/log <span class="nt">-size</span> +1G <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nb">ls</span> <span class="nt">-Ssh</span> | sort <span class="nt">-z</span>
+find  <span class="nt">-type</span> f <span class="nt">-exec</span> awk <span class="s1">'BEGIN{stringa=0;stringb=0}/stringa/{stringa++}/stringb/{stringb++}END{if(stringa&gt;0 &amp;&amp; stringb&gt;0){print FILENAME}}'</span> <span class="o">{}</span> <span class="se">\;</span>
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

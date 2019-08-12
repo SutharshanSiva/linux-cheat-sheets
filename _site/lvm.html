@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/lvm.html" />
+<meta property="og:url" content="http://localhost:4000/lvm.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/lvm.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">####  LVM Logical Volume Management for Virtual Machines  ####</span>
+<span class="c">#  Take a snapshot prior to starting this</span>
+1. Login to vSphere
+2. Edit settings on box
+3. Examine the settings of the other drive you want to expand, make a note of the
+datastore it is on, the Type of disk, <span class="k">if </span>it is Thin, you will want to <span class="nb">set </span>your new drive with
+the settings listed below:
+4. Verify independent and virtual device node match the other drives <span class="k">then </span>finish
+5. lsscsi displays scsi id: /dev/sd[x]
+<span class="c">####  LVM Logical Volume Management for Virtual Machines  ####</span>
+
+
+<span class="c">####  Adding a new drive and volume group  ####</span>
+lsblk
+pvcreate /dev/sdd
+vgcreate myvol /dev/sdd
+lvcreate <span class="nt">-l</span> 100%FREE <span class="nt">-n</span> devdisks myvol
+lvdisplay
+mkfs.ext4 /dev/myvol/devdisks		<span class="c"># ext4 allows for shrinkage of volumes - xfs does not allow it</span>
+mkdir /mnt/newvol
+blkid /dev/sdd				<span class="c"># copy blkid UUID for /dev/mapper/myvol-devdisks</span>
+<span class="c"># edit /etc/fstab</span>
+<span class="nv">UUID</span><span class="o">=</span>&lt;blkid#&gt;	/mnt/newvol	ext4	defaults 0 0
+mount <span class="nt">-a</span>
+df <span class="nt">-h</span>
+<span class="c">####  Adding a new drive and volume group  ####</span>
+
+
+<span class="c">####  Extending a Physical Volume  ####</span>
+fdisk <span class="nt">-l</span>
+parted <span class="nt">-l</span>
+cfdisk /dev/sdc
+<span class="nb">echo</span> <span class="s2">"- - -"</span> <span class="o">&gt;</span> /sys/class/scsi_host/host0/scan		<span class="c"># added physical disk</span>
+<span class="nb">echo </span>1 <span class="o">&gt;</span> /sys/class/scsci_device/&lt;device&gt;/device/rescan	<span class="c"># added space to existing disk</span>
+lsblk			<span class="c"># look for new size</span>
+pvresize /dev/sdc
+
+<span class="c"># Resizing a logical volume do above steps and</span>
+lvextend <span class="nt">-l</span> 100%FREE /dev/mapper/VolumeName
+lvextend <span class="nt">-L</span> +50G <span class="nt">-n</span> /dev/volumename/logicalname
+resize2fs or xfs_growfs /dev/VolumeName/LogicalName
+<span class="c">####  Extending a Physical Volume  ####</span>
+
+
+<span class="c">####  Extending a volume group  ####</span>
+<span class="c"># create new primary partition in fdisk</span>
+<span class="c"># create a new physical volume</span>
+pvcreate /dev/sdb1 /dev/sdb2
+pvdisplay
+vgextend  myVOL /dev/sdb2 
+vgdisplay
+lvextend /dev/mapper/VolumeName/LogicalName /dev/sdb2
+lvdisplay
+e2fsck <span class="nt">-f</span> /dev/VolumeName/LogicalName
+resize2fs /dev/VolumeName/LogicalName
+df <span class="nt">-h</span><span class="p">;</span> mount <span class="nt">-a</span><span class="p">;</span> df <span class="nt">-h</span>
+<span class="c">####  Extending a volume group  ####</span>
+
+
+
+<span class="c">####  Extending a Logical group  ####</span>
+lvextend <span class="nt">-L</span> +200M /dev/VG/LV <span class="nt">-r</span>   <span class="c"># to resize</span>
+xfs_growfs /mnt/lv
+
+
+<span class="c">###  For xfs file system (RedHat 7.1 /home)</span>
+yum install xfsprogs.x86_64
+mount <span class="nt">-t</span> xfs /dev/mapper/VolumeName-LogicalName /home
+xfs_growfs /home
+df <span class="nt">-h</span>
+
+
+<span class="c">###  Remove a bad hdd.</span>
+<span class="c"># remove bad drive.</span>
+lvremove <span class="nt">-f</span> vgAPPS/lv-Vol0				<span class="c"># removes logical volume</span>
+vgreduce <span class="nt">--removemissing</span>
+
+
+<span class="c">###  Remove Logical Volume</span>
+lvs
+vim /etc/fstab
+umount /data01
+lvchange <span class="nt">-an</span> /dev/datavg/testlv
+lvremove /dev/datavg/testlv
+
+
+<span class="c">###  Remove Volume Group</span>
+vgchange <span class="nt">-an</span> datavg
+vgremove datavg
+
+
+<span class="c">###  Delete physical volume being used by volume group</span>
+vgreduce vgAPPS /dev/sdb /dev/sdc
+pvremove /dev/sdb /dev/sdc
+
+
+<span class="c">###  More information</span>
+lvs <span class="nt">--units</span> m <span class="nt">-o</span> devices
+parted <span class="nt">-l</span>  		<span class="c"># shows size in mb</span>
+pvresize /dev/sdc	<span class="c"># if vm disk has been increased</span>
+
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

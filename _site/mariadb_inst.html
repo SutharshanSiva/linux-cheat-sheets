@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>How to Install and Secure MariaDB 10 in Centos 7 | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="How to Install and Secure MariaDB 10 in Centos 7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/mariadb_inst.html" />
+<meta property="og:url" content="http://localhost:4000/mariadb_inst.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"How to Install and Secure MariaDB 10 in Centos 7","url":"http://localhost:4000/mariadb_inst.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3 id="how-to-install-and-secure-mariadb-10-in-centos-7">How to Install and Secure MariaDB 10 in Centos 7</h3>
+<h2 id="httpswwwtecmintcominstall-mariadb-in-centos-7">https://www.tecmint.com/install-mariadb-in-centos-7/</h2>
+
+<h2 id="add-the-mariadb-yum-repo-file">Add the Mariadb YUM repo file</h2>
+<p>vim /etc/yum.repos.d/MariaDB.repo</p>
+
+<h1 id="centos-7">Centos 7</h1>
+<p>[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.1/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1</p>
+
+<h1 id="rhel-7">RHEL 7</h1>
+<p>[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.1/rhel7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1</p>
+
+<h2 id="install-mariadb-in-centos-7">Install MariaDB in Centos 7</h2>
+<p>yum install MariaDB-server MariaDB-client -y</p>
+
+<p>systemctl start mariadb
+systemctl enable mariadb
+systemctl status mariadb</p>
+
+<h2 id="secure-mariadb-in-centos-7">Secure MariaDB in Centos 7</h2>
+<p>mysql_secure_installation</p>
+
+<h1 id="remove-anonymous-users-y">remove anonymous users: y</h1>
+<h1 id="disallow-root-login-remotely-y">Disallow root login remotely: y</h1>
+<h1 id="remove-test-database-y">remove test database: y</h1>
+<h1 id="reload-privilege-tables-now-y">Reload privilege tables now: y</h1>
+
+<h2 id="login-to-mariadb">login to mariadb</h2>
+<p>mysql -V
+mysqld –print-defaults
+mysql -u root -p</p>
+
+<h2 id="learn-mariadb-administration">Learn MariaDB Administration</h2>
+<p>https://www.tecmint.com/learn-mysql-mariadb-for-beginners/
+https://www.tecmint.com/learn-mysql-mariadb-advance-functions-sql-queries/
+https://www.tecmint.com/gliding-through-database-mysql-in-a-nutshell-part-i/
+https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/</p>
+
+<p>https://www.tecmint.com/mysql-mariadb-performance-tuning-and-optimization/
+https://www.tecmint.com/mysql-performance-monitoring/
+https://www.tecmint.com/how-to-setup-mysql-master-slave-replication-in-rhel-centos-fedora/
+https://www.tecmint.com/reset-mysql-or-mariadb-root-password/
+https://www.tecmint.com/mysql-mariadb-security-best-practices-for-linux/
+https://www.tecmint.com/check-mysql-database-size-in-linux/</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

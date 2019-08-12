@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to Ireaneus Linux Cheat Sheets webpage | Linux command line cheat sheets website</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/du.html" />
+<meta property="og:url" content="http://localhost:4000/du.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Welcome to Ireaneus Linux Cheat Sheets webpage","url":"http://localhost:4000/du.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># To sort directories/files by size</span>
+du <span class="nt">-sk</span> <span class="k">*</span>| sort <span class="nt">-rn</span>
+
+<span class="c"># To show cumulative humanreadable size</span>
+du <span class="nt">-sh</span> <span class="nb">.</span>	<span class="c"># just the current directory</span>
+du <span class="nt">-xsh</span>		<span class="c"># x is used to exclude NFS partition within the partition that is being scanned</span>
+du <span class="nt">-Sm</span> /var/log | sort <span class="nt">-rn</span> | sed <span class="s1">'{11,$D; =}'</span> | sed <span class="s1">'N; s/\n/ /'</span> | awk <span class="s1">'{printf $1 ":" "\t" $2 "\t" $3 "\n"}'</span>
+
+<span class="c"># To show calculated total</span>
+du <span class="nt">-csh</span>
+du <span class="nt">-ch</span> <span class="nt">--max-depth</span><span class="o">=</span>1 <span class="k">*</span> | egrep <span class="s1">'M|G'</span>	<span class="c"># Will show max directory depth of 1 and grep for Megs and Gigs</span>
+
+<span class="c"># A script for loop to find large file locations</span>
+<span class="k">for </span>i <span class="k">in </span>G M K<span class="p">;</span> <span class="k">do </span>du <span class="nt">-ah</span> | <span class="nb">grep</span> <span class="o">[</span>0-9]<span class="nv">$i</span> | sort <span class="nt">-nr</span> <span class="nt">-k</span> 1<span class="p">;</span> <span class="k">done</span> | head <span class="nt">-n</span> 11
+
+<span class="c"># Number of files search</span>
+<span class="nb">echo</span> <span class="s2">"Detailed Inode usage for: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span> <span class="p">;</span> <span class="k">for </span>d <span class="k">in</span> <span class="sb">`</span>find <span class="nt">-maxdepth</span> 1 <span class="nt">-type</span> d |cut <span class="nt">-d</span><span class="se">\/</span> <span class="nt">-f2</span> |grep <span class="nt">-xv</span> <span class="nb">.</span> |sort<span class="sb">`</span><span class="p">;</span> <span class="k">do </span><span class="nv">c</span><span class="o">=</span><span class="k">$(</span>find <span class="nv">$d</span> |wc <span class="nt">-l</span><span class="k">)</span> <span class="p">;</span> <span class="nb">printf</span> <span class="s2">"</span><span class="nv">$c</span><span class="se">\t\t</span><span class="s2">- </span><span class="nv">$d</span><span class="se">\n</span><span class="s2">"</span> <span class="p">;</span> <span class="k">done</span> <span class="p">;</span> <span class="nb">printf</span> <span class="s2">"Total: </span><span class="se">\t\t</span><span class="k">$(</span>find <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span> | wc <span class="nt">-l</span><span class="k">)</span><span class="se">\n</span><span class="s2">"</span>
+
+find <span class="nb">.</span> <span class="nt">-printf</span> <span class="s2">"%h</span><span class="se">\n</span><span class="s2">"</span> | cut <span class="nt">-d</span>/ <span class="nt">-f-2</span> | sort | uniq <span class="nt">-c</span> | sort <span class="nt">-rn</span>
+find / <span class="nt">-xdev</span> <span class="nt">-printf</span> <span class="s1">'%h\n'</span> | sort | uniq <span class="nt">-c</span> | sort <span class="nt">-k</span> 1 <span class="nt">-n</span>
+</code></pre></div></div>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

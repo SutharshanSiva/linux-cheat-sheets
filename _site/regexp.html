@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Regular Expressions | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Regular Expressions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/regexp.html" />
+<meta property="og:url" content="http://localhost:4000/regexp.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Regular Expressions","url":"http://localhost:4000/regexp.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="regular-expressions">Regular Expressions</h1>
+<h1 id="in-some-ways-they-resemble-the-shells-wildcard-method-of-matching-file--and-pathnames-but-on-a-much-grander-scale-regular-expressions-are-supported-by-many-command-line-tools-and-by-most-programming-languages-to-facilitate-the-solution-of-text-manipulation-problems">In some ways, they resemble the shell’s wildcard method of matching file- and pathnames but on a much grander scale. Regular expressions are supported by many command-line tools and by most programming languages to facilitate the solution of text manipulation problems.</h1>
+
+<h1 id="grep-options-regex-file">grep [options] regex [file…]</h1>
+<h1 id="options">options</h1>
+<p>-i	# Ignore case. Do not distinguish between upper- and lowercase characters. –ignore-case.
+-v	# Invert match. Normally, grep prints lines that contain a match. This option causes grep to print every line that does not contain a match. –invert-match.
+-c 	# Print the number of matches (or non-matches if the -v option is also specified) instead of the lines themselves. –count.
+-l	# Print the name of each file that contains a match instead of the lines themselves. –files-with-matches.
+-L	# Like the -l option, but print only the names of files that do not contain matches. –files-without-match.
+-n	# Prefix each matching line with the number of the line within the file. –line-number.
+-h	# For multifile searches, suppress the output of filenames. –no-filename.</p>
+
+<h1 id="metacharacters">Metacharacters</h1>
+<p>^ $ . [ ] { } - ? * + ( ) | \</p>
+
+<p>.	# grep -h ‘.zip’ dirlist<em>.txt 	## Any character bunzip, bzip2
+^	# grep -h ‘^zip’ dirlist</em>.txt	## Regular expression is at beginning of line.
+$	# grep -h ‘zip$’ dirlist<em>.txt	## Regular expression is at the end of the line.
+[]	# grep -h ‘[bg]zip’ dirlist</em>.txt	## expression is an or statement ‘b or g’
+[^]	# grep -h ‘[^bg]zip’ dirlist<em>.txt 	## the remaining characters are taken to be a set of characters that must not be present at the given character position
+^[]	# grep -h ‘^[A-Z]’ dirlist</em>.txt	## entries start with a capital letter</p>
+
+<h1 id="regular-expression-examples">Regular expression examples</h1>
+<p>for i in {1..10}; do echo “(${RANDOM:0:3}) ${RANDOM:0:3}-${RANDOM:0:4}” » phonelist.txt; done
+grep -Ev ‘^([0-9]{3}) [0-9]{3}-[0-9]{4}$’ phonelist.txt
+(292) 108-518
+(129) 44-1379</p>
+
+<h1 id="check-if-a-directory-say-homeavitecmintexist-or-not-printf-if-the-said-directory-exist-or-not">Check if a directory (say /home/avi/Tecmint)exist or not? Printf if the said directory exist or not</h1>
+<p>[ ! -d /home/avi/Tecmint ] &amp;&amp; printf ‘\nno such /home/avi/Tecmint directory exist\n’ || printf ‘\n/home/avi/Tecmint directory exist\n’</p>
+
+<h1 id="check-and-do-if-directory-doesnt-exist">Check and do if directory doesn’t exist</h1>
+<p>[ ! -d /home/avi/Tecmint ] &amp;&amp; exit</p>
+
+<h1 id="brace-expansion">Brace Expansion</h1>
+<p>echo Front-{A,B,C}-Back</p>
+<h1 id="front-a-back-front-b-back-front-c-back">Front-A-Back Front-B-Back Front-C-Back</h1>
+<p>touch  file{1..5}</p>
+<h1 id="file1-file2-file3-file4-file5">file1 file2 file3 file4 file5</h1>
+
+<p>[ ! -d /home/avi/Tecmint ] &amp;&amp; mkdir /home/avi/Tecmint</p>
+
+<p>find . -regex ‘.<em>[^-_./0-9a-zA-Z].</em>’
+locate –regex ‘bin/(bz|gz|zip)’</p>
+
+<h1 id="using-the--as-a-logical-not">Using the ! as a logical not</h1>
+<p>rm !(2.txt) 	# remove all files except 2.txt
+rm !(*.pdf)	# remove all files except pdf files</p>
+
+<h1 id="grep-examples">grep examples</h1>
+<p>grep ‘^lin’     # beginning of line
+grep ‘my$’      # end of line
+grep ‘^[%<em>]’    # begins with % or *
+grep ‘^[a-zA-Z]’        # starts with letter
+grep ‘^[^a-zA-Z]’       # don’t start with a letter
+grep ‘^.i’              # second letter i 
+grep ‘^%</em>’              # all * whether or not % is in line
+grep ‘^%{1,4}’        # begins with and has 1 or up to 4 %
+grep ‘^1{1}’          # matches 1 begins with 1</p>
+
+<p>grep -v -e ‘^ *#’ -e ‘^$’ /etc/httpd/conf/httpd.conf    #-e expression -v not, removes lines with ‘#’ and ‘$’ endofline space</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

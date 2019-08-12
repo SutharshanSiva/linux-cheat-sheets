@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d2ead7be5e032b4414db8dfc7e38cad0cc952ff3">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Compile a file | Welcome to Ireaneus Linux Cheat Sheets webpage</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Compile a file" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux command line cheat sheets website" />
+<meta property="og:description" content="Linux command line cheat sheets website" />
+<link rel="canonical" href="http://localhost:4000/gcc.html" />
+<meta property="og:url" content="http://localhost:4000/gcc.html" />
+<meta property="og:site_name" content="Welcome to Ireaneus Linux Cheat Sheets webpage" />
+<script type="application/ld+json">
+{"description":"Linux command line cheat sheets website","@type":"WebPage","headline":"Compile a file","url":"http://localhost:4000/gcc.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Welcome to Ireaneus Linux Cheat Sheets webpage</h1>
+        <h2>Linux command line cheat sheets website</h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/ireaneus/linux-cheat-sheets" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="compile-a-file">Compile a file</h1>
+<p>gcc file.c</p>
+
+<h1 id="compile-a-file-with-a-custom-output">Compile a file with a custom output</h1>
+<p>gcc -o file file.c</p>
+
+<h1 id="debug-symbols">Debug symbols</h1>
+<p>gcc -g</p>
+
+<h1 id="debug-with-all-symbols">Debug with all symbols.</h1>
+<p>gcc -ggdb3</p>
+
+<h1 id="build-for-64-bytes">Build for 64 bytes</h1>
+<p>gcc -m64</p>
+
+<h1 id="include-the-directory-usrincludemypersonnallib-to-the-list-of-path-for-include-">Include the directory {/usr/include/myPersonnal/lib/} to the list of path for #include &lt;….&gt;</h1>
+<h1 id="with-this-option-no-warning--error-will-be-reported-for-the-files-in-usrincludemypersonnallib">With this option, no warning / error will be reported for the files in {/usr/include/myPersonnal/lib/}</h1>
+<p>gcc -isystem /usr/include/myPersonnal/lib/</p>
+
+<h1 id="build-a-gui-for-windows-mingw-will-disable-the-termconsole">Build a GUI for windows (Mingw) (Will disable the term/console)</h1>
+<p>gcc -mwindows</p>
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
