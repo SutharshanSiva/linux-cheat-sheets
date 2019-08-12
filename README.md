@@ -22,7 +22,7 @@
 - [axel](axel.md)
 - [az-900](az-900.md)
 
---------------------------------
+---
 - [bash](bash.md)
 - [bower](bower.md)
 - [cheat](cheat.md)
@@ -46,6 +46,8 @@
 - [displayresolutions](displayresolutions.md)
 - [distcc](distcc.md)
 - [dnf](dnf.md)
+
+---
 - [docker](docker.md)
 - [dpkg](dpkg.md)
 - [du](du.md)
