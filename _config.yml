@@ -1,3 +1,5 @@
 theme: jekyll-theme-hacker
 title: Welcome to Ireaneus Linux Cheat Sheets webpage
 Description: Linux Commandline cheatsheets with valuable examples 
+url: https://ireaneus.github.io/linux-cheat-sheets/
+markdown: kramdown
