@@ -1,7 +1,6 @@
 ## Cheatsheets
 
-- [7z](7z.md)
-- [ab](ab.md)
+[7z](7z.md)                   [ab](ab.md)
 - [alias](alias.md)
 - [ansible](ansible.md)
 - [ansi](ansi.md)
