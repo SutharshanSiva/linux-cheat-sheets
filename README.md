@@ -5,8 +5,8 @@
 |:--- |:--- |
 | [7z](7z.md) | A file archiving tool with highest compression ratio |
 | [ab](ab.md) | Apache HTTP Server benchmarking tool |
+| [alias](alias.md) | Create shortcuts to complex command strings |
 
-- [alias](alias.md)
 - [ansible](ansible.md)
 - [ansi](ansi.md)
 - [apache](apache.md)
