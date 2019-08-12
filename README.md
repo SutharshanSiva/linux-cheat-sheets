@@ -18,19 +18,19 @@
 | [asterisk](asterisk.md) | Connect to Asterisk server |
 | [at](at.md) | a task scheduler |
 | [awk](awk.md) | A programming language, views text file as records and fields |
+| [awscli](awscli.md) | Amazon Web Services Commandline |
+| [awscli-profile](awscli-profile.md) | How to setup AWS profile |
+| [axel](axel.md) | Commandline download accelerator |
+| [az-900](az-900.md) | Microsoft Azure az-900 exam notes |
+| [bash](bash.md) | Need I say anything |
+| [bower](bower.md) | Another package installer |
+| [cheat](cheat.md) | How to setup cheat commandline |
+| [chmod](chmod.md) | Change mode permissions on directories and files |
+| [chown](chown.md) | Change ownership |
+| [cmus](cmus.md) | Commandline music player |
+| [convert](convert.md) | image editor |
 
 
-- [awscli](awscli.md)
-- [awscli-profile](awscli-profile.md)
-- [axel](axel.md)
-- [az-900](az-900.md)
-- [bash](bash.md)
-- [bower](bower.md)
-- [cheat](cheat.md)
-- [chmod](chmod.md)
-- [chown](chown.md)
-- [cmus](cmus.md)
-- [convert](convert.md)
 - [cpdf](cpdf.md)
 - [cp](cp.md)
 - [crontab](crontab.md)
