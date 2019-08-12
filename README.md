@@ -6,20 +6,19 @@
 | [7z](7z.md) | A file archiving tool with highest compression ratio |
 | [ab](ab.md) | Apache HTTP Server benchmarking tool |
 | [alias](alias.md) | Create shortcuts to complex command strings |
-
-- [ansible](ansible.md)
-- [ansi](ansi.md)
-- [apache](apache.md)
-- [apk](apk.md)
-- [apparmor](apparmor.md)
-- [apt-cache](apt-cache.md)
-- [apt-get](apt-get.md)
-- [aptitude](aptitude.md)
-- [apt](apt.md)
-- [asciiart](asciiart.md)
-- [asterisk](asterisk.md)
-- [at](at.md)
-- [awk](awk.md)
+| [ansible](ansible.md) | A configuration management system developed by RedHat |
+| [ansi](ansi.md) | American National Standards Institute terminal color codes |
+| [apache](apache.md) | Open Source web application server |
+| [apk](apk.md) | A package manager |
+| [apparmor](apparmor.md) | Confines programs to limited resources |
+| [apt-cache](apt-cache.md) | displays apt cache packages |
+| [apt-get](apt-get.md) | A package installer |
+| [aptitude](aptitude.md) | Another package installer |
+| [apt](apt.md) | Yet another package installer - debian |
+| [asciiart](asciiart.md) | Ascii Art |
+| [asterisk](asterisk.md) | Connect to Asterisk server |
+| [at](at.md) | a task scheduler |
+| [awk](awk.md) | A programming language, views text file as records and fields |
 - [awscli](awscli.md)
 - [awscli-profile](awscli-profile.md)
 - [axel](axel.md)
