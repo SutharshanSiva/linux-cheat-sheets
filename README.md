@@ -1,6 +1,5 @@
 ---
 ## Cheatsheets
----
 
 Command | Description
 ------- | -----------
