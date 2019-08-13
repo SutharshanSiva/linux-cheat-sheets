@@ -1,5 +1,8 @@
-# File management
+# vim
+### Very powerful editor for terminal sessions
 
+##### File management
+```
 :e              reload file
 :q              quit
 :q!             quit without saving changes
@@ -7,9 +10,10 @@
 :w {file}       write new file
 :w !sudo tee %	adds sudo to a read-only file for saving
 :x              write file and exit
+```
 
-# Movement
-
+#### Movement
+```
     k
   h   l         basic motion
     j
@@ -26,11 +30,12 @@ gg              go to first line in file
 G               go to end of file
 gk		move down one displayed line
 gj		move up one displayed line
+```
 
-# Insertion
-#   To exit from insert mode use Esc or Ctrl-C
-#   Enter insertion mode and:
-
+#### Insertion
+#####   To exit from insert mode use Esc or Ctrl-C
+#####   Enter insertion mode and:
+```
 a               append after the cursor
 A               append at the end of the line
 i               insert before the cursor
@@ -41,9 +46,10 @@ R               enter insert mode but replace instead of inserting chars
 :r {file}       insert from file - where the cursor is at insert another file
 4i		insert 4 copies of your next insert
 7r		replace 7 characters
+```
 
-# Editing
-
+##### Editing
+```
 u               undo
 .		redo
 yy              yank (copy) a line
@@ -56,30 +62,40 @@ d{motion}       delete text that {motion} moves over
 v		visual copy
 Shift-v		visual copy of line
 Ctrl-v		visual block mode
+```
 
+######  To add a character of a visual block
+```
+Ctrl-v		# select block
+:'<,'>		# : sets up the addition
+:'<,'>s/^/#/	# adds # to beginning of line
+:'<,'>s/$/)/	# adds ) to end of line
+```
 
 # Filters
 Ctrl-v		highlight block
 :!sort -k 4	sort by column 4
 
 
-# Search and replace with the `:substitute` (aka `:s`) command
-
+###### Search and replace with the `:substitute` (aka `:s`) command
+```
 :s/foo/bar/	replace the first match of 'foo' with 'bar' on the current line only
 :s/foo/bar/g	replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
 :%s/foo/bar/g	replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
 :%s/foo/bar/gc	ask to manually confirm (`c` flag) each replacement
+```
 
-
-# Preceding a motion or edition with a number repeats it 'n' times
-# Examples:
+###### Preceding a motion or edition with a number repeats it 'n' times
+#### Examples:
+```
 50k         moves 50 lines up
 2dw         deletes 2 words
 5yy         copies 5 lines
 42G         go to line 42
+```
 
-
-# Working in buffers - or opening more files in VIM
+###### Working in buffers - or opening more files in VIM
+```
 :buffers	# displays all open files
 :bad file.txt	# adds new file in Vim
 :bn		# moves to next file in buffer
@@ -88,9 +104,11 @@ Ctrl-v		highlight block
 :bw 2		# closes buffer file 2 only
 :! cat file1.txt	# will pop out of vim to run a command
 :!r blkid /dev/sdb	# read into a file the command
+```
 
-###### Command mode features
+##### Command mode features
+```
 e file.txt        # opens file like bad
 vs                # visual split screen
 map ,t :!make<cr> # mapping
-
+```
