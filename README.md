@@ -4,9 +4,11 @@ These cheat sheets are designed in helping the novice Linux system administrator
 
 #### Table Of Contents
 
-[Code of Conduct](code-of-conduct)
+[Code of Conduct](CODE_OF_CONDUCT.md)
 
-[Contribute Template](TEMPLATES.md)
+[Contributing Template](CONTRIBUTING.md)
+
+[LICENSE](LICENSE.md)
 
 [Cheatsheets](#cheatsheets)
 
