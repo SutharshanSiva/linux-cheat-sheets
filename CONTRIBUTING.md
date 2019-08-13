@@ -8,6 +8,7 @@ The following is a set of guidelines for contributing to this project
 #### Table Of Contents
 
 [Code of Conduct](#code-of-conduct)
+
 [Contribute Template](#contributing-template)
 
 ## Code of Conduct
