@@ -1,6 +1,17 @@
-# Cheatsheets
+# Linux Commandline Cheat Sheets
+
+These cheat sheets are designed in helping the novice Linux system administrator with their daily tasks, I made this easy to follow so Linux Admins can fix their environment and automate their tasks as quickly as possible.
+
+#### Table Of Contents
+
+[Code of Conduct](code-of-conduct)
+
+[Contribute Template](TEMPLATES.md)
+
+[Cheatsheets](#cheatsheets)
 
 
+#### Cheatsheets
 
 | Command | Description |
 |:--- |:--- |
