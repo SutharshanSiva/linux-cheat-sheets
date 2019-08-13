@@ -8,8 +8,6 @@ These cheat sheets are designed in helping the novice Linux system administrator
 
 [Contributing Template](CONTRIBUTING.md)
 
-[LICENSE](LICENSE)
-
 [Cheatsheets](#cheatsheets)
 
 
