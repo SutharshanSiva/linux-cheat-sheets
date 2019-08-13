@@ -29,8 +29,8 @@ B                   # previous start of whitespace-delimited word
 $                   # end of line
 gg                  # go to first line in file
 G                   # go to end of file
-gk		            # move down one displayed line
-gj		            # move up one displayed line
+gk                  # move down one displayed line
+gj                  # move up one displayed line
 ```
 
 #### Insertion
@@ -45,14 +45,14 @@ o                   # create a new line under the cursor
 O                   # create a new line above the cursor
 R                   # enter insert mode but replace instead of inserting chars
 :r {file}           # insert from file - where the cursor is at insert another file
-4i		            # insert 4 copies of your next insert
-7r		            # replace 7 characters
+4i                  # insert 4 copies of your next insert
+7r                  # replace 7 characters
 ```
 
 #### Editing
 ```
 u                   # undo
-.		            # redo
+.                   # redo
 yy                  # yank (copy) a line
 y{motion}           # yank text that {motion} moves over
 yw                  # yank word
@@ -61,9 +61,9 @@ P                   # paste before cursor
 <Del> or x          # delete a character
 dd                  # delete a line
 d{motion}           # delete text that {motion} moves over
-v		            # visual copy
-Shift-v		        # visual copy of line
-Ctrl-v		        # visual block mode
+v                   # visual copy
+Shift-v             # visual copy of line
+Ctrl-v              # visual block mode
 ```
 
 #####  To add a character of a visual block
@@ -76,15 +76,15 @@ Ctrl-v		        # select block
 
 #### Filters
 ```
-Ctrl-v		        # highlight block
+Ctrl-v              # highlight block
 :!sort -k 4	        # sort by column 4
 ```
 
 ##### Search and replace with the `:substitute` (aka `:s`) command
 ```
 :s/foo/bar/	        # replace the first match of 'foo' with 'bar' on the current line only
-:s/foo/bar/g	    # replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
-:%s/foo/bar/g	    # replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
+:s/foo/bar/g        # replace all matches (`g` flag) of 'foo' with 'bar' on the current line only
+:%s/foo/bar/g       # replace all matches of 'foo' with 'bar' in the entire file (`:%s`)
 :%s/foo/bar/gc	    # ask to manually confirm (`c` flag) each replacement
 ```
 
@@ -99,14 +99,14 @@ Ctrl-v		        # highlight block
 
 ##### Working in buffers - or opening more files in VIM
 ```
-:buffers	        # displays all open files
-:bad file.txt	    # adds new file in Vim
-:bn		            # moves to next file in buffer
-:bp		            # moves to the previous buffered file
-:b 2		        # moves to file 2 in buffer
-:bw 2		        # closes buffer file 2 only
-:! cat file1.txt	# will pop out of vim to run a command
-:!r blkid /dev/sdb	# read into a file the command
+:buffers            # displays all open files
+:bad file.txt       # adds new file in Vim
+:bn                 # moves to next file in buffer
+:bp                 # moves to the previous buffered file
+:b 2                # moves to file 2 in buffer
+:bw 2               # closes buffer file 2 only
+:! cat file1.txt    # will pop out of vim to run a command
+:!r blkid /dev/sdb  # read into a file the command
 ```
 
 #### Command mode features
@@ -114,4 +114,16 @@ Ctrl-v		        # highlight block
 e file.txt          # opens file like bad
 vs                  # visual split screen
 map ,t :!make<cr>   # mapping
+```
+
+#### Macros
+##### recording macros starts in 'Command Mode <Esc>'
+```
+q a                 # starts and store recording in register
+```
+###### Edit the file as normal - recording will show at bottom
+```
+<Esc> q             # be in command mode and hit q to stop recording
+@a                  # run the macro on current line
+100@a               # will run the macro 100 times from current line
 ```
