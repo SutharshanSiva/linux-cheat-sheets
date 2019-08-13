@@ -49,103 +49,103 @@
 | [dpkg](dpkg.md) | Debian package installer |
 | [du](du.md) | Disk usage |
 | [echo](echo.md) | Prints to stdoutput |
-| [emacs](emacs.md) | |
-| [expand](expand.md) | |
-| [fdisk](fdisk.md) | |
-| [ffmpeg](ffmpeg.md) | |
-| [find](find.md) | |
-| [firewalld](firewalld.md) | |
-| [fmt](fmt.md) | |
-| [for](for.md) | |
-| [free](free.md) | |
-| [fstab](fstab.md) | |
-| [gcc](gcc.md) | |
-| [gcloud-cli](gcloud-cli.md) | |
-| [gcloud](gcloud.md) | |
-| [gdb](gdb.md) | |
-| [gitlabs](gitlabs.md) | |
-| [git](git.md) | |
-| [gpg](gpg.md) | |
-| [grep](grep.md) | |
-| [gs](gs.md) | |
-| [gsre](gsre.md) | |
-| [gzip](gzip.md) | |
-| [head](head.md) | |
-| [history](history.md) | |
-| [http](http.md) | |
-| [hub](hub.md) | |
-| [ifconfig](ifconfig.md) | |
-| [indent](indent.md) | |
-| [ip](ip.md) | |
-| [iptables](iptables.md) | |
-| [irssi](irssi.md) | |
-| [iwconfig](iwconfig.md) | |
-| [jobs](jobs.md) | |
-| [journalctl](journalctl.md) | |
-| [jq](jq.md) | |
-| [jrnl](jrnl.md) | |
-| [kernel](kernel.md) | |
-| [kubernetes](kubernetes.md) | |
-| [kvm](kvm.md) | |
-| [ldap](ldap.md) | |
-| [ldconfig](ldconfig.md) | |
-| [less](less.md) | |
-| [ln](ln.md) | |
-| [ls](ls.md) | |
-| [lsmod](lsmod.md) | |
-| [lsof](lsof.md) | |
-| [lvm](lvm.md) | |
-| [mac](mac.md) | |
-| [mail](mail.md) | |
-| [mailx](mailx.md) | |
-| [man](man.md) | |
-| [mariadb_inst](mariadb_inst.md) | |
-| [mariadb](mariadb.md) | |
-| [markdown](markdown.md) | |
-| [mkdir](mkdir.md) | |
-| [more](more.md) | |
-| [mount](mount.md) | |
-| [mysqladmin](mysqladmin.md) | |
-| [mysqldump](mysqldump.md) | |
-| [mysql](mysql.md) | |
-| [nagios_inst](nagios_inst.md) | |
-| [ncat](ncat.md) | |
-| [nc](nc.md) | |
-| [netstat](netstat.md) | |
-| [networking](networking.md) | |
-| [nmap](nmapnmap.md) | |
-| [nmcli](nmcli.md) | |
-| [notify-send](notify-send.md) | |
-| [nova](nova.md) | |
-| [numfmt](numfmt.md) | |
-| [od](od.md) | |
-| [openssl](openssl.md) | |
-| [p4](p4.md) | |
-| [pacman](pacman.md) | |
-| [paste](paste.md) | |
-| [pdftk](pdftk.md) | |
-| [php](php.md) | |
-| [ping6](ping6.md) | |
-| [pip](pip.md) | |
-| [ps](ps.md) | |
-| [psql](psql.md) | |
-| [pssh](pssh.md) | |
-| [puppet](puppet.md) | |
-| [python](python.md) | |
-| [readline](readline.md) | |
-| [redhat](redhat.md) | |
-| [regexp](regexp.md) | |
-| [rm](rm.md) | |
-| [route](route.md) | |
-| [rpm](rpm.md) | |
-| [rsync](rsync.md) | |
-| [rundeck](rundeck.md) | |
-| [sam2p](sam2p.md) | |
-| [sar](sar.md) | |
-| [satellite](satellite.md) | |
-| [scp](scp.md) | |
-| [screen](screen.md) | |
-| [sed](sed.md) | |
+| [emacs](emacs.md) | GNU Emacs extensible editor |
+| [expand](expand.md) | convert tabs to spaces |
+| [fdisk](fdisk.md) | Manipulate disk partition tables |
+| [ffmpeg](ffmpeg.md) | convert or view multimedia files |
+| [find](find.md) | search for files in a directory hierarchy |
+| [firewalld](firewalld.md) | Dynamic Firewall Manager |
+| [fmt](fmt.md) | simple optimal text formatter |
+| [for](for.md) | Bash 'for' examples |
+| [free](free.md) | free memory usage|
+| [fstab](fstab.md) | mount entries in /etc/fstab |
+| [gcc](gcc.md) | gcc compiler |
+| [gcloud-cli](gcloud-cli.md) | GCP google cloud cli |
+| [gcloud](gcloud.md) | google cloud cli extension |
+| [gdb](gdb.md) | The GNU Debugger |
+| [gitlabs](gitlabs.md) | setup a gitlabs server |
+| [git](git.md) | the stupid content tracker |
+| [gpg](gpg.md) | OpenPGP encryption and signing tool |
+| [grep](grep.md) | grep, egrep, fgrep - print lines matching a pattern |
+| [gs](gs.md) | compression utility for PDFs |
+| [gsre](gsre.md) | Notes for Google Site reliability Engineer book |
+| [gzip](gzip.md) | gzip, gunzip, zcat - compress or expand files |
+| [head](head.md) | output the first part of files |
+| [history](history.md) | historical record of past commandline entries |
+| [http](http.md) | HTTP codes definitions|
+| [hub](hub.md) | GitHub Hub |
+| [ifconfig](ifconfig.md) | sysvinit ip configuration information |
+| [indent](indent.md) | indent formatting |
+| [ip](ip.md) | systemd ip networking management |
+| [iptables](iptables.md) | firewall ip rules |
+| [irssi](irssi.md) | IRC channel utility |
+| [iwconfig](iwconfig.md) | wireless network configurator |
+| [jobs](jobs.md) | bash utility for bg fg jobs starter|
+| [journalctl](journalctl.md) | Query the systemd journal |
+| [jq](jq.md) | JSON query |
+| [jrnl](jrnl.md) | Journal entry program |
+| [kernel](kernel.md) | kernel mgmt and compile |
+| [kubernetes](kubernetes.md) | kubectl and configuration |
+| [kvm](kvm.md) | Information about virtualization and running kvm |
+| [ldap](ldap.md) | Install and configure ldap |
+| [ldconfig](ldconfig.md) | library cache file |
+| [less](less.md) | less and more text file readers and search |
+| [ln](ln.md) | hard and soft links |
+| [ls](ls.md) | list directory |
+| [lsmod](lsmod.md) | Show the status of modules in the Linux Kernel |
+| [lsof](lsof.md) | list of open files |
+| [lvm](lvm.md) | Logical Volume management |
+| [mac](mac.md) | MAC commands and shortcut keys |
+| [mail](mail.md) | mail program examples|
+| [mailx](mailx.md) | mailx command examples |
+| [man](man.md) | an interface to the on-line reference manuals |
+| [mariadb_inst](mariadb_inst.md) | mariadb installation |
+| [mariadb](mariadb.md) | mariadb setup root account |
+| [markdown](markdown.md) | GitHub and markdown syntax |
+| [mkdir](mkdir.md) | make directory |
+| [more](more.md) | less and more text file readers and search |
+| [mount](mount.md) | mount a filesystem |
+| [mysqladmin](mysqladmin.md) | using mysqladmin |
+| [mysqldump](mysqldump.md) | using mysqldump |
+| [mysql](mysql.md) | mysql commands |
+| [nagios_inst](nagios_inst.md) | Installing Nagios |
+| [ncat](ncat.md) | Concatenate and redirect sockets |
+| [nc](nc.md) | Different than ncat |
+| [netstat](netstat.md) | Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships |
+| [networking](networking.md) | a cheatsheet for all things networking |
+| [nmap](nmap.md) | 3rd party FOSS program used for network scanning |
+| [nmcli](nmcli.md) | NetworkManager CLI |
+| [notify-send](notify-send.md) | To send a desktop notification via dbus |
+| [nova](nova.md) | nova VM server |
+| [numfmt](numfmt.md) | number formatter |
+| [od](od.md) | dump files in octal and other formats |
+| [openssl](openssl.md) | OpenSSL command line tool |
+| [p4](p4.md) | Print details related to Client and server configuration |
+| [pacman](pacman.md) | Another package manager |
+| [paste](paste.md) | merge lines of files |
+| [pdftk](pdftk.md) | Concatenate pdf files |
+| [php](php.md) | programming language for web |
+| [ping6](ping6.md) | ping ip v6 addresses|
+| [pip](pip.md) | python pip installer|
+| [ps](ps.md) | process search |
+| [psql](psql.md) | is the PostgreSQL terminal interface |
+| [pssh](pssh.md) | parallel ssh is a python based application to ssh into multiple systems |
+| [puppet](puppet.md) | puppet configuration management system |
+| [python](python.md) | programming language |
+| [readline](readline.md) | get a line from a user with editing - See man readline |
+| [redhat](redhat.md) | setup subscription manager |
+| [regexp](regexp.md) | regular expression examples |
+| [rm](rm.md) | remove files |
+| [route](route.md) | show manipulate the IP routing table|
+| [rpm](rpm.md) | Red Hat flavored package manager |
+| [rsync](rsync.md) | powerful cp and backup utility |
+| [rundeck](rundeck.md) | Ansible rundeck |
+| [sam2p](sam2p.md) | Another pdf concatenate utility |
+| [sar](sar.md) | sysstat utility for historical CPU,memory, and disk io|
+| [satellite](satellite.md) | Red Hat Satellite server - patching and package server |
+| [scp](scp.md) | secure copy through ssh |
+| [screen](screen.md) | interactive terminal program |
+| [sed](sed.md) | stream editor for filtering and transforming text |
 | [selinux](selinux.md) | |
 | [sftp](sftp.md) | |
 | [shred](shred.md) | |
