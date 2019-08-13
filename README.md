@@ -48,7 +48,7 @@
 | [docker](docker.md) | Container program |
 | [dpkg](dpkg.md) | Debian package installer |
 | [du](du.md) | Disk usage |
-| [echo](echo.md) | |
+| [echo](echo.md) | Prints to stdoutput |
 | [emacs](emacs.md) | |
 | [expand](expand.md) | |
 | [fdisk](fdisk.md) | |
