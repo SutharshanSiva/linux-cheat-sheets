@@ -1,7 +1,7 @@
 # vim
 ### Very powerful editor for terminal sessions
 
-##### File management
+#### File management
 ```
 :e              reload file
 :q              quit
@@ -48,7 +48,7 @@ R               enter insert mode but replace instead of inserting chars
 7r		replace 7 characters
 ```
 
-##### Editing
+#### Editing
 ```
 u               undo
 .		redo
@@ -72,10 +72,11 @@ Ctrl-v		# select block
 :'<,'>s/$/)/	# adds ) to end of line
 ```
 
-# Filters
+#### Filters
+```
 Ctrl-v		highlight block
 :!sort -k 4	sort by column 4
-
+```
 
 ###### Search and replace with the `:substitute` (aka `:s`) command
 ```
