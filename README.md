@@ -146,51 +146,51 @@
 | [scp](scp.md) | secure copy through ssh |
 | [screen](screen.md) | interactive terminal program |
 | [sed](sed.md) | stream editor for filtering and transforming text |
-| [selinux](selinux.md) | |
-| [sftp](sftp.md) | |
-| [shred](shred.md) | |
-| [shutdown](shutdown.md) | |
-| [smartcard](smartcard.md) | |
-| [smbclient](smbclient.md) | |
-| [snmpwalk](snmpwalk.md) | |
-| [sockstat](sockstat.md) | |
-| [sort](sort.md) | |
-| [split](split.md) | |
-| [sqlmap](sqlmap.md) | |
-| [ssh-copy-id](ssh-copy-id.md) | |
-| [ssh-google-auth](ssh-google-auth.md) | |
-| [ssh-keygen](ssh-keygen.md) | |
-| [ssh](ssh.md) | |
-| [ssh-proxy](ssh-proxy.md) | |
-| [ss](ss.md) | |
-| [stdout](stdout.md) | |
-| [strace](strace.md) | |
-| [sysctl](sysctl.md) | |
-| [systemctl](systemctl.md) | |
-| [systemd](systemd.md) | |
-| [tail](tail.md) | |
-| [tar](tar.md) | |
-| [tcpdump](tcpdump.md) | |
-| [tee](tee.md) | |
-| [tmux](tmux.md) | |
-| [top](top.md) | |
-| [troubleshooting](troubleshooting.md) | |
-| [truncate](truncate.md) | |
-| [tune2fs](tune2fs.md) | |
-| [udisksctl](udisksctl.md) | |
-| [uname](uname.md) | |
-| [uniq](uniq.md) | |
-| [unzip](unzip.md) | |
-| [vim](vim.md) | |
-| [virsh](virsh.md) | |
-| [vscode](vscode.md) | |
-| [wall](wall.md) | |
-| [watch](watch.md) | |
-| [weechat](weechat.md) | |
-| [wget](wget.md) | |
-| [xargs](xargs.md) | |
-| [yaourt](yaourt.md) | |
-| [youtube](youtube-dl.md) | |
-| [yum](yum.md) | |
-| [zip](zip.md) | |
-| [zoneadm](zoneadm.md) | |
+| [selinux](selinux.md) | NSA Security-Enhanced Linux (SELinux) |
+| [sftp](sftp.md) | secure FTP using ssh |
+| [shred](shred.md) | overwrite a file to hide its contents, and optionally delete it |
+| [shutdown](shutdown.md) | shutdown, reboot init 6 |
+| [smartcard](smartcard.md) | Reading smartcards in Linux |
+| [smbclient](smbclient.md) | utility used for SMB shares |
+| [snmpwalk](snmpwalk.md) | snmp utility |
+| [sockstat](sockstat.md) | network socket utility |
+| [sort](sort.md) | commandline sort utility |
+| [split](split.md) | split a file into pieces |
+| [sqlmap](sqlmap.md) | A python utility for sql |
+| [ssh-copy-id](ssh-copy-id.md) | use locally available keys to authorise logins on a remote machine |
+| [ssh-google-auth](ssh-google-auth.md) | Installing google-authenticator |
+| [ssh-keygen](ssh-keygen.md) | authentication key generation, management and conversion |
+| [ssh](ssh.md) | OpenSSH SSH client (remote login program) |
+| [ssh-proxy](ssh-proxy.md) | Setup ssh proxy for web-browsing |
+| [ss](ss.md) | another utility to investigate sockets |
+| [stdout](stdout.md) | standard output |
+| [strace](strace.md) | debug utility for starting applications |
+| [sysctl](sysctl.md) | configure kernel parameters at runtime |
+| [systemctl](systemctl.md) | Control the systemd system and service manager |
+| [systemd](systemd.md) | init - systemd system and service manager |
+| [tail](tail.md) | output last part of file |
+| [tar](tar.md) | tape archiver used for file compression and backups |
+| [tcpdump](tcpdump.md) | dump traffic on a network |
+| [tee](tee.md) | read from standard input and write to standard output and files |
+| [tmux](tmux.md) | similar to screen - terminal multiplexer |
+| [top](top.md) | display Linux processes |
+| [troubleshooting](troubleshooting.md) | Linux System Admin troubleshooting help |
+| [truncate](truncate.md) | shrink or extend the size of a file to the specified size |
+| [tune2fs](tune2fs.md) | adjust tunable filesystem parameters on ext2/ext3/ext4 filesystems |
+| [udisksctl](udisksctl.md) | block device disk utility |
+| [uname](uname.md) | print system information |
+| [uniq](uniq.md) | report or omit repeated lines |
+| [unzip](unzip.md) | list, test and extract compressed files in a ZIP archive |
+| [vim](vim.md) | Vi IMproved, a programmers text editor |
+| [virsh](virsh.md) | Command utility for kvm |
+| [vscode](vscode.md) | Visual Studio Code Cheat sheet |
+| [wall](wall.md) | send a message to everybody's terminal. |
+| [watch](watch.md) | execute a program periodically, showing output fullscreen |
+| [weechat](weechat.md) | a terminal program chat? |
+| [wget](wget.md) | The non-interactive network downloader. |
+| [xargs](xargs.md) | build and execute command lines from standard input |
+| [yaourt](yaourt.md) | another pacman package manager |
+| [youtube](youtube-dl.md) | youtube downloader |
+| [yum](yum.md) | Yellowdog Updater Modified |
+| [zip](zip.md) | package and compress (archive) files |
+| [zoneadm](zoneadm.md) | zone admin thingy |
