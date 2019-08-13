@@ -1,6 +1,7 @@
 # vim
 ### Very powerful editor for terminal sessions
-[x] [Back](README.md) to README.md
+
+- [Back](README.md) to README.md
 
 #### File management
 ```
