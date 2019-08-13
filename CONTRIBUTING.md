@@ -8,7 +8,14 @@ The following is a set of guidelines for contributing to this project
 #### Table Of Contents
 
 [Code of Conduct](#code-of-conduct)
+[Contribute Template](#contributing-template)
 
 ## Code of Conduct
 
 This project and everyone participating in it is governed by this site's [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+## Contributing Template
+
+These cheatsheets are designed with the GitHub Markdown language. If you want to submit new cheat sheets or modify existing please use the markdown library to stylize these sheets.
+
+Thank you.
