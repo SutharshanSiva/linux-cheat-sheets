@@ -1,6 +1,6 @@
-# alias
-
 - [Back](README.md) to README.md
+
+# alias
 
 ####  Show a list of your current shell aliases
 ```
