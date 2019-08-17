@@ -1,14 +1,27 @@
-# Install a package
+- [Back](README.md) to README.md
+# apk
+
+### Install a package
+```
 apk add $package
+```
 
-# Remove a package
+### Remove a package
+```
 apk del $package
+```
 
-# Update repos
+### Update repos
+```
 apk update
+```
 
-# Upgrade all packages
+### Upgrade all packages
+```
 apk upgrade
+```
 
-# Find a package
+### Find a package
+```
 apk search $package
+```
