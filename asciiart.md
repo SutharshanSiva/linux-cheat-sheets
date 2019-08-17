@@ -1,18 +1,26 @@
-# To show some text in ASCII Art:
+- [Back](README.md) to README.md
+# Ascii Art
 
-figlet Cheat
+To show some text in ASCII Art:
+
+#### figlet Cheat
+```
 #  ____ _                _
 # / ___| |__   ___  __ _| |_
 #| |   | '_ \ / _ \/ _` | __|
 #| |___| | | |  __/ (_| | |_
 # \____|_| |_|\___|\__,_|\__|
 #
+```
 
-
-# To have some text with color and other options:
-# Show with a border
+#### To have some text with color and other options:
+#### Show with a border
+```
 toilet -F border Cheat
-# Basic show (filled)
+```
+
+#### Basic show (filled)
+```
 toilet Cheat
 #   mmm  #                      m
 # m"   " # mm    mmm    mmm   mm#mm
@@ -20,3 +28,4 @@ toilet Cheat
 # #      #   #  #""""  m"""#    #
 #  "mmm" #   #  "#mm"  "mm"#    "mm
 #
+```
