@@ -132,6 +132,7 @@ These cheat sheets are designed in helping the novice Linux system administrator
 | [nova](nova.md) | nova VM server |
 | [numfmt](numfmt.md) | number formatter |
 | [od](od.md) | dump files in octal and other formats |
+| [opensuse](opensuse.md) | Running OpenSuse Leap |
 | [openssl](openssl.md) | OpenSSL command line tool |
 | [p4](p4.md) | Print details related to Client and server configuration |
 | [pacman](pacman.md) | Another package manager |
