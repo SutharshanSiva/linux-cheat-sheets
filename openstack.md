@@ -10,14 +10,14 @@ OpenStack is an open source cloud platform that controls large pools of compute,
 
 ### OpenStack Services
 | OpenStack Name | OpenStack Service
-| --- | --- | 
- Keystone | Identity
- Horizon | Dashboard
- Nova | Compute
- Neutron | Networking
- Glance | Imaging
- Swift | Object Storage
- Cinder | Block Storage
+|:--- |:--- | 
+| Keystone | Identity |
+| Horizon | Dashboard |
+| Nova | Compute |
+| Neutron | Networking |
+| Glance | Imaging |
+| Swift | Object Storage |
+| Cinder | Block Storage |
 
 #### OpenStack Modules
 - Daemon - Daemons run as background processes. On Linux platforms, a daemon is usually installed as a service.
@@ -54,24 +54,24 @@ OpenStack is an open source cloud platform that controls large pools of compute,
 	- Etc!
 - The most commonly used databases are MySQL/MariaDB, PostgreSQL for production, and SQLite for development.
 
-#### Keystone
+### Keystone
 Keystone is the Identity Service used by OpenStack for authentication and high-level authorization. It provides API client authentication, service discovery, and distributed multi-tenant authorization by implementing OpenStack’s identity API.
 
-#### Horizon
+### Horizon
 Horizon is a Django-based project aimed at providing a complete OpenStack dashboard, along with an extensible framework for building new dashboards from reusable components.
 
-#### Nova
+### Nova
 OpenStack Compute (codename Nova) is an open source software designed to provision and manage large networks of virtual machines, creating a redundant and scalable cloud computing platform.
 
-#### Neutron
+### Neutron
 Neutron is an OpenStack project created to provide Networking as a Service (NaaS) between interface devices managed by other OpenStack services.
 
-#### Glance
+### Glance
 OpenStack Compute (Nova) relies on an external image service to store virtual machine images and maintain a catalog of available images. By default, Compute is configured to use the Glance image service, which is currently (as of Newton release) the only supported image service.
 
-#### Swift
+### Swift
 The OpenStack Object Store project known as Swift is a highly available, distributed, eventually consistent object store that can be used to store lots of data efficiently, safely, and cheaply.
 
-#### Cinder
+### Cinder
 OpenStack Block Storage (codename Cinder) is designed to present storage resources to end users that can be consumed by the OpenStack Compute project (Nova).
 
