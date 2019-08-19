@@ -9,8 +9,9 @@ OpenStack is an open source cloud platform that controls large pools of compute,
 - Written mostly in Python and free under the Apache 2.0 license
 
 ### OpenStack Services
+
 | OpenStack Name | OpenStack Service
-|:--- |:--- | 
+| --- | --- | 
 | Keystone | Identity |
 | Horizon | Dashboard |
 | Nova | Compute |
