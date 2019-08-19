@@ -76,3 +76,10 @@ The OpenStack Object Store project known as Swift is a highly available, distrib
 ### Cinder
 OpenStack Block Storage (codename Cinder) is designed to present storage resources to end users that can be consumed by the OpenStack Compute project (Nova).
 
+### Optional Services:
+### Trove
+### Ironic - Bare Metal provisioning
+### Magnum - Containers as a service
+### Telemetry - Billing services
+### Sahara - Elastic Map Reduce
+### Designate - DNS
