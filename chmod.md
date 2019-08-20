@@ -48,6 +48,7 @@ chmod 666 -R /opt/myapp/*
 ```
 
 ###  Roles
+
 | role | description |
 | --- | --- |
 | u | user (owner of the file) |
@@ -56,6 +57,7 @@ chmod 666 -R /opt/myapp/*
 | a | all (all 3 roles above) |
 
 ###  Numeric representations
+
 | numeric | description |
 | --- | --- |
 | 7 | full (rwx) |
@@ -63,6 +65,6 @@ chmod 666 -R /opt/myapp/*
 | 5 | read and execute (r-x) |
 | 4 | read only (r--) |
 | 3 | write and execute (-wx) |
-2 - write only (-w-)
-1 - execute only (--x)
-0 - none (---)
+| 2 | write only (-w-) |
+| 1 | execute only (--x) |
+| 0 | none (---) |
