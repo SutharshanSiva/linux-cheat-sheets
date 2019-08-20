@@ -1,7 +1,10 @@
-# To add a music library location
+## To add a music library location
+```
 :add /home/username/Music/Albums
+```
 
-# Useful keys
+## Useful keys
+```
 v - stop playback
 
 b - next track
@@ -25,3 +28,4 @@ i - jump view to the currently playing track (handy when in shuffle mode)
 + - increase the volume by 10%
 
 man cmus-tutorial
+```
