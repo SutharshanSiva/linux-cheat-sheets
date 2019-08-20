@@ -37,7 +37,6 @@ These cheat sheets are designed in helping the novice Linux system administrator
 | [az-900](az-900.md) | Microsoft Azure az-900 exam notes |
 | [bash](bash.md) | Need I say anything |
 | [bower](bower.md) | Another package installer |
-| [cheat](cheat.md) | How to setup cheat commandline |
 | [chmod](chmod.md) | Change mode permissions on directories and files |
 | [chown](chown.md) | Change ownership |
 | [cmus](cmus.md) | Commandline music player |
