@@ -1,9 +1,13 @@
-## To add a music library location
+- [Back](README.md) to README.md
+
+# cmus
+
+### To add a music library location
 ```
 :add /home/username/Music/Albums
 ```
 
-## Useful keys
+### Useful keys
 ```
 v - stop playback
 
