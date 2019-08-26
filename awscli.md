@@ -84,7 +84,7 @@ codestar         elasticbeanstalk   lex-models      s3api
 cognito-identity               elastictranscoder              lex-runtime                    sdb
 ```
 
-#### aws cloudformation
+#### AWS cloudformation
 ```
   create-stack
 --stack-name <value>
