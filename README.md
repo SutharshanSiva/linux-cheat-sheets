@@ -41,7 +41,7 @@ These cheat sheets are designed in helping the novice Linux system administrator
 | [chown](chown.md) | Change ownership |
 | [cmus](cmus.md) | Commandline music player |
 | [convert](convert.md) | image editor |
-| [cpdf](cpdf.md) | A PDF modifier |
+| [cpdf](cpdf.md) | ** A very robust PDF modifier |
 | [cp](cp.md) | Copy command |
 | [crontab](crontab.md) | An automated job scheduler |
 | [csharp](csharp.md) | an Object Oriented Language |
