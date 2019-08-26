@@ -1,4 +1,4 @@
-- [Back](README.md) to README.md
+[Back](README.md) to README.md
 
 # AWS CLI commands
 ```
