@@ -1,10 +1,13 @@
 - [Back](README.md) to README.md
 
 # AWS CLI commands
+```
 aws --version
 aws ec2 iam help
+```
 
-# AWS CLI EC2 commands
+#### AWS CLI EC2 commands
+```
 aws ec2 describe-security-groups --output table
 aws ec2 describe-regions --output table
 aws ec2 describe-availability-zones --output table
@@ -18,8 +21,10 @@ aws ec2 describe-instances --instance-id i-054acd6b61b1b3c91 --output table
 aws ec2 describe-instances --query 'Reservations[].Instances[].[Placement.AvailabilityZone,InstanceId,InstanceType,State.Name,Tags[Key=='Name'] | [0].Value]' --output table
 aws ec2 get-console-output --instance-id i-0cb92fcf5285829c1 | sed 's/\\n/\n/g' | sed 's/\\r/\r/g'
 aws ec2 terminate-instances --instance-ids i-0cb92fcf5285829c1 --dry-run
+```
 
-# AWS CLI IAM commands
+#### AWS CLI IAM commands
+```
 aws iam list-users
 aws iam list-groups
 aws iam list-roles
@@ -32,14 +37,18 @@ aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAc
 aws iam list-attached-group-policies --group-name Developers
 aws iam list-attached-group-policies --group-name SystemAdmin
 aws iam create-service-linked-role --aws-service-name SERVICE-NAME-URL.amazonaws.com
+```
 
-# AWS CLI S3 commands
-# aws s3 cp ls mb mv presign rb rm sync website
+#### AWS CLI S3 commands
+##### aws s3 cp ls mb mv presign rb rm sync website
+```
 aws s3 ls s3://mybucket
 aws s3 cp myfolder s3://mybucket/myfolder --recursive
 aws s3 sync myfolder s3://mybucket/myfolder --exclude *.tmp
+```
 
-# AWS CLI SSM commands
+#### AWS CLI SSM commands
+```
 aws ssm list-documents --output table
 aws ssm describe-instance-information --output text --query "InstanceInformationList[*]"
 aws ssm send-command --document-name "AWS-RunShellScript" --comment "listing services" --instance-ids "i-0cb92fcf5285829c1" --parameters commands="service --status-all" --region us-west-2 --output text
@@ -48,9 +57,11 @@ aws ssm describe-document --name "AWS-RunShellScript" --query "[Document.Name,Do
 aws ssm describe-document --name "AWS-RunShellScript" --query "Document.Parameters[*]"
 aws ssm describe-instance-information --instance-information-filter-list key=InstanceIds,valueSet=i-0cb92fcf5285829c1
 aws ssm describe-instance-information --instance-information-filter-list key=AgentVersion,valueSet=LATEST
+```
 
-# AWS CLI All Resources
-acm      	cognito-idp         elb             lightsail            servicecatalog 
+#### AWS CLI All Resources
+```
+acm           	cognito-idp         elb             lightsail            servicecatalog 
 apigateway      cognito-sync        elbv2           logs                 ses 
 application-autoscaling        configservice        emr           machinelearning                shield 
 appstream        configure          es              marketplacecommerceanalytics   sms 
@@ -71,8 +82,10 @@ codecommit       efs                kms             route53domains              
 codepipeline     elasticache        lambda          s3                             
 codestar         elasticbeanstalk   lex-models      s3api                          
 cognito-identity               elastictranscoder              lex-runtime                    sdb
+```
 
-# aws cloudformation
+#### aws cloudformation
+```
   create-stack
 --stack-name <value>
 [--template-body <value>]
@@ -93,5 +106,4 @@ cognito-identity               elastictranscoder              lex-runtime       
 [--enable-termination-protection | --no-enable-termination-protection]
 [--cli-input-json <value>]
 [--generate-cli-skeleton <value>]
-
 ```
