@@ -16,7 +16,6 @@
 
 | Compute | Network & Content Deliver | Management Tools |
 | :---: | :---: | :---: |
-
 | [x] EC2 | [] VPC | []CloudWatch |
 | [x] EC2 Container Service | []CloudFront | []CloudFormation |
 | [x] Elastic Beanstalk | []Route 53 | |
@@ -25,7 +24,6 @@
 
 | Storage | Security, Identity & Compliance | Messaging |
 |:---:| :---: | :---: |
-
 | [x] S3 | [] IAM | [] Simple Queue Service |
 | [] EFS | | []Simple Notification Service |
 | [] EBS | | |
@@ -34,7 +32,6 @@
 
 | Database |
 | :---: |
-
 | [x] RDS |
 | [x] DynamoDB |
 | [] ElasticCache |
