@@ -12,6 +12,8 @@
 
 [https://www.certmetrics.com/amazon/](https://www.certmetrics.com/amazon/)
 
+Amazon AWS [free](https://aws.amazon.com/free/) services, some have free 12 month allocation.
+
 #### Read the following from AWS documentation: FAQ, What is, Getting started
 
 | Compute | Network & Content Deliver | Management Tools |
@@ -36,6 +38,27 @@
 | [x] DynamoDB |
 | [ ] ElasticCache |
 | [ ] Redshift |
+
+###  Getting started
+####  Creating an AWS Account
+[https://aws.amazon.com/](https://aws.amazon.com)
+##### Free Tier account setup
+Requirements
+- Email address
+- credit card
+
+##### Setup
+- signin with email address and password
+- MFA association -> My Security Credentials -> MFA authentication - Virtual MFA device
+	- Show QR code - enter 2 codes
+
+##### Billing monitoring
+- set a billing alarm
+  - my billing -> Billing preferences [x] Receive free tier usage and receive billing alerts
+  - Cloudwatch -> Alarms [x] create alarm [x] all metrics
+	- Billing -> Total estimated charges [x] $10.00 / per month
+	- Create new SNS topic - BillingAlarm - email address - confirm - create alarm 
+
 
 ###  EC2 notes  ###
 Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. 
@@ -68,6 +91,27 @@ Cross Origin Resource Sharing - Need to enable it on the resources bucket and st
 
 
 ### IAM notes  ###
+#### Access Management Basics
+- Principal <> A person or application that can make an authenticated or anonymous request
+- Authentication <> The process of authenticating a principal against an identity
+- Identity <> Objects that require authentication and are authorized to access resources
+- Authorization <> The process of checking and allowing or denying access to a resource for an identity
+
+#### Shared Responsibility/Security Model
+Shared responsibility Model
+##### Customer Security in the cloud 
+- Customer data
+- Platform, Application, Identity and Access management
+- Operating system, Network and Firewall Config
+- Encryption - At rest and in transit
+- Network protection
+
+###### AWS Security of the cloud
+- Software
+- compute storage database network
+- Hardware AWS infrastructure
+- Regions AZs Edge location
+
 AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
  - AWS account default limit of 20 EC2 instances.
  - Use an IAM role to manage temporary credentials for applications that run on an EC2 instance. When you use a role, you don''t have to distribute long-term credentials to an EC2 instance.
