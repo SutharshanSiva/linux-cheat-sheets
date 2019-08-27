@@ -16,26 +16,26 @@
 
 | Compute | Network & Content Deliver | Management Tools |
 | :--- | :--- | :--- |
-| [x] EC2 | [] VPC | []CloudWatch |
-| [x] EC2 Container Service | [] CloudFront | [] CloudFormation |
-| [x] Elastic Beanstalk | [] Route 53 | |
+| [x] EC2 | [ ] VPC | [ ] CloudWatch |
+| [x] EC2 Container Service | [ ] CloudFront | [ ] CloudFormation |
+| [x] Elastic Beanstalk | [ ] Route 53 | |
 | [x] Lamda | | |
 | [ ] Batch | | |
 
 | Storage | Security, Identity & Compliance | Messaging |
 |:---| :--- | :--- |
-| [x] S3 | [] IAM | [] Simple Queue Service |
-| [] EFS | | [] Simple Notification Service |
-| [] EBS | | |
-| [] Glacier | | |
-| [] Storage Gateway | | |
+| [x] S3 | [ ] IAM | [ ] Simple Queue Service |
+| [ ] EFS | | [ ] Simple Notification Service |
+| [ ] EBS | | |
+| [ ] Glacier | | |
+| [ ] Storage Gateway | | |
 
 | Database |
 | :--- |
 | [x] RDS |
 | [x] DynamoDB |
-| [] ElasticCache |
-| [] Redshift |
+| [ ] ElasticCache |
+| [ ] Redshift |
 
 ###  EC2 notes  ###
 Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. 
