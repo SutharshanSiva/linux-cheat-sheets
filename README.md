@@ -33,6 +33,7 @@ These cheat sheets are designed in helping the novice Linux system administrator
 | [awk](awk.md) | A programming language, views text file as records and fields |
 | [awscli](awscli.md) | Amazon Web Services Commandline |
 | [awscli-profile](awscli-profile.md) | How to setup AWS profile |
+| [aws-solutions-architect](awsSAA.md) | AWS Certified Solutions Architect Associate |
 | [axel](axel.md) | Commandline download accelerator |
 | [az-900](az-900.md) | Microsoft Azure az-900 exam notes |
 | [bash](bash.md) | Need I say anything |
