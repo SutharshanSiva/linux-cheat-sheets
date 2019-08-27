@@ -51,8 +51,7 @@ MAIL=""		# Will stop sending output mail
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/user
 ```
 
-#### Installing a crontab from a cron file
-#### this will remove old crontab entries
+#### Installing a crontab from a cron file, this will remove old crontab entries
 ```
 crontab cron-file.txt
 crontab -l user
