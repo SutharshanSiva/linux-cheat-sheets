@@ -1,9 +1,13 @@
+[Back](README.md) to README.md
 
+# Crontab
 
-# set a shell
+#### set a shell
+```
 SHELL=/bin/bash
-
-# crontab format
+```
+#### crontab format
+```
 * * * * *  command_to_execute
 - - - - -
 | | | | |
@@ -20,26 +24,36 @@ SHELL=/bin/bash
 0 * * * * /home/user/command.sh
 # every Saturday at 8:05 AM
 5 8 * * 6 /home/user/command.sh
+```
 
-# read the crontab of every user in passwd
+#### read the crontab of every user in passwd
+```
 for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done
 for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; done
+```
 
-# schedule a job 
+#### schedule a job 
+```
 @yearly
 @monthly
 @daily
 @reboot
+```
 
-# Redirect mail from cron job
+#### Redirect mail from cron job
+```
 MAIL="user"
 MAIL=""		# Will stop sending output mail
+```
 
-# Specify PATH variable
+#### Specify PATH variable
+```
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/user
+```
 
-# Installing a crontab from a cron file
-## this will remove old crontab entries
+#### Installing a crontab from a cron file
+#### this will remove old crontab entries
+```
 crontab cron-file.txt
 crontab -l user
 @reboot CMD
@@ -49,10 +63,10 @@ crontab -l user
 MAIL="david"
 
 */1 * * * * david sh /home/david/bin/stat.sh
+```
 
-# cron.allow and cron.deny
+#### cron.allow and cron.deny
 The cron.deny and cron.allow files consist of a list of user names, one user name per line.
-
 These access control files work together as follows:
 
 If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.
