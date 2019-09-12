@@ -1,6 +1,7 @@
+[Back](README.md) to README.md
+# Devops meaning
 
-
-Devops meaning: Devps is a cultural sensibility.  It's a unified metrics
+Devops meaning: Devops is a cultural sensibility.  It's a unified metrics
 based approach to making software efficiently and fearlessly using as 
 much automation as possible.  
 
