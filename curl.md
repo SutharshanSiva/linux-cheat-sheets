@@ -105,7 +105,7 @@ curl -X PUT -d '{"name":"Jane Doe"}' httpbin.org/put
 curl -I http://example.com
 ```
 
-### DELETE Request - Similarly, ReST APIs use DELETE request to delete an existing resource. Here's how to make a delete request:
+DELETE Request - Similarly, ReST APIs use DELETE request to delete an existing resource. Here's how to make a delete request:
 ```
 curl -X DELETE httpbin.org/delete
 ```
