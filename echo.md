@@ -1,10 +1,13 @@
 # Echo commands with quotes
-greeting="hello world"
+[Back](README.md) to README.md
 
-#echo $greeting, blu \(planet\)!
+```sh
+[user@server1]$ greeting="hello world"
 
-#echo '$greeting, blu \(planet\)!'
+[user@server1]$ echo $greeting, blu \(planet\)!
 
-#echo "$greeting, blu \(planet\)!"
+[user@server1]$ echo '$greeting, blu \(planet\)!'
 
+[user@server1]$ echo "$greeting, blu \(planet\)!"
 
+```
