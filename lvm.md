@@ -40,6 +40,7 @@ pvresize /dev/sdc
 # Resizing a logical volume do above steps and
 lvextend -l 100%FREE /dev/mapper/VolumeName
 lvextend -L +50G -n /dev/volumename/logicalname
+growpart /dev/sda 1
 resize2fs or xfs_growfs /dev/VolumeName/LogicalName
 ####  Extending a Physical Volume  ####
 
@@ -54,6 +55,7 @@ vgdisplay
 lvextend /dev/mapper/VolumeName/LogicalName /dev/sdb2
 lvdisplay
 e2fsck -f /dev/VolumeName/LogicalName
+growpart /dev/sda 1
 resize2fs /dev/VolumeName/LogicalName
 df -h; mount -a; df -h
 ####  Extending a volume group  ####
