@@ -1,14 +1,16 @@
-- [Back](README.md) to README.md
-
 # American National Standards Institute terminal color codes
 
-### Reset
-```
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
+## Reset
+
+```bash
 Color_Off='\e[0m'       # Text Reset
 ```
 
 ### Regular Colors
-```
+
+```bash
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
 Green='\e[0;32m'        # Green
@@ -20,7 +22,8 @@ White='\e[0;37m'        # White
 ```
 
 ### Bold
-```
+
+```bash
 BBlack='\e[1;30m'       # Black
 BRed='\e[1;31m'         # Red
 BGreen='\e[1;32m'       # Green
@@ -32,7 +35,8 @@ BWhite='\e[1;37m'       # White
 ```
 
 ### Underline
-```
+
+```bash
 UBlack='\e[4;30m'       # Black
 URed='\e[4;31m'         # Red
 UGreen='\e[4;32m'       # Green
@@ -44,7 +48,8 @@ UWhite='\e[4;37m'       # White
 ```
 
 ### Background
-```
+
+```bash
 On_Black='\e[40m'       # Black
 On_Red='\e[41m'         # Red
 On_Green='\e[42m'       # Green
@@ -56,7 +61,8 @@ On_White='\e[47m'       # White
 ```
 
 ### High Intensity
-```
+
+```bash
 IBlack='\e[0;90m'       # Black
 IRed='\e[0;91m'         # Red
 IGreen='\e[0;92m'       # Green
@@ -68,7 +74,8 @@ IWhite='\e[0;97m'       # White
 ```
 
 ### Bold High Intensity
-```
+
+```bash
 BIBlack='\e[1;90m'      # Black
 BIRed='\e[1;91m'        # Red
 BIGreen='\e[1;92m'      # Green
@@ -80,7 +87,8 @@ BIWhite='\e[1;97m'      # White
 ```
 
 ### High Intensity backgrounds
-```
+
+```bash
 On_IBlack='\e[0;100m'   # Black
 On_IRed='\e[0;101m'     # Red
 On_IGreen='\e[0;102m'   # Green
