@@ -1,27 +1,33 @@
-- [Back](README.md) to README.md
 # apk
 
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
 ### Install a package
-```
-apk add $package
+
+```bash
+[user@server1]$ apk add $package
 ```
 
 ### Remove a package
-```
-apk del $package
+
+```bash
+[user@server1]$ apk del $package
 ```
 
 ### Update repos
-```
-apk update
+
+```bash
+[user@server1]$ apk update
 ```
 
 ### Upgrade all packages
-```
-apk upgrade
+
+```bash
+[user@server1]$ apk upgrade
 ```
 
 ### Find a package
-```
-apk search $package
+
+```bash
+[user@server1]$ apk search $package
 ```

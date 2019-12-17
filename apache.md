@@ -2,11 +2,11 @@
 
 [Back](README.md) to Linux CheatSheets by Ireaneus
 
-## 3 Ways to Check Apache Server Status and Uptime in Linux
+### 3 Ways to Check Apache Server Status and Uptime in Linux
 
 [https://www.tecmint.com/check-apache-httpd-status-and-uptime-in-linux/](https://www.tecmint.com/check-apache-httpd-status-and-uptime-in-linux/)
 
-## How to setup free SSL certificate for Apache on Debian 10
+### How to setup free SSL certificate for Apache on Debian 10
 
 [https://www.tecmint.com/setup-free-ssl-certificate-for-apache-on-debian-10/](https://www.tecmint.com/setup-free-ssl-certificate-for-apache-on-debian-10/)
 
@@ -15,7 +15,7 @@
 [user@server1]$ systemctl status httpd     # RHEL/CentOS/Fedora
 ```
 
-### Apachectl Utilities
+#### Apachectl Utilities
 
 ```bash
 [user@server1]$ sudo vi /etc/apache2/mods-enabled/status.conf
@@ -28,7 +28,7 @@
 [user@server1]$ vi /etc/httpd/conf.d/server-status.conf
 	<Location "/server-status">
 		SetHandler server-status
-		#Require  host  localhost	#uncomment to only allow requests from localhost 
+		#Require  host  localhost uncomment to only allow requests from localhost
 	</Location>
 
 [user@server1]$ systemctl restart httpd

@@ -1,43 +1,53 @@
-- [Back](README.md) to README.md
 # apt-get
+
 Desc: Allows to update the operating system
 
-#### To fetch package list
-```
-apt-get update
+[Back](README.md) to README.md
+
+### To fetch package list
+
+```bash
+[user@server1]$ apt-get update
 ```
 
-#### To download and install updates without installing new package.
-```
-apt-get upgrade
+### To download and install updates without installing new package
+
+```bash
+[user@server1]$ apt-get upgrade
 ```
 
-#### To download and install the updates AND install new necessary packages
-```
-apt-get dist-upgrade
+### To download and install the updates AND install new necessary packages
+
+```bash
+[user@server1]$ apt-get dist-upgrade
 ```
 
-#### Full command:
-```
-apt-get update && apt-get dist-upgrade
+### Full command
+
+```bash
+[user@server1]$ apt-get update && apt-get dist-upgrade
 ```
 
-#### To install a new package(s)
-```
-apt-get install package(s)
+### To install a new package(s)
+
+```bash
+[user@server1]$ apt-get install package(s)
 ```
 
 #### Download a package without installing it. (The package will be downloaded in your current working dir)
-```
-apt-get download modsecurity-crs
+
+```bash
+[user@server1]$ apt-get download modsecurity-crs
 ```
 
-#### Change Cache dir and archive dir (where .deb are stored).
-```
-apt-get -o Dir::Cache="/path/to/destination/dir/" -o Dir::Cache::archives="./" install ...
+#### Change Cache dir and archive dir (where .deb are stored)
+
+```bash
+[user@server1]$ apt-get -o Dir::Cache="/path/to/destination/dir/" -o Dir::Cache::archives="./" install ...
 ```
 
-#### Show apt-get installed packages.
-```
-grep 'install ' /var/log/dpkg.log
+#### Show apt-get installed packages
+
+```bash
+[user@server1]$ grep 'install ' /var/log/dpkg.log
 ```

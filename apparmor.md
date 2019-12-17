@@ -1,26 +1,35 @@
-- [Back](README.md) to README.md
 # apparmor
+
 Desc: Apparmor will protect the system by confining programs to a limited set of resources.
 
-### To activate a profile:
-```
-sudo aa-enforce usr.bin.firefox
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
+### To activate a profile
+
+```bash
+[user@server1]$ sudo aa-enforce usr.bin.firefox
 # OR
-export _PROFILE_='usr.bin.firefox' sudo $(rm /etc/apparmor.d/disable/$_PROFILE_ ; cat /etc/apparmor.d/$_PROFILE_ | apparmor_parser -a )
+[user@server1]$ export _PROFILE_='usr.bin.firefox' sudo $(rm /etc/apparmor.d/disable/$_PROFILE_ ; cat /etc/apparmor.d/$_PROFILE_ | apparmor_parser -a )
 ```
 
-### TO disable a profile:
-```
-sudo aa-disable usr.bin.firefox
+### TO disable a profile
+
+```bash
+[user@server1]$ sudo aa-disable usr.bin.firefox
 # OR
-export _PROFILE_='usr.bin.firefox' sudo $(ln -s /etc/apparmor.d/$_PROFILE_ /etc/apparmor.d/disable/ && apparmor_parser -R /etc/apparmor.d/$_PROFILE_)
+[user@server1]$ export _PROFILE_='usr.bin.firefox' sudo $(ln -s /etc/apparmor.d/$_PROFILE_ /etc/apparmor.d/disable/ && apparmor_parser -R /etc/apparmor.d/$_PROFILE_)
 ```
 
-### To list profiles loaded:
-```
-sudo aa-status
+### To list profiles loaded
+
+```bash
+[user@server1]$ sudo aa-status
 # OR
-sudo apparmor_status
+[user@server1]$ sudo apparmor_status
 ```
 
-### List of profiles aviables: /etc/apparmor.d/
+### List of profiles available
+
+```bash
+[user@server1]$ ls -l /etc/apparmor.d/
+```
