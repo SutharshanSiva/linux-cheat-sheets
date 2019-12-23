@@ -1,21 +1,25 @@
-- [Back](README.md) to README.md
+# Bash
 
-# Bash 
+[Back](README.md) to Linux Cheatsheets by Ireaneus
 
-### To list all bash commands
+## To list all bash commands
+
+```bash
+[user@server1]$ Esc + y
 ```
-Esc + y
-```
-### Executing bash scripts
-```
+
+## Executing bash scripts
+
+```bash
 #!/usr/bin/env bash
-bash my.sh
-chmod +x my.sh
-./my.sh
+[user@server1]$ bash my.sh
+[user@server1]$ chmod +x my.sh
+[user@server1]$ ./my.sh
 ```
 
-### To include a bash script in another bash script
-```
+## To include a bash script in another bash script
+
+```bash
 # config.sh
 USERNAME=$USER
 EMAIL="username@example.com"
@@ -29,16 +33,18 @@ echo Welcome ${USERNAME}!
 echo Your email is ${EMAIL}.
 ```
 
-### To implement a for loop:
-```
+## To implement a for loop
+
+```bash
 for file in [[ "ls -l * | wc -l" ]];
-do 
+do
     echo $file found;
 done
 ```
 
-### To implement a case command:
-```
+## To implement a case command:
+
+```bash
 case "$1"
 in
     0) echo "zero found";;
@@ -48,27 +54,32 @@ in
 esac
 ```
 
-### debugging:
-```
-set -x	# turn on debugging
-set +x	# turn off debugging
+## debugging
+
+```bash
+[user@server1]$ set -x	# turn on debugging
+[user@server1]$ set +x	# turn off debugging
 ```
 
-### Environment echo commands
-```
-echo $PATH $HOME $UID $(date) $USER
+## Environment echo commands
+
+```bash
+[user@server1]$ echo $PATH $HOME $UID $(date) $USER
 
 # Brace Expansion
-echo {1..10..2}
+[user@server1]$ echo {1..10..2}
 1 3 5 7 9
 
-echo {A..Z}
+[user@server1]$ echo {A..Z}
 A B C D ..
 
-echo a{A{1,2},B{3,4}}b
+[user@server1]$ echo a{A{1,2},B{3,4}}b
 ```
 
-mkdir -p Projects/{docker,bash,ansible}
+## Make parent directory
+```bash
+[user@server1]$ mkdir -p Projects/{docker,bash,ansible}
+```
 
 ### bash cursor movements
 
@@ -84,16 +95,19 @@ mkdir -p Projects/{docker,bash,ansible}
 | ctrl-xx | Move between the beginning of the |
 | | line, return to start of line and |
 | | change something then back again |
+| | |
 
-### bash command replacement
-```
-ls anaconda-ks.cfg
-vi !!:$
+## bash command replacement
 
-cp anaconda-ks.cfg anaconda-ks.bak
-vi !^
+```bash
+[user@server1]$ ls anaconda-ks.cfg
+[user@server1]$ vi !!:$
+
+[user@server1]$ cp anaconda-ks.cfg anaconda-ks.bak
+[user@server1]$ vi !^
 vi anaconda-ks.cfg
-!grep			# run the last grep command
+
+[user@server1]$ !grep			# run the last grep command
 ```
 
 ### bash delete text
@@ -103,6 +117,7 @@ vi anaconda-ks.cfg
 | ctrl-d | Delete character under the cursor |
 | alt-d | Delete all characters after the cursor |
 | ctrl-h | Delet the character before the cursor |
+| | |
 
 ### Completion commands
 
@@ -110,36 +125,42 @@ vi anaconda-ks.cfg
 | --- | --- |
 | alt-? | Display list of possible combos |
 | alt-* | Insert all possible completions |
+| | |
 
 ### Declare statements
-```
-declare -i NEWVAR=123  			# Integer only
-declare -r NEWVAR="this is readonly"
-declare +i NEWVAR="string"
-declare -p NEWVAR 			# print
+
+```bash
+[user@server1]$ declare -i NEWVAR=123  			# Integer only
+[user@server1]$ declare -r NEWVAR="this is readonly"
+[user@server1]$ declare +i NEWVAR="string"
+[user@server1]$ declare -p NEWVAR 			# print
 ```
 
 ### Export variables
-```
-$ MYVAR="value"
-$ echo ${MYVAR}
+
+```bash
+[user@server1]$ MYVAR="value"
+[user@server1]$ echo ${MYVAR}
 value
-$ echo 'echo ${MYVAR}' > echo.sh
-$ chmod +x echo.sh
-$ ./echo.sh 
-$ export MYVAR="value-exported"
-$ ./echo.sh 
+
+[user@server1]$ echo 'echo ${MYVAR}' > echo.sh
+[user@server1]$ chmod +x echo.sh
+[user@server1]$ ./echo.sh
+[user@server1]$ export MYVAR="value-exported"
+[user@server1]$ ./echo.sh
 value-exported
 ```
 
-### bash alias
-```
-echo 'alias webstat="systemctl status httpd.service"' >> /home/user/.bashrc
+## bash alias
+
+```bash
+[user@server1]$ echo 'alias webstat="systemctl status httpd.service"' >> /home/user/.bashrc
 ```
 
-###  Running a remote script in bash
-```
-# remote_check.sh
+## Running a remote script in bash
+
+```bash
+##### remote_check.sh #####
 #!/bin/bash
 
 ##
@@ -196,10 +217,11 @@ function all_checks() {
 
 all_checks
 
-# remote_check.sh
+##### remote_check.sh #####
 ```
 
-### Running remote_check.sh on remote servers
-```
-for server in $(cat servers.txt) ; do ssh root@${server} 'bash -s' < ./remote_check.sh ; done
+## Running remote_check.sh on remote servers
+
+```bash
+[user@server1]$ for server in $(cat servers.txt) ; do ssh root@${server} 'bash -s' < ./remote_check.sh ; done
 ```
