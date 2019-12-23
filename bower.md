@@ -1,48 +1,57 @@
-- [Back](README.md) to README.md
-
 # Bower
 
+[Back](README.md) to Linux Cheatsheets by Ireaneus
+
 ### Install a package locally
-```
-bower install <package-name>
+
+```bash
+[user@server1]$ bower install <package-name>
 ```
 
 ### Install a package locally directly from github
-```
-bower install <user>/<repo>
+
+```bash
+[user@server1]$ bower install <user>/<repo>
 ```
 
 ### Install a specific package locally
-```
-bower install <package-name>#<version>
+
+```bash
+[user@server1]$ bower install <package-name>#<version>
 ```
 
 ### Install a package locally and save installed package into bower.json
-```
-bower install <package-name> --save
+
+```bash
+[user@server1]$ bower install <package-name> --save
 ```
 
 ### Retrieve info of a particular package
-```
-bower info <package-name>
+
+```bash
+[user@server1]$ bower info <package-name>
 ```
 
 ### List local packages
-```
-bower list
+
+```bash
+[user@server1]$ bower list
 ```
 
 ### Search for a package by name
-```
-bower search <package-name>
+
+```bash
+[user@server1]$ bower search <package-name>
 ```
 
 ### Update a package to their newest version
-```
-bower update <package-name>
+
+```bash
+[user@server1]$ bower update <package-name>
 ```
 
 ### Remove a local package
-```
-bower uninstall <package-name>
+
+```bash
+[user@server1]$ bower uninstall <package-name>
 ```
