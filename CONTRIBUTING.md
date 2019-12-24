@@ -5,7 +5,8 @@
 These cheat sheets are designed in helping the novice Linux system administrator with their daily tasks, I made this easy to follow so Linux Admins can fix their environment and automate their tasks as quickly as possible.
 
 The following is a set of guidelines for contributing to this project
-#### Table Of Contents
+
+## Table Of Contents
 
 [Code of Conduct](#code-of-conduct)
 

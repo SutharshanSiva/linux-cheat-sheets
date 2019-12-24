@@ -1,53 +1,62 @@
-- [Back](README.md) to README.md
-
 # chmod
 
+[Back](README.md) to Linux Cheatsheets by Ireaneus
+
 ### Add execute for all (myscript.sh)
-```
-chmod a+x myscript.sh
+
+```bash
+[user@server1]$ chmod a+x myscript.sh
 ```
 
 ### Set user to read/write/execute, group/global to read only (myscript.sh), symbolic mode
-```
-chmod u=rwx, go=r myscript.sh
+
+```bash
+[user@server1]$ chmod u=rwx, go=r myscript.sh
 ```
 
-###  Remove write from user/group/global (myscript.sh), symbolic mode
-```
-chmod a-w myscript.sh
+### Remove write from user/group/global (myscript.sh), symbolic mode
+
+```bash
+[user@server1]$ chmod a-w myscript.sh
 ```
 
-###  Remove read/write/execute from user/group/global (myscript.sh), symbolic mode
-```
-chmod = myscript.sh
+### Remove read/write/execute from user/group/global (myscript.sh), symbolic mode
+
+```bash
+[user@server1]$ chmod = myscript.sh
 ```
 
-###  Set user to read/write and group/global read (myscript.sh), octal notation
-```
-chmod 644 myscript.sh
+### Set user to read/write and group/global read (myscript.sh), octal notation
+
+```bash
+[user@server1]$ chmod 644 myscript.sh
 ```
 
-###  Set user to read/write/execute and group/global read/execute (myscript.sh), octal notation
-```
-chmod 755 myscript.sh
+### Set user to read/write/execute and group/global read/execute (myscript.sh), octal notation
+
+```bash
+[user@server1]$ chmod 755 myscript.sh
 ```
 
-###  Set user/group/global to read/write (myscript.sh), octal notation
-```
-chmod 666 myscript.sh
+### Set user/group/global to read/write (myscript.sh), octal notation
+
+```bash
+[user@server1]$ chmod 666 myscript.sh
 ```
 
-###  Set permissions on a directory
-```
-chmod 755 /opt/myapp
+### Set permissions on a directory
+
+```bash
+[user@server1]$ chmod 755 /opt/myapp
 ```
 
-###  Set permissions on a directory and files recursivley
-```
-chmod 666 -R /opt/myapp/*
+### Set permissions on a directory and files recursivley
+
+```bash
+[user@server1]$ chmod 666 -R /opt/myapp/*
 ```
 
-###  Roles
+## Roles
 
 | role | description |
 | --- | --- |
@@ -55,8 +64,9 @@ chmod 666 -R /opt/myapp/*
 | g | group (members of file's group) |
 | o | global (all users who are not owner and not part of group) |
 | a | all (all 3 roles above) |
+| | |
 
-###  Numeric representations
+## Numeric representations
 
 | numeric | description |
 | --- | --- |
@@ -68,3 +78,4 @@ chmod 666 -R /opt/myapp/*
 | 2 | write only (-w-) |
 | 1 | execute only (--x) |
 | 0 | none (---) |
+| | |

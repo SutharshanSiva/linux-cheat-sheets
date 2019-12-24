@@ -1,14 +1,16 @@
-- [Back](README.md) to README.md
-
 # cmus
 
+[Back](README.md) to Linux Cheatsheets by Ireaneus
+
 ### To add a music library location
-```
+
+```bash
 :add /home/username/Music/Albums
 ```
 
 ### Useful keys
-```
+
+```bash
 v - stop playback
 
 b - next track
