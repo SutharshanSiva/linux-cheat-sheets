@@ -2,33 +2,31 @@
 
 [Back](README.md) to Linux Cheatsheets by Ireaneus
 
-### To resize an image to a fixed width and proportional height:
+To resize an image to a fixed width and proportional height:
 
 ```bash
 [user@server1]$ convert original-image.jpg -resize 100x converted-image.jpg
 ```
 
-### To resize an image to a fixed height and proportional width
+To resize an image to a fixed height and proportional width
 
 ```bash
 [user@server1]$ convert original-image.jpg -resize x100 converted-image.jpg
 ```
 
-### To resize an image to a fixed width and height
+To resize an image to a fixed width and height
 
 ```bash
 [user@server1]$ convert original-image.jpg -resize 100x100 converted-image.jpg
 ```
 
-### To resize an image and simultaneously change its file type
+To resize an image and simultaneously change its file type
 
 ```bash
 [user@server1]$ convert original-image.jpg -resize 100x converted-image.png
 ```
 
-### To resize all of the images within a directory
-
-To implement a for loop
+To resize all of the images within a directory and implement a for loop
 
 ```bash
 for file in `ls original/image/path/`;

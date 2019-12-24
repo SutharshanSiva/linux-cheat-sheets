@@ -2,31 +2,31 @@
 
 [Back](README.md) to Linux Cheatsheets by Ireaneus
 
-### Change file owner
+#### Change file owner
 
 ```bash
 [user@server1]$ chown user file
 ```
 
-### Change file owner and group
+#### Change file owner and group
 
 ```bash
 [user@server1]$ chown user:group file
 ```
 
-### Change owner recursively
+#### Change owner recursively
 
 ```bash
 [user@server1]$ chown -R user directory
 ```
 
-### Change ownership to match another file
+#### Change ownership to match another file
 
 ```bash
 [user@server1]$ chown --reference=/path/to/ref_file file
 ```
 
-### umask command controls the default permissions given to a file when it is created
+#### umask command controls the default permissions given to a file when it is created
 
 ```bash
 [user@server1]$ umask
@@ -40,7 +40,7 @@ Result	--- rw- rw- r--
 [user@server1]$ mask 000 000 010 010	# umask 0022
 ```
 
-### setuid bit (octal 4000) 
+#### setuid bit (octal 4000)
 
 When applied to an executable file, it sets the effective user ID 
 from that of the real user (the user actually running the program) 
@@ -54,7 +54,7 @@ the program runs with the effective privileges of the superuser
 
 ```
 
-### the setgid bit (octal 2000)
+#### The setgid bit (octal 2000)
 
 This, like the setuid bit, changes the effective group ID from that of the real group ID of the user to that of the file owner. If the setgid bit is set on a directory, newly created files in the directory will be given the group ownership of the directory rather the group ownership of the file’s creator. This is useful in a shared directory when members of a common group need access to all the files in the directory, regardless of the file owner’s primary group.
 

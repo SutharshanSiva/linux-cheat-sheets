@@ -2,13 +2,13 @@
 
 [Back](README.md) to Linux Cheatsheets by Ireaneus
 
-### To add a music library location
+To add a music library location
 
 ```bash
 :add /home/username/Music/Albums
 ```
 
-### Useful keys
+Useful keys
 
 ```bash
 v - stop playback

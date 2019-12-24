@@ -1,55 +1,65 @@
-[Back](README.md) to README.md
+# cpdf
+
+[Back](README.md) to Linux Cheatsheets by Ireaneus
 
 [Github - cpdf](https://github.com/coherentgraphics/cpdf-binaries) installations Linux, OSX, Windows
 
-# cpdf
-
 Read in.pdf, select pages 1, 2, 3 and 6, and write those pages to out.pdf
-```
-cpdf in.pdf 1-3,6 -o out.pdf
+
+```bash
+[user@server1]$ cpdf in.pdf 1-3,6 -o out.pdf
 ```
 
 Select the even pages (2, 4, 6...) from in.pdf and write those pages to out.pdf
-```
-cpdf in.pdf even -o out.pdf
+
+```bash
+[user@server1]$ cpdf in.pdf even -o out.pdf
 ```
 
 Using AND to perform several operations in order, here merging two files together and adding a copyright stamp to every page.
-```
-cpdf -merge in.pdf in2.pdf AND -add-text "Copyright 2014" -o out.pdf
+
+```bash
+[user@server1]$ cpdf -merge in.pdf in2.pdf AND -add-text "Copyright 2014" -o out.pdf
 ```
 
 Read control.txt and use its contents as the command line arguments for cpdf.
-```
-cpdf -control control.txt
+
+```bash
+[user@server1]$ cpdf -control control.txt
 ```
 
 Merge in.pdf and in2.pdf into one document, writing to out.pdf.
-```
-cpdf -merge in.pdf in2.pdf -o out.pdf
+
+```bash
+[user@server1]$ cpdf -merge in.pdf in2.pdf -o out.pdf
 ```
 
 Split in.pdf into ten-page chunks, writing them to Chunk001.pdf, Chunk002.pdf etc
-```
-cpdf -split in.pdf -o Chunk%%%.pdf -chunk 10
+
+```bash
+[user@server1]$ cpdf -split in.pdf -o Chunk%%%.pdf -chunk 10
 ```
 
 Split in.pdf on bookmark boundaries, writing each to a file whose name is the bookmark label
-```
-cpdf -split-bookmarks 0 in.pdf -o @N.pdf
+
+```bash
+[user@server1]$ cpdf -split-bookmarks 0 in.pdf -o @N.pdf
 ```
 
 Scale both the dimensions and contents of in.pdf by a factor of two in x and y directions.
-```
-cpdf -scale-page "2 2" in.pdf -o out.pdf
+
+```bash
+[user@server1]$ cpdf -scale-page "2 2" in.pdf -o out.pdf
 ```
 
 Scale the pages in in.pdf to fit the US Letter page size, writing to out.pdf
-```
-cpdf -scale-to-fit usletterportrait in.pdf -o out.pdf
+
+```bash
+[user@server1]$ cpdf -scale-to-fit usletterportrait in.pdf -o out.pdf
 ```
 
 Shift the contents of the page by 26 pts in the x direction, and 18 millimetres in the y direction, writing to out.pdf
+
 ```
 cpdf -shift "26pt 18mm" in.pdf -o out.pdf
 ```
