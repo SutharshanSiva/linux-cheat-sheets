@@ -1,31 +1,36 @@
-[Back](README.md) to README.md
-
 # cp
 
+[Back](README.md) to Linux Cheatsheets by Ireaneus
+
 To copy a file only if it is newer than last backup
-```
-cp -u ~/file1 ~/backup
+
+```bash
+[user@server1]$ cp -u ~/file1 ~/backup
 ```
 
 To copy a directory and files
-```
-cp -R
-cp -r
-cp --recursive
+
+```bash
+[user@server1]$ cp -R
+[user@server1]$ cp -r
+[user@server1]$ cp --recursive
 ```
 
 To force a copy
-```
-cp -f
-cp --force
+
+```bash
+[user@server1]$ cp -f
+[user@server1]$ cp --force
 ```
 
 To preserve a file's attributes
-```
-cp -p
+
+```bash
+[user@server1]$ cp -p
 ```
 
 To copy a single file to multiple files:
-```
-cat host1 | tee host2 host3
+
+```bash
+[user@server1]$ cat host1 | tee host2 host3
 ```
