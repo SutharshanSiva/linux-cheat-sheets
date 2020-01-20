@@ -1,74 +1,87 @@
-[Back](README.md) to README.md
-
 # curl
 
-#### Download a single file
-```
-curl http://path.to.the/file
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
+Download a single file
+
+```bash
+[user@server1]$ curl http://path.to.the/file
 ```
 
-#### Download a file and specify a new filename
-```
-curl http://example.com/file.zip -o new_file.zip
+Download a file and specify a new filename
+
+```bash
+[user@server1]$ curl http://example.com/file.zip -o new_file.zip
 ```
 
-#### Download multiple files
-```
-curl -O URLOfFirstFile -O URLOfSecondFile
+Download multiple files
+
+```bash
+[user@server1]$ curl -O URLOfFirstFile -O URLOfSecondFile
 ```
 
-#### Download a file and pass HTTP Authentication
-```
-curl -u username:password URL
+Download a file and pass HTTP Authentication
+
+```bash
+[user@server1]$ curl -u username:password URL
 ```
 
-#### Download all sequentially numbered files (1-24)
-```
-curl http://example.com/pic[1-24].jpg
+Download all sequentially numbered files (1-24)
+
+```bash
+[user@server1]$ curl http://example.com/pic[1-24].jpg
 ```
 
-#### Download a file with a Proxy
-```
-curl -x proxysever.server.com:PORT http://addressiwantto.access
+Download a file with a Proxy
+
+```bash
+[user@server1]$ curl -x proxysever.server.com:PORT http://addressiwantto.access
 ```
 
-#### Download a file from FTP
+Download a file from FTP
 ```
-curl -u username:password -O ftp://example.com/pub/file.zip
-```
-
-#### Get an FTP directory listing
-```
-curl ftp://username:password@example.com
+[user@server1]$ curl -u username:password -O ftp://example.com/pub/file.zip
 ```
 
-#### Resume a previously failed download
-```
-curl -C - -o partial_file.zip http://example.com/file.zip
+Get an FTP directory listing
+
+```bash
+[user@server1]$ curl ftp://username:password@example.com
 ```
 
-#### Fetch only the HTTP headers from a response
-```
-curl -I http://example.com
+Resume a previously failed download
+
+```bash
+[user@server1]$ curl -C - -o partial_file.zip http://example.com/file.zip
 ```
 
-#### Fetch your external IP and network info as JSON
-```
-curl http://ifconfig.me/all/json
+Fetch only the HTTP headers from a response
+
+```bash
+[user@server1]$ curl -I http://example.com
 ```
 
-#### Limit the rate of a download
-```
-curl --limit-rate 1000B -O http://path.to.the/file
+Fetch your external IP and network info as JSON
+
+```bash
+[user@server1]$ curl http://ifconfig.me/all/json
 ```
 
-#### Get your global IP
-```
-curl httpbin.org/ip
+Limit the rate of a download
+
+```bash
+[user@server1]$ curl --limit-rate 1000B -O http://path.to.the/file
 ```
 
-#### POST REQUEST - json
+Get your global IP
+
+```bash
+[user@server1]$ curl httpbin.org/ip
 ```
+
+POST REQUEST - json
+
+```bash
 curl -d '{"name":"First Lastname","course":"LPIC102"}' httpbin.org/post
 curl -H 'Content-Type: application/json' -d '{"name":"John Doe","course":"Linux"}' httpbin.org/post
 ```

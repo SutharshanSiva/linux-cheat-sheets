@@ -1,13 +1,16 @@
-[Back](README.md) to README.md
-
 # Crontab
 
-#### set a shell
-```
+[Back](README.md) to Linux Cheatsheets by Ireaneus
+
+set a shell
+
+```bash
 SHELL=/bin/bash
 ```
-#### crontab format
-```
+
+crontab format
+
+```bash
 * * * * *  command_to_execute
 - - - - -
 | | | | |
@@ -26,33 +29,38 @@ SHELL=/bin/bash
 5 8 * * 6 /home/user/command.sh
 ```
 
-#### read the crontab of every user in passwd
-```
+read the crontab of every user in passwd
+
+```bash
 for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l; done
 for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; done
 ```
 
-#### schedule a job 
-```
+schedule a job
+
+```bash
 @yearly
 @monthly
 @daily
 @reboot
 ```
 
-#### Redirect mail from cron job
-```
+Redirect mail from cron job
+
+```bash
 MAIL="user"
 MAIL=""		# Will stop sending output mail
 ```
 
-#### Specify PATH variable
-```
+Specify PATH variable
+
+```bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/home/user
 ```
 
-#### Installing a crontab from a cron file, this will remove old crontab entries
-```
+Installing a crontab from a cron file, this will remove old crontab entries
+
+```bash
 crontab cron-file.txt
 crontab -l user
 @reboot CMD
@@ -64,14 +72,16 @@ MAIL="david"
 */1 * * * * david sh /home/david/bin/stat.sh
 ```
 
-#### cron.allow and cron.deny
-The cron.deny and cron.allow files consist of a list of user names, one user name per line.
+## cron.allow and cron.deny
+
+>The cron.deny and cron.allow files consist of a list of user names, one user name per line.
+
 These access control files work together as follows:
 
-If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.
+>If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.
 
-If cron.allow does not exist, all users can submit crontab files, except for users who are listed in cron.deny.
+>If cron.allow does not exist, all users can submit crontab files, except for users who are listed in cron.deny.
 
-If neither cron.allow nor cron.deny exists, superuser privileges are required to run the crontab command.
+>If neither cron.allow nor cron.deny exists, superuser privileges are required to run the crontab command.
 
-Superuser privileges are required to edit or create the cron.deny and cron.allow files
+>Superuser privileges are required to edit or create the cron.deny and cron.allow files

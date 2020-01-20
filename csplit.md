@@ -1,13 +1,16 @@
-[Back](README.md) to README.md
-
 # csplit
 
-### Split a file based on pattern
-```
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
+Split a file based on pattern
+
+```bash
 csplit input.file '/PATTERN/'
 ```
 
-### Use prefix/suffix to improve resulting file names
-```
+Use prefix/suffix to improve resulting file names
+
+```bash
 csplit -f 'prefix-' -b '%d.extension' input.file '/PATTERN/' '{*}'
+
 ```
