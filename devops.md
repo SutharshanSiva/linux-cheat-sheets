@@ -2,16 +2,11 @@
 
 [Back](README.md) to Linux CheatSheets by Ireaneus
 
-*Devops meaning: Devops is a cultural sensibility.  It's a unified metrics
-based approach to making software efficiently and fearlessly using as 
-much automation as possible.*
+*Devops meaning: Devops is a cultural sensibility.  It's a unified metrics based approach to making software efficiently and fearlessly using as much automation as possible.*
 
-*Sadly many companies don't have the will or discipline to foster a 
-true DevOps culture, so they come up with the term "DevOps Engineer" 
-to make it seem as if the DevOps sensibility has taken hold.*
+*Sadly many companies don't have the will or discipline to foster a true DevOps culture, so they come up with the term "DevOps Engineer" to make it seem as if the DevOps sensibility has taken hold.*
 
-*In reality they're just looking for infrastructure engineers who 
-know how to work AWS or Google Cloud*
+*In reality they're just looking for infrastructure engineers who know how to work AWS or Google Cloud*
 
 ## APIs
 
@@ -27,11 +22,11 @@ An architectural style that defines a set of constraints to be used for creating
 
 ### CRUD
 
-### Create Read Update & Delete
+*Create Read Update & Delete*
 
-*HTTP Methods*
+### HTTP Methods
 
-POST=Create GET=Read PUT=Update DELETE=Delete
+*POST=Create GET=Read PUT=Update DELETE=Delete*
 
 ### JSON
 

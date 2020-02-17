@@ -1,6 +1,6 @@
-[Back](README.md) to README.md
-
 # Display resolutions
+
+[Back](README.md) to Linux CheatSheets by Ireaneus
 
 - 4:3 aspect ratio resolutions: 640×480, 800×600, 960×720, 1024×768, 1280×960, 1400×1050, 1440×1080 , 1600×1200, 1856×1392, 1920×1440, and 2048×1536.
 

@@ -1,10 +1,12 @@
-[Back](README.md) to README.md
-
 # DISTCC server installation
 
-#### INSTALL
+[Back](README.md) to Linux CheatSheets by Ireaneus
+
+## INSTALL
+
 ==============================================================================
-```
+
+```bash
 # Edit /etc/default/distcc and set theses vars
 STARTDISTCC="true"
 ALLOWEDNETS="127.0.0.1 192.168.1.0/24"# Your computer and local computers
@@ -19,9 +21,12 @@ service distccd start
 Do not forget to install on each machine DISTCC.
 No need to install libs ! Only main host need libs !
 ```
-# USAGE
+
+## USAGE
+
 ==============================================================================
-```
+
+```bash
 # Run make with 4 thread (a cross network) in auto configuration.
 # Note: for gcc, Replace CXX by CC and g++ by gcc
 ZEROCONF='+zeroconf' make -j4 CXX='distcc g++'

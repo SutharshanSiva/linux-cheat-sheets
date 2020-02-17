@@ -78,10 +78,7 @@ MAIL="david"
 
 These access control files work together as follows:
 
->If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.
-
->If cron.allow does not exist, all users can submit crontab files, except for users who are listed in cron.deny.
-
->If neither cron.allow nor cron.deny exists, superuser privileges are required to run the crontab command.
-
->Superuser privileges are required to edit or create the cron.deny and cron.allow files
+- If cron.allow exists, only the users who are listed in this file can create, edit, display, or remove crontab files.
+- If cron.allow does not exist, all users can submit crontab files, except for users who are listed in cron.deny.
+- If neither cron.allow nor cron.deny exists, superuser privileges are required to run the crontab command.
+- Superuser privileges are required to edit or create the cron.deny and cron.allow files
